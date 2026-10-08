@@ -1,4 +1,4 @@
-// hex.h — hex encode/decode helpers
+// hex.h - hex encode/decode helpers
 #pragma once
 
 #include <stddef.h>

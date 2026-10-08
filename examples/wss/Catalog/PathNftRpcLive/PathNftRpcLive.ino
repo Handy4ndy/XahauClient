@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — PathNftRpcLive
+ * XahauClient Example - PathNftRpcLive
  *
  * Live path/NFT RPC catalog
  *
@@ -70,7 +70,7 @@ static bool resolveAddr(const char* seed, char* out, size_t cap) {
 void setup() {
   Serial.begin(115200);
   delay(1500);
-  Serial.println(F("=== XahauClient WSS live · Path/NFT RPC catalog ==="));
+  Serial.println(F("=== XahauClient WSS live | Path/NFT RPC catalog ==="));
   Serial.println(XAHAU_CLIENT_VERSION);
   Serial.println(F("Xahau note: nft_* often server-error (NFToken); deposit_authorized+book_offers are primary."));
 
@@ -101,7 +101,7 @@ void setup() {
   // XAH / IOU book (issuer = B is arbitrary; may be empty book)
   live("book_offers XAH/USD@B",
        xahau::rpcBuildBookOffers("XAH", nullptr, "USD", s_addrB, 5, s_req, sizeof(s_req)));
-  // amm_info JSON builder removed 2026-09-28 (AMM EncodeOnly cut); probe via rawRequest if needed.
+  // amm_info JSON builder removed (AMM EncodeOnly cut); probe via rawRequest if needed.
   static const char* kNft =
       "00080000B4F4AFC5FBCBD76873F18006173D213FDC0084B40000099B00000000";
   live("nft_info", xahau::rpcBuildNftInfo(kNft, s_req, sizeof(s_req)));
@@ -111,7 +111,7 @@ void setup() {
   live("nfts_by_issuer A",
        xahau::rpcBuildNftsByIssuer(s_addrA, 5, s_req, sizeof(s_req)));
 
-  // channel_verify with dummy values — server will reject; build+transport still exercised
+  // channel_verify with dummy values - server will reject; build+transport still exercised
   live("channel_verify",
        xahau::rpcBuildChannelVerify(
            "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF", "1000",

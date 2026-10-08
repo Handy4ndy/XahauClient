@@ -1,4 +1,4 @@
-// xahau_error.h — library status codes
+// xahau_error.h - library status codes
 #pragma once
 
 #include <stdint.h>
@@ -23,7 +23,7 @@ enum class Status : int8_t {
   Rejected = -14,
   /**
    * Submit accepted into open-ledger queue (engine_result terQUEUED).
-   * Not a hard failure — do NOT re-sign with a new Sequence; resolve by hash.
+   * Not a hard failure - do NOT re-sign with a new Sequence; resolve by hash.
    */
   Queued = -15,
 };

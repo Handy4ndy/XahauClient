@@ -12,7 +12,7 @@
 
 namespace xahau {
 
-// Shared default response buffer — keeps XahauRpcClient small for stack placement.
+// Shared default response buffer - keeps XahauRpcClient small for stack placement.
 // Override with setResponseBuffer() for concurrent clients or larger payloads.
 // Tier A SetHook: larger submit/meta responses.
 static char s_defaultRpcResp[16384];  // match WebSockets ESP max (~15KiB) + NUL margin
@@ -82,7 +82,7 @@ Status XahauRpcClient::fetchAccountInfo(const char* account, AccountInfoSnapshot
   st = doRequest(req);
   if (st != Status::Ok) return st;
   st = rpcParseAccountInfoSnapshot(respBuf_, out);
-  // Truncated / empty WSS payloads sometimes surface as DecodeFailed — surface as
+  // Truncated / empty WSS payloads sometimes surface as DecodeFailed - surface as
   // Rejected only when parse explicitly set error; keep DecodeFailed for retries.
   return st;
 }
@@ -163,13 +163,13 @@ Status XahauRpcClient::fetchLedgerCloseTime(uint32_t& closeTimeRipple) {
 
 Status XahauRpcClient::submitBlob(const char* txBlobHex, SubmitResult& out) {
   memset(&out, 0, sizeof(out));
-  // Static BSS — large enough for long signed blobs without stack pressure.
+  // Static BSS - large enough for long signed blobs without stack pressure.
   // Tier A SetHook: submit JSON wrapping ~8 KiB CreateCode hex (~17 KiB).
   static char s_submitReq[17408];
   Status st = rpcBuildSubmit(txBlobHex, s_submitReq, sizeof(s_submitReq));
   if (st != Status::Ok) return st;
   // One reconnect retry on Timeout only. Re-sends the *same* signed blob (same
-  // Sequence/hash) — rippled treats identical re-submit as idempotent. Never
+  // Sequence/hash) - rippled treats identical re-submit as idempotent. Never
   // re-sign with a new sequence here (that would double-apply on-ledger).
   for (int attempt = 0; attempt < 2; ++attempt) {
     st = doRequest(s_submitReq);
@@ -281,7 +281,7 @@ Status XahauRpcClient::waitForOutcome(const char* txHashHex, uint32_t lastLedger
         out.queued = false;
         return Status::Rejected;
       }
-      // ter* including QUEUED — keep polling
+      // ter* including QUEUED - keep polling
       if (cls == EngineClass::Ter) {
         sawProvisional = true;
         out.queued = rpcIsTerQueued(out.engineResult);
@@ -350,7 +350,7 @@ Status XahauRpcClient::fetchAccountObjectIds(const char* account, const char* ty
 
 static Status subscribeAckOk(const char* resp) {
   if (!resp || !resp[0]) return Status::DecodeFailed;
-  // Clio: server/consensus/peer_status streams → reportingUnsupported
+  // Clio: server/consensus/peer_status streams -> reportingUnsupported
   if (rpcIsReportingUnsupported(resp)) return Status::Rejected;
   char err[48];
   if (rpcParseError(resp, err, sizeof(err)) == Status::Ok && err[0]) return Status::Rejected;

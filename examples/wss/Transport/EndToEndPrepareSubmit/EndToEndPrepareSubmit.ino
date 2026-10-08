@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — EndToEndPrepareSubmit
+ * XahauClient Example - EndToEndPrepareSubmit
  *
  * WSS end-to-end prepare + submit
  *
@@ -72,7 +72,7 @@ static bool resolveAccount(char* out, size_t outCap, xahau::KeyPair* keysOut) {
   return true;
 }
 
-// BSS globals — WebSocketsClient + response buffers must NOT live on setup() stack.
+// BSS globals - WebSocketsClient + response buffers must NOT live on setup() stack.
 // Large stack locals (resp[8k] + TLS) caused loopTask stack-canary panics in ClientTest.
 static xahau::WsXahauTransport s_ws;
 static xahau::XahauRpcClient s_client(s_ws);
@@ -103,7 +103,7 @@ static void printStatus(const char* label, xahau::Status st) {
 static void printJsonSnippet(const char* json) {
   if (!PRINT_RAW_JSON || !json) return;
   Serial.println(F("--- JSON ---"));
-  // Cap print length for Serial — use BSS temp (never stack) to avoid canary panics
+  // Cap print length for Serial - use BSS temp (never stack) to avoid canary panics
   size_t n = strlen(json);
   if (n > 1500) {
     memcpy(s_printTmp, json, 1500);

@@ -1,4 +1,4 @@
-# WSS — Stream (subscribe)
+# WSS - Stream (subscribe)
 
 Push subscriptions over a persistent WebSocket session (stream monitor pattern
 
@@ -11,10 +11,10 @@ Push subscriptions over a persistent WebSocket session (stream monitor pattern
 ## Flow
 
 ```text
-WiFi → WsXahauTransport → setStreamHandler → connect
-     → XahauRpcClient::subscribe* / subscribeEx
-     → poll() until done
-     → unsubscribe* → close
+WiFi -> WsXahauTransport -> setStreamHandler -> connect
+     -> XahauRpcClient::subscribe* / subscribeEx
+     -> poll() until done
+     -> unsubscribe* -> close
 ```
 
 **Do not** call `request()` / `rawRequest` / `subscribe*` from inside the stream handler (non-reentrant).

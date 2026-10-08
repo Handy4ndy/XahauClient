@@ -9,5 +9,5 @@ Sketches (2):
 - [`OfferCreate`](./OfferCreate/OfferCreate.ino)
 - [`OfferCancel`](./OfferCancel/OfferCancel.ino)
 
-AMM* example folders were archived 2026-09-28 (not enabled as live Xahau types) —
+AMM* example folders were archived (not enabled as live Xahau types) - 
 see a maintainer archive.

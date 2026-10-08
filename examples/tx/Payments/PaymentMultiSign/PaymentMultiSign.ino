@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — PaymentMultiSign
+ * XahauClient Example - PaymentMultiSign
  *
  * Payment multi-sign
  *
@@ -41,7 +41,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · PaymentMultiSign ==="));
+  Serial.println(F("=== XahauClient | PaymentMultiSign ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -50,12 +50,12 @@ void setup() {
   xahau::KeyPair keysB;
   xahau::Status st = xahau::deriveKeysFromSeed(XAHAU_SEED, keys);
   if (st != xahau::Status::Ok) {
-    Serial.println(F("deriveKeysFromSeed(A) failed — set XAHAU_SEED"));
+    Serial.println(F("deriveKeysFromSeed(A) failed - set XAHAU_SEED"));
     return;
   }
   st = xahau::deriveKeysFromSeed(XAHAU_SEED_B, keysB);
   if (st != xahau::Status::Ok) {
-    Serial.println(F("deriveKeysFromSeed(B) failed — set XAHAU_SEED_B"));
+    Serial.println(F("deriveKeysFromSeed(B) failed - set XAHAU_SEED_B"));
     xahau::secureClear(keys);
     return;
   }
@@ -79,7 +79,7 @@ void setup() {
   p.common.feeDrops = 24;  // (1 sig + 1) * ~12 drops; raised after prepare
   p.common.sequence = 1;
   p.common.lastLedgerSequence = 100;
-  // Multi-sign uses empty SigningPubKey — no single-sig FullyCanonical needed for B.
+  // Multi-sign uses empty SigningPubKey - no single-sig FullyCanonical needed for B.
   // Still fine to set on common; bagPrepareMultiSign clears SigningPubKey.
 
   static char s_blob[4096];
@@ -140,7 +140,7 @@ void setup() {
     xahau::secureClear(keysB);
     return;
   }
-  // Multi-sign fee = (N+1) * base; N=1 → 2×.
+  // Multi-sign fee = (N+1) * base; N=1 -> 2x.
   {
     const uint64_t base = p.common.feeDrops > 0 ? p.common.feeDrops : 12ULL;
     xahau::sketch::ensureFeeAtLeast(p.common, base * 2ULL);

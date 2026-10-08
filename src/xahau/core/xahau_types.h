@@ -1,4 +1,4 @@
-// xahau_types.h — shared value types (portable)
+// xahau_types.h - shared value types (portable)
 #pragma once
 
 #include <stddef.h>
@@ -83,7 +83,7 @@ struct TxCommon {
   uint32_t ticketSequence;
   /**
    * On-wire NetworkID (UInt32 type=2 field=1).
-   * Required for Xahau (mainnet 21337, testnet 21338) — network IDs >= 1025.
+   * Required for Xahau (mainnet 21337, testnet 21338) - network IDs >= 1025.
    * Set 0 to omit (invalid on Xahau public nets).
    */
   uint32_t networkId;
@@ -101,7 +101,7 @@ struct TxCommon {
 };
 
 // ---------------------------------------------------------------------------
-// Field identity (type << 16 | nth) — matches Xahau binary fieldCode
+// Field identity (type << 16 | nth) - matches Xahau binary fieldCode
 // ---------------------------------------------------------------------------
 
 constexpr uint32_t fieldCode(uint16_t type, uint16_t nth) {
@@ -128,10 +128,10 @@ inline uint32_t rippleToUnixTime(uint32_t rippleSec) {
 /**
  * Normalize OracleSet LastUpdateTime to Unix seconds.
  * Accepts Unix (~1.7e9) or accidental Ripple (~8e8) inputs.
- * Must be within ±300s of ledger close (as Unix) or → tecINVALID_UPDATE_TIME.
+ * Must be within ±300s of ledger close (as Unix) or -> tecINVALID_UPDATE_TIME.
  */
 inline uint32_t normalizeOracleUpdateTime(uint32_t t) {
-  // Ripple-sized values in the 2020s are ~7e8–9e8; treat as ledger close units.
+  // Ripple-sized values in the 2020s are ~7e8-9e8; treat as ledger close units.
   if (t > 0 && t < 1500000000u) return rippleToUnixTime(t);
   return t;
 }
@@ -149,7 +149,7 @@ inline uint32_t oracleUpdateTimeFromLedgerClose(uint32_t closeTimeRipple) {
 // Common field codes (subset; full set lives in generated tables)
 namespace fc {
   constexpr uint32_t TransactionType     = fieldCode(1, 2);
-  /** NetworkID — type=2 field=1 header 0x21; required on Xahau (IDs >= 1025). */
+  /** NetworkID - type=2 field=1 header 0x21; required on Xahau (IDs >= 1025). */
   constexpr uint32_t NetworkID           = fieldCode(2, 1);
   constexpr uint32_t Flags               = fieldCode(2, 2);
   constexpr uint32_t SourceTag           = fieldCode(2, 3);

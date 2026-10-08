@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — OfferCancel
+ * XahauClient Example - OfferCancel
  *
  * OfferCancel transaction
  *
@@ -22,12 +22,12 @@ SET_LOOP_TASK_STACK_SIZE(16 * 1024);
 #endif
 
 // ---------------------------------------------------------------------------
-// CONFIG — edit like a .js / .py script (seed + WiFi only)
+// CONFIG - edit like a .js / .py script (seed + WiFi only)
 // ---------------------------------------------------------------------------
 const char* WIFI_SSID     = "YOUR_WIFI_SSID";
 const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 
-// Classic family seed: "sEd…" (Ed25519) or "s…" (secp256k1).
+// Classic family seed: "sEd..." (Ed25519) or "s..." (secp256k1).
 // Fund via Testnet faucet, then paste here (same idea as Wallet.from_seed).
 const char* XAHAU_SEED     = "sEdPLACEHOLDER_REPLACE_ME";
 
@@ -44,7 +44,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · OfferCancel ==="));
+  Serial.println(F("=== XahauClient | OfferCancel ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -109,7 +109,7 @@ void setup() {
   Serial.print(F(":"));
   Serial.println(net.wsPort);
 
-  // CRITICAL: WebSocketsClient is large — never put WsXahauTransport on setup() stack.
+  // CRITICAL: WebSocketsClient is large - never put WsXahauTransport on setup() stack.
   static xahau::WsXahauTransport s_ws;
   static xahau::XahauRpcClient s_client(s_ws);
   s_ws.setEndpoint(net);

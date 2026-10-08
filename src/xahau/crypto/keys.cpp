@@ -1,4 +1,4 @@
-// keys.cpp — dual-curve seed derivation
+// keys.cpp - dual-curve seed derivation
 #include "keys.h"
 
 #include "hash.h"

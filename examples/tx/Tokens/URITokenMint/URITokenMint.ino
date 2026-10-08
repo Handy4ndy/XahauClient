@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — URITokenMint
+ * XahauClient Example - URITokenMint
  *
  * URITokenMint transaction
  *
@@ -31,7 +31,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient — URITokenMint ==="));
+  Serial.println(F("=== XahauClient - URITokenMint ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -81,7 +81,7 @@ void setup() {
     Serial.println(s_blob);
   }
   if (!DO_SUBMIT) {
-    Serial.println(F("DO_SUBMIT=false — offline only. Done."));
+    Serial.println(F("DO_SUBMIT=false - offline only. Done."));
     xahau::secureClear(keys);
     return;
   }
@@ -119,7 +119,7 @@ void setup() {
   }
   xahau::sketch::submitAndLog(s_client, s_blob);
 #else
-  Serial.println(F("XAHAU_FEATURE_NET disabled — cannot submit."));
+  Serial.println(F("XAHAU_FEATURE_NET disabled - cannot submit."));
 #endif
   xahau::secureClear(keys);
   Serial.println(F("Done."));

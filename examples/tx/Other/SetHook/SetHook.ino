@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — SetHook
+ * XahauClient Example - SetHook
  *
  * SetHook transaction
  *

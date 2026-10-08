@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — LedgerStream
+ * XahauClient Example - LedgerStream
  *
  * WSS ledger stream subscribe
  *
@@ -28,7 +28,7 @@ const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 // 0 = Mainnet, 1 = Testnet (default); 2+ also maps to Testnet (no public Devnet)
 const int   XAHAU_NETWORK  = 1;
 
-// How many ledgerClosed events before exit (finite — suite-friendly).
+// How many ledgerClosed events before exit (finite - suite-friendly).
 const int   TARGET_LEDGERS = 2;
 
 // Max wait for TARGET_LEDGERS (ms). Testnet ~3-4s/ledger.
@@ -37,7 +37,7 @@ const uint32_t STREAM_TIMEOUT_MS = 45000;
 // Print full stream JSON snippets (can flood Serial)
 const bool  PRINT_RAW_JSON = false;
 
-// BSS — never put large buffers / WebSocketsClient on setup() stack
+// BSS - never put large buffers / WebSocketsClient on setup() stack
 static xahau::WsXahauTransport s_ws;
 static xahau::XahauRpcClient s_client(s_ws);
 static char s_respBig[8192];

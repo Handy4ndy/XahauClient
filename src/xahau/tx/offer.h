@@ -1,4 +1,4 @@
-// offer.h — OfferCreate / OfferCancel
+// offer.h - OfferCreate / OfferCancel
 #pragma once
 
 #include "../codec/tx_field_bag.h"

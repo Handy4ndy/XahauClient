@@ -1,4 +1,4 @@
-// st_number.cpp — Xahau Number: int64 mantissa BE + int32 exponent BE
+// st_number.cpp - Xahau Number: int64 mantissa BE + int32 exponent BE
 #include "st_number.h"
 
 #include <stdio.h>
@@ -119,7 +119,7 @@ Status encodeStNumber(const char* decimal, uint8_t out12[12]) {
   }
 
   // Build mantissa as decimal string slice digits[start..dlen)
-  // Use uint64 accumulation carefully — may need big steps via repeated *10
+  // Use uint64 accumulation carefully - may need big steps via repeated *10
   // For embedded: use double-uint64 style limited length
   // Max digits we'll keep before normalize: 20
   char mantStr[24];
@@ -171,7 +171,7 @@ Status encodeStNumber(const char* decimal, uint8_t out12[12]) {
   }
 
   if (exp < kMinExp || (mag > 0 && mag < kMinMantissaU && exp <= kMinExp)) {
-    // underflow → zero
+    // underflow -> zero
     memset(out12, 0, 12);
     writeI32BE(out12 + 8, kZeroExp);
     return Status::Ok;

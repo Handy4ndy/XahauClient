@@ -1,4 +1,4 @@
-﻿// example_runtime.h — helpers for Arduino examples (optional)
+﻿// example_runtime.h - helpers for Arduino examples (optional)
 // WiFi + seed + fetch sequence + submit over public network presets.
 // Include after enabling XAHAU_FEATURE_NET and WiFi.
 #pragma once
@@ -58,7 +58,7 @@ inline bool harnessReplayIfDone(const char* runId) {
   const bool tes = pref.getBool("tes", false);
   pref.end();
 
-  Serial.println(F("=== XahauClient Â· harness_replay ==="));
+  Serial.println(F("=== XahauClient Â | harness_replay ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
   Serial.print(F("Address: "));
@@ -155,9 +155,9 @@ inline const NetworkEndpoint& networkFromIndex(int idx) {
 #if XAHAU_FEATURE_NET
 
 /**
- * TLS policy by network (Wave D).
+ * TLS policy by network.
  *
- * Mainnet: fail-closed — requireSslPin=true, insecureSsl=false.
+ * Mainnet: fail-closed - requireSslPin=true, insecureSsl=false.
  *   You MUST call setSslFingerprint(...) or setSslCaCert(...) before request(),
  *   or beginTlsSession returns InvalidArgument.
  *
@@ -188,7 +188,7 @@ inline void applyNetworkTransport(WsXahauTransport& ws, const NetworkEndpoint& e
   applyDefaultTlsPolicy(ws);
 }
 
-/** @deprecated Prefer txMinFeeDrops(TxType) — same value as AMMCreate/VaultCreate/AccountDelete. */
+/** @deprecated Prefer txMinFeeDrops(TxType) - same value as AMMCreate/VaultCreate/AccountDelete. */
 constexpr uint64_t kSpecialTxFeeMinDrops = 200000ULL;
 
 /** Raise fee to at least minDrops (no-op if already higher). */
@@ -202,7 +202,7 @@ inline void ensureFeeAtLeast(TxCommon& common, uint64_t minDrops) {
  * Fetch Sequence + LastLedgerSequence + open fee for this account.
  * Fee falls back to feeFallbackDrops if server fee is 0.
  *
- * Retries account_info / fee on Timeout / Rejected / DecodeFailed — long
+ * Retries account_info / fee on Timeout / Rejected / DecodeFailed - long
  * sequence runs against public Testnet often hit transient WSS flakes after
  * multi-minute waits (e.g. escrow), which previously cascaded as mass skips.
  *
@@ -294,7 +294,7 @@ inline Status prepareCommonForTx(XahauRpcClient& client, const KeyPair& keys, Tx
  * Submit signed hex blob; prints engine_result to Serial.
  *
  * Returns Status::Ok (tes), Status::Queued (terQUEUED), or Status::Rejected.
- * On Queued/Timeout: do NOT re-sign with a new Sequence — call waitForOutcome /
+ * On Queued/Timeout: do NOT re-sign with a new Sequence - call waitForOutcome /
  * fetchTxResult with the returned hash first.
  *
  * @param harnessRunId  Optional ClientTest flash id; when set, remembers
@@ -356,7 +356,7 @@ inline Status submitAndWait(XahauRpcClient& client, const char* blobHex, uint32_
     return st;
   }
 
-  // Provisional or ambiguous: resolve by hash — never re-sign.
+  // Provisional or ambiguous: resolve by hash - never re-sign.
   // Prefer server hash; if submit meta timed out empty, use caller-computed HASH_TX_ID.
   const char* pollHash = out.txHash[0] ? out.txHash : localHashFallback;
   if ((st == Status::Queued || st == Status::Timeout || out.queued) && pollHash && pollHash[0]) {

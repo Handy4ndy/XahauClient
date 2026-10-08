@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — SetRemarks
+ * XahauClient Example - SetRemarks
  *
  * SetRemarks transaction
  *
@@ -27,7 +27,7 @@ const int   XAHAU_NETWORK = 1;
 const bool  DO_SUBMIT     = false;  // offline by default for library example
 const bool  PRINT_BLOB    = true;
 
-// 64-hex Hash256 of target ledger object (placeholder — replace before live)
+// 64-hex Hash256 of target ledger object (placeholder - replace before live)
 const char* OBJECT_ID_HEX = "0000000000000000000000000000000000000000000000000000000000000001";
 const char* REMARK_NAME   = "demo";
 const char* REMARK_VALUE  = "xahau-client";
@@ -36,7 +36,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · SetRemarks ==="));
+  Serial.println(F("=== XahauClient | SetRemarks ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -91,7 +91,7 @@ void setup() {
     Serial.println(s_blob);
   }
   if (!DO_SUBMIT) {
-    Serial.println(F("DO_SUBMIT=false — offline only. Done."));
+    Serial.println(F("DO_SUBMIT=false - offline only. Done."));
     xahau::secureClear(keys);
     return;
   }
@@ -125,7 +125,7 @@ void setup() {
   }
   xahau::sketch::submitAndLog(s_client, s_blob);
 #else
-  Serial.println(F("XAHAU_FEATURE_NET disabled — cannot submit."));
+  Serial.println(F("XAHAU_FEATURE_NET disabled - cannot submit."));
 #endif
   xahau::secureClear(keys);
   Serial.println(F("Done."));

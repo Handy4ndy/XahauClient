@@ -1,4 +1,4 @@
-// multi_sign.h — multi-sign (Signers array) + helpers for dual-party envelopes
+// multi_sign.h - multi-sign (Signers array) + helpers for dual-party envelopes
 #pragma once
 
 #include <stddef.h>
@@ -17,7 +17,7 @@ namespace xahau {
 /** One multi-sign contribution (Account + SigningPubKey + TxnSignature). */
 struct MultiSigner {
   uint8_t accountId[20];
-  uint8_t publicKey[33];  // Ed25519 0xED–pub or compressed secp
+  uint8_t publicKey[33];  // Ed25519 0xED-pub or compressed secp
   uint8_t signature[80];
   uint16_t signatureLen;
   MultiSigner() : signatureLen(0) {
@@ -34,7 +34,7 @@ struct MultiSigner {
 Status bagPrepareMultiSign(TxFieldBag& bag);
 
 /**
- * Encode Signers STArray body (no outer F0 header — setEmbedded adds field header).
+ * Encode Signers STArray body (no outer F0 header - setEmbedded adds field header).
  * Each Signer: Account, SigningPubKey, TxnSignature.
  */
 Status buildSignersArray(const MultiSigner* signers, uint8_t count, uint8_t* out, size_t outCap,

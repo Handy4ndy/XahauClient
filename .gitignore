@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# XahauClient — Arduino / PlatformIO library .gitignore
+# XahauClient - Arduino / PlatformIO library .gitignore
 # ---------------------------------------------------------------------------
 
 # PlatformIO / build
@@ -63,7 +63,7 @@ results/
 AUDIT_*.md
 ClientTest/
 
-# Secrets — never commit real credentials
+# Secrets - never commit real credentials
 .env
 .env.*
 !.env.example

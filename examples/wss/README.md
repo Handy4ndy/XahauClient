@@ -18,7 +18,7 @@ Aligned with [Public API Methods](https://xahau.network/docs/features/http-webso
 | Stream | `wss/Stream/` | 3 | subscribe ledger + accounts + wallet monitor |
 | Catalog | `wss/Catalog/` | 3 | **live** wallet-priority RPC batteries (account / ledger / path+nft) |
 
-**Total: 25 sketches** (Vault/Loan object helpers archived 2026-09-28 with non-Xahau Lending examples).
+**Total: 25 sketches** (Vault/Loan object helpers archived with non-Xahau Lending examples).
 
 ## How to use
 

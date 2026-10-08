@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — ParseAccountInfo
+ * XahauClient Example - ParseAccountInfo
  *
  * RPC parser: account_info
  *
@@ -15,7 +15,7 @@
 void setup() {
   Serial.begin(115200);
   delay(1500);
-  Serial.println(F("=== XahauClient RPC offline · ParseAccountInfo ==="));
+  Serial.println(F("=== XahauClient RPC offline | ParseAccountInfo ==="));
 
   const char* json =
       "{\"result\":{\"account_data\":{\"Account\":\"rABC\",\"Balance\":\"25000000\","

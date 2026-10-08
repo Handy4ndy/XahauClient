@@ -1,4 +1,4 @@
-// account_set.h — AccountSet builder (fills TxFieldBag only)
+// account_set.h - AccountSet builder (fills TxFieldBag only)
 #pragma once
 
 #include "../codec/tx_field_bag.h"
@@ -19,7 +19,7 @@ struct AccountSetParams {
   char domain[256];
   /** Optional transfer rate (0 = omit; 1000000000 = 0% fee). */
   uint32_t transferRate;
-  /** Optional tick size 0–15; 0 = omit unless forceTickSize. */
+  /** Optional tick size 0-15; 0 = omit unless forceTickSize. */
   uint8_t tickSize;
   bool forceTickSize;
 

@@ -1,4 +1,4 @@
-// secp256k1_math.h — scalar helpers for Xahau key derivation / ECDSA
+// secp256k1_math.h - scalar helpers for Xahau key derivation / ECDSA
 #pragma once
 
 #include <stddef.h>

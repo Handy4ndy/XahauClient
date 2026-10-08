@@ -1,4 +1,4 @@
-// sign.h — STX-prefix signing over serialized bag
+// sign.h - STX-prefix signing over serialized bag
 #pragma once
 
 #include <stddef.h>

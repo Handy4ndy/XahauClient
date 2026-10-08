@@ -1,4 +1,4 @@
-// xahau_platform.h — host vs Arduino portability
+// xahau_platform.h - host vs Arduino portability
 #pragma once
 
 #include <stddef.h>

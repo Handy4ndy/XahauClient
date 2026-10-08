@@ -1,4 +1,4 @@
-// base58.cpp — Xahau Base58Check (aligned with ripple-address-codec)
+// base58.cpp - Xahau Base58Check (aligned with ripple-address-codec)
 #include "base58.h"
 
 #include "hash.h"

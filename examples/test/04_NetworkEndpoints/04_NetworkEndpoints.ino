@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — 04_NetworkEndpoints
+ * XahauClient Example - 04_NetworkEndpoints
  *
  * Network endpoint presets
  *

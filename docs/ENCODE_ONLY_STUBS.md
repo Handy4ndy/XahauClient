@@ -1,9 +1,9 @@
-# Encode-only catalog stubs — REMOVED from library source
+# Encode-only catalog stubs - REMOVED from library source
 
 On **2026-09-28**, EncodeOnly / XRPL-port **encode and sign helpers** for
 non-Xahau families were **cut from library `src`** (not merely examples).
 
-Archived source and former example trees are kept in the maintainer’s private
+Archived source and former example trees are kept in the maintainer's private
 backup set (not part of the published library package). Do **not** restore those
 families into live `examples/` or `src/` unless the matching amendment appears
 enabled on both public nets (`feature` RPC) **and** maintainers ask.
@@ -11,14 +11,14 @@ enabled on both public nets (`feature` RPC) **and** maintainers ask.
 Prefer **Testnet** (`XAHAU_NETWORK = 1`). Index `2+` also maps to Testnet
 (`networkFromIndex`; no public Devnet preset).
 
-Full live sketch tables: [EXAMPLES.md](EXAMPLES.md) · folder map: [examples/tx/README.md](../examples/tx/README.md)
+Full live sketch tables: [EXAMPLES.md](EXAMPLES.md) | folder map: [examples/tx/README.md](../examples/tx/README.md)
 
 ## Prefer live alternatives
 
 | Removed family (src + examples) | Prefer instead |
 |---------------------------------|----------------|
 | NFToken* | URITokenMint / Burn / CreateSellOffer / Buy / CancelSellOffer |
-| Import | **Kept** — Xahau-native type **97** encode; live submit needs xPOP |
+| Import | **Kept** - Xahau-native type **97** encode; live submit needs xPOP |
 | XChain* | Out of scope (intentional open) |
 
 ## Families removed from library SOURCE (2026-09-28)

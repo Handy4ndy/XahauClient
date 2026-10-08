@@ -1,4 +1,4 @@
-// st_number.h — Xahau STNumber (12-byte mantissa + exponent)
+// st_number.h - Xahau STNumber (12-byte mantissa + exponent)
 #pragma once
 
 #include <stddef.h>

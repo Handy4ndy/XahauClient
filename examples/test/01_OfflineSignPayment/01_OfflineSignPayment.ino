@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — 01_OfflineSignPayment
+ * XahauClient Example - 01_OfflineSignPayment
  *
  * Offline Payment encode and sign
  *
@@ -12,7 +12,7 @@
  */
 #include <XahauClient.h>
 
-// Local only — use a faucet-funded testnet seed when experimenting.
+// Local only - use a faucet-funded testnet seed when experimenting.
 // Leave as empty / placeholder in committed examples.
 #ifndef XAHAU_DEMO_SEED
 #define XAHAU_DEMO_SEED "sEdPLACEHOLDER_REPLACE_ME"
@@ -33,7 +33,7 @@ void setup() {
   Serial.print(F("deriveKeys: "));
   Serial.println(xahauStatusName(st));
   if (st != XahauStatus::Ok) {
-    Serial.println(F("Set XAHAU_DEMO_SEED to a valid sEd… or s… seed to sign."));
+    Serial.println(F("Set XAHAU_DEMO_SEED to a valid sEd... or s... seed to sign."));
     return;
   }
 

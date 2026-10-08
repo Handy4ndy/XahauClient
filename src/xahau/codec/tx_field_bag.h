@@ -1,4 +1,4 @@
-// tx_field_bag.h — in-memory field store for canonical STObject serialization
+// tx_field_bag.h - in-memory field store for canonical STObject serialization
 #pragma once
 
 #include <stddef.h>
@@ -123,7 +123,7 @@ Status bagSetCommon(TxFieldBag& bag, TxType type, const TxCommon& common,
 
 /**
  * Shared bag for buildAndSign* helpers.
- * Lives in BSS (not the ESP32 loopTask stack). Not re-entrant — one sign at a time.
+ * Lives in BSS (not the ESP32 loopTask stack). Not re-entrant - one sign at a time.
  * TxFieldBag is multi-KiB (arena + slots); allocating it on setup()/loop stack
  * triggers "Stack canary watchpoint" on ESP32.
  */

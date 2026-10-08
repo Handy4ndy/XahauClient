@@ -16,7 +16,7 @@
 1. Place the `XahauClient` folder under your sketchbook libraries directory  
    (typically `Documents/Arduino/libraries/XahauClient`).
 2. Restart the IDE.
-3. Confirm **File → Examples → XahauClient** lists examples.
+3. Confirm **File -> Examples -> XahauClient** lists examples.
 
 ### PlatformIO
 
@@ -31,7 +31,7 @@ See root [README.md](../README.md) Install for ZIP / folder steps.
 
 ## Your first offline sketch
 
-1. Open **Examples → XahauClient → test → 01_OfflineSignPayment**.
+1. Open **Examples -> XahauClient -> test -> 01_OfflineSignPayment**.
 2. Replace `XAHAU_SEED` with a **Testnet** family seed only  
    (never a mainnet seed in shared code).
 3. Upload or run; Serial prints a signed hex blob or an error if the seed is invalid.
@@ -39,21 +39,21 @@ See root [README.md](../README.md) Install for ZIP / folder steps.
 Keys work like JS/Python:
 
 ```cpp
-xahau::deriveKeysFromSeed("sEd…", keys);  // Ed25519
-xahau::deriveKeysFromSeed("s…", keys);    // secp256k1
+xahau::deriveKeysFromSeed("sEd...", keys);  // Ed25519
+xahau::deriveKeysFromSeed("s...", keys);    // secp256k1
 ```
 
 ## First live Testnet sketch
 
 1. Create a Testnet account via the [Xahau Testnet faucet](https://docs.xahau.network/) (or your usual Testnet faucet).
-2. Open **Examples → XahauClient → wss → Transport → EndToEndPrepareSubmit**  
-   (or **tx → Payments → Payment**).
+2. Open **Examples -> XahauClient -> wss -> Transport -> EndToEndPrepareSubmit**  
+   (or **tx -> Payments -> Payment**).
 3. Set:
 
 ```cpp
 const char* WIFI_SSID     = "YOUR_WIFI_SSID";
 const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
-const char* XAHAU_SEED     = "s…";   // funded Testnet seed
+const char* XAHAU_SEED     = "s...";   // funded Testnet seed
 const int   XAHAU_NETWORK  = 1;      // Testnet
 const bool  DO_SUBMIT     = true;   // Payment sketch
 // Also replace rYOUR_DESTINATION_ADDRESS / rYOUR_ISSUER_ADDRESS in tx sketches.
@@ -70,7 +70,7 @@ defaults `XAHAU_FEATURE_NET=1` on Arduino so `ws_transport.cpp` is linked. If yo
 still see this error:
 
 1. Confirm library is `Documents/Arduino/libraries/XahauClient` (v0.3.1).
-2. Install the **WebSockets** library (Sketch → Include Library → Manage Libraries).
+2. Install the **WebSockets** library (Sketch -> Include Library -> Manage Libraries).
 3. Restart the IDE / recompile after updating the library files.
 
 ### Crash on boot: `Guru Meditation` / `LoadProhibited`
@@ -101,8 +101,8 @@ Arduino for the same reason.
 | Offline RPC builders | `examples/rpc/BuildAccountInfo` |
 | Live Payment | `examples/tx/Payments/Payment` or `wss/Transport/EndToEndPrepareSubmit` |
 | URIToken market (Xahau NFT) | `examples/tx/Tokens/URITokenMint` (+ Buy/Burn/CreateSell/CancelSell) |
-| Remit (Xahau-native) | `examples/tx/Payments/Remit` (`REMIT_MODE` 0..4 — see EXAMPLES.md) |
-| Import encode (needs xPOP for live) | `examples/tx/Other/Import` — see ENCODE_ONLY_STUBS.md for archived XRPL-port Lending/AMM/NFToken/… |
+| Remit (Xahau-native) | `examples/tx/Payments/Remit` (`REMIT_MODE` 0..4 - see EXAMPLES.md) |
+| Import encode (needs xPOP for live) | `examples/tx/Other/Import` - see ENCODE_ONLY_STUBS.md for archived XRPL-port Lending/AMM/NFToken/... |
 
 Full list: [EXAMPLES.md](EXAMPLES.md).
 
@@ -110,7 +110,7 @@ Full list: [EXAMPLES.md](EXAMPLES.md).
 
 | `XAHAU_NETWORK` | Network | Typical use |
 |----------------|---------|-------------|
-| `0` | Mainnet | Real value — double-check every field |
+| `0` | Mainnet | Real value - double-check every field |
 | `1` | Testnet | Default for examples |
 | `2+` | Testnet | Same as `1` (`networkFromIndex`; no separate Devnet) |
 
@@ -120,7 +120,7 @@ Details: [NETWORKS.md](NETWORKS.md).
 
 | Symptom | Check |
 |---------|--------|
-| `deriveKeysFromSeed` fails | Seed must be valid base58 family seed (`sEd…` or `s…`) |
+| `deriveKeysFromSeed` fails | Seed must be valid base58 family seed (`sEd...` or `s...`) |
 | Wi-Fi timeout | SSID/password; 2.4 GHz on most ESP32 boards |
 | WSS timeout | Firewall; Xahau hosts use **443** (`xahau.network` / `xahau-test.net`) |
 | `actNotFound` | Account not funded on that network |

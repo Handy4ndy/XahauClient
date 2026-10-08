@@ -103,7 +103,7 @@ Status writeMptAmount(uint8_t* buf, size_t& pos, size_t max, uint64_t value,
   if (!issuanceId) return Status::InvalidArgument;
   // Max MPT quantity is 2^63-1.
   if (value > 0x7FFFFFFFFFFFFFFFULL) return Status::InvalidField;
-  // Lead byte: not-IOU(0) | positive(1) | isMPT(1) | reserved 00000 → 0x60
+  // Lead byte: not-IOU(0) | positive(1) | isMPT(1) | reserved 00000 -> 0x60
   Status st = writeByte(buf, pos, max, 0x60);
   if (st != Status::Ok) return st;
   st = writeUInt64BE(buf, pos, max, value);

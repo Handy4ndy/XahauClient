@@ -1,4 +1,4 @@
-// hash.cpp — compact portable hashes (public-domain style implementations)
+// hash.cpp - compact portable hashes (public-domain style implementations)
 #include "hash.h"
 
 #include <string.h>

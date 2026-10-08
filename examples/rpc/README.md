@@ -8,9 +8,9 @@ Live ledger I/O over WebSocket: **[`../wss/`](../wss/)**.
 |--------|---------|
 | [`BuildCatalog`](./BuildCatalog/) | **All** public `rpcBuild*` (account / server / submit / subscribe) using **A+B** seeds |
 | [`ParseCatalog`](./ParseCatalog/) | **All** major `rpcParse*` + stream event parsers (canned JSON) |
-| [`MockClientFlow`](./MockClientFlow/) | Mock client: **A→B** Payment, submit, `waitForOutcome`, subscribe |
+| [`MockClientFlow`](./MockClientFlow/) | Mock client: **A->B** Payment, submit, `waitForOutcome`, subscribe |
 
-Legacy thin sketches (`BuildAccountInfo`, …) may remain for IDE history; prefer the catalog sketches above for coverage.
+Legacy thin sketches (`BuildAccountInfo`, ...) may remain for IDE history; prefer the catalog sketches above for coverage.
 
 ## Host tests
 

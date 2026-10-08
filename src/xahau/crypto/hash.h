@@ -1,4 +1,4 @@
-// hash.h — portable SHA-256 / SHA-512 / RIPEMD-160
+// hash.h - portable SHA-256 / SHA-512 / RIPEMD-160
 #pragma once
 
 #include <stddef.h>

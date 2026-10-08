@@ -1,4 +1,4 @@
-// trust_set.h — TrustSet builder (fills TxFieldBag only)
+// trust_set.h - TrustSet builder (fills TxFieldBag only)
 #pragma once
 
 #include "../codec/tx_field_bag.h"

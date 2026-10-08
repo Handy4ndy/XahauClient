@@ -1,4 +1,4 @@
-// payment.h — Payment builder (fills TxFieldBag only)
+// payment.h - Payment builder (fills TxFieldBag only)
 #pragma once
 
 #include "../codec/tx_field_bag.h"

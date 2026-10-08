@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — ParseCatalog
+ * XahauClient Example - ParseCatalog
  *
  * RPC response-parser catalog
  *
@@ -36,7 +36,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient RPC offline · ParseCatalog ==="));
+  Serial.println(F("=== XahauClient RPC offline | ParseCatalog ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 

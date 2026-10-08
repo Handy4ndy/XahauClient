@@ -1,4 +1,4 @@
-// phase4_extra.h — OracleSet (Xahau PriceOracle). EncodeOnly XRPL-port families
+// phase4_extra.h - OracleSet (Xahau PriceOracle). EncodeOnly XRPL-port families
 // (DID/Credential/AMM/MPT/Domain/Delegate/Batch/Vault/XChain) removed from library
 // source 2026-09-28; see docs/ENCODE_ONLY_STUBS.md and harness bak archive.
 #pragma once
@@ -41,7 +41,7 @@ struct OracleSetParams {
   // Required on create (max 256 ASCII / 16 ASCII for class). Optional on update.
   char provider[64];
   char assetClass[32];
-  // Optional URI — UTF-8 string; on wire VL blob, max 256 bytes.
+  // Optional URI - UTF-8 string; on wire VL blob, max 256 bytes.
   char uri[256];
   OracleSetParams()
       : oracleDocumentID(0),

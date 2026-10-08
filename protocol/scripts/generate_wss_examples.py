@@ -111,7 +111,7 @@ static bool resolveAccount(char* out, size_t outCap, xahau::KeyPair* keysOut) {
   return true;
 }
 
-// BSS globals — WebSocketsClient + response buffers must NOT live on setup() stack.
+// BSS globals - WebSocketsClient + response buffers must NOT live on setup() stack.
 // Large stack locals (resp[8k] + TLS) caused loopTask stack-canary panics in ClientTest.
 static xahau::WsXahauTransport s_ws;
 static xahau::XahauRpcClient s_client(s_ws);
@@ -142,7 +142,7 @@ static void printStatus(const char* label, xahau::Status st) {
 static void printJsonSnippet(const char* json) {
   if (!PRINT_RAW_JSON || !json) return;
   Serial.println(F("--- JSON ---"));
-  // Cap print length for Serial — use BSS temp (never stack) to avoid canary panics
+  // Cap print length for Serial - use BSS temp (never stack) to avoid canary panics
   size_t n = strlen(json);
   if (n > 1500) {
     memcpy(s_printTmp, json, 1500);
@@ -386,7 +386,7 @@ add(
     """  char acct[48];
   if (!resolveAccount(acct, sizeof(acct), nullptr)) return;
 
-  // All objects — use BSS s_respBig (not stack) to avoid loopTask stack canary panics
+  // All objects - use BSS s_respBig (not stack) to avoid loopTask stack canary panics
   char req[256];
   xahau::Status st = xahau::rpcBuildAccountObjects(acct, nullptr, req, sizeof(req));
   printStatus("rpcBuildAccountObjects(all)", st);
@@ -394,7 +394,7 @@ add(
   printStatus("account_objects", st);
   printJsonSnippet(s_respBig);
 
-  // Typed filter example (allowlisted: vault, state, …)
+  // Typed filter example (allowlisted: vault, state, ...)
   st = xahau::rpcBuildAccountObjects(acct, "state", req, sizeof(req));
   printStatus("rpcBuildAccountObjects(state)", st);
   st = client.rawRequest(req, s_respBig, sizeof(s_respBig));
@@ -716,7 +716,7 @@ def write_all():
         lines = [f"# WSS - {g}", "", blurb, "", "Sketches:", ""]
         for ex in EXAMPLES:
             if ex["group"] == g:
-                lines.append(f"- [`{ex['name']}`](./{ex['name']}/{ex['name']}.ino) — `{ex['api']}`")
+                lines.append(f"- [`{ex['name']}`](./{ex['name']}/{ex['name']}.ino) - `{ex['api']}`")
         lines.append("")
         (RPC / g / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 

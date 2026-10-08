@@ -1,4 +1,4 @@
-# Locked decisions (2026-07-11)
+# Locked decisions
 
 | Decision | Choice |
 |----------|--------|
@@ -13,6 +13,6 @@
 
 ## Working agreement
 
-- Build greenfield layers in order: codec → crypto → sign → typed fills → rpc → net.
-- Raise each `TxType` maturity: Catalog → Encode → Validate → Golden.
+- Build greenfield layers in order: codec -> crypto -> sign -> typed fills -> rpc -> net.
+- Raise each `TxType` maturity: Catalog -> Encode -> Validate -> Golden.
 - Prefer host golden vectors before testnet smoke.

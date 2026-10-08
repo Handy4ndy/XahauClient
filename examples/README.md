@@ -1,12 +1,12 @@
 # XahauClient examples
 
-Four top-level sections (Xahau mainnet/testnet live tree — **0.3.1** / 2026-09-28):
+Four top-level sections (Xahau mainnet/testnet live tree - **0.3.1**):
 
 | Section | Path | Count | Role |
 |---------|------|------:|------|
 | **test** | [`test/`](test/) | 6 | Install / board smoke (offline + mock + presets print) |
-| **rpc** | [`rpc/`](rpc/) | 7 | JSON-RPC builders, parsers, Mock client — **no Wi-Fi** |
-| **wss** | [`wss/`](wss/) | 25 | Live WebSocket to public clusters — **ESP32 + Wi-Fi** |
+| **rpc** | [`rpc/`](rpc/) | 7 | JSON-RPC builders, parsers, Mock client - **no Wi-Fi** |
+| **wss** | [`wss/`](wss/) | 25 | Live WebSocket to public clusters - **ESP32 + Wi-Fi** |
 | **tx** | [`tx/`](tx/) | 35 | Transaction encode/sign (and optional live submit) |
 
 **All sketches: 73**
@@ -27,22 +27,22 @@ ledger I/O does. Keeping them separate matches that layering.
 
 ---
 
-## test — smoke
+## test - smoke
 
 See **[test/README.md](test/README.md)**.
 
 | Sketch | Purpose |
 |--------|---------|
 | `01_OfflineSignPayment` | Offline Payment sign |
-| `02_DeriveKeys` | Seed → address |
+| `02_DeriveKeys` | Seed -> address |
 | `03_RpcMockSubmit` | Minimal mock transport |
 | `04_NetworkEndpoints` | Print network presets |
 | `05_MultiSignOffline` | Offline multi-sign Payment |
-| `06_GenerateSeed` | Entropy → family seed |
+| `06_GenerateSeed` | Entropy -> family seed |
 
 ---
 
-## rpc — offline JSON-RPC
+## rpc - offline JSON-RPC
 
 See **[rpc/README.md](rpc/README.md)**.
 
@@ -50,7 +50,7 @@ Builders, parsers, and `MockXahauTransport` client flows. No Wi-Fi.
 
 ---
 
-## wss — live WebSocket
+## wss - live WebSocket
 
 See **[wss/README.md](wss/README.md)**.
 
@@ -67,7 +67,7 @@ Requires ESP32, Wi-Fi, WebSockets library.
 
 ---
 
-## tx — transactions
+## tx - transactions
 
 See **[tx/README.md](tx/README.md)** and [docs/EXAMPLES.md](../docs/EXAMPLES.md).
 

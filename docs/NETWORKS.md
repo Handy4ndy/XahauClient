@@ -1,4 +1,4 @@
-# Networks — Xahau Mainnet / Testnet
+# Networks - Xahau Mainnet / Testnet
 
 ## Important
 
@@ -28,11 +28,11 @@ Aligned with `src/xahau/net/networks.h` (not XRPL public clusters):
 
 There is **no separate public Xahau Devnet preset** in this library. Example index `XAHAU_NETWORK`: `0` = mainnet, anything else = testnet (`networkFromIndex`).
 
-> Do **not** point this client at `xrplcluster.com` / `*.rippletest.net` — those are XRPL hosts.
+> Do **not** point this client at `xrplcluster.com` / `*.rippletest.net` - those are XRPL hosts.
 
 ### Subscribe streams
 
-Prefer `streams: ["ledger"]` + `accounts: [r…]` on ESP32. Avoid global `transactions` / `validations` unless you have RAM and a clear need.
+Prefer `streams: ["ledger"]` + `accounts: [r...]` on ESP32. Avoid global `transactions` / `validations` unless you have RAM and a clear need.
 
 ## C++ presets
 
@@ -57,11 +57,11 @@ Live status is driven by `networks.h` + periodic `feature` RPC. High-level:
 
 | Class | Meaning | Examples |
 |-------|---------|----------|
-| **Enabled** | Live on Mainnet / Testnet | Hooks, URIToken, Remit, Import, Cron, Remarks, ClaimReward, Oracle, Clawback, … |
+| **Enabled** | Live on Mainnet / Testnet | Hooks, URIToken, Remit, Import, Cron, Remarks, ClaimReward, Oracle, Clawback, ... |
 | **NotEnabled** | In definitions / release but not enabled | NamedHooks, HooksUpdate2, HookOnV2, AMM*, AMMClawback |
-| **Absent** | Not in Xahau testnet `feature` list (2026-09-26) | DID, Credentials, MPTokensV1, PermissionedDomains |
+| **Absent** | Not in Xahau testnet `feature` list | DID, Credentials, MPTokensV1, PermissionedDomains |
 
-XRPL-only port stubs (Vault/Loan/Batch/DelegateSet, codes 200+) stay **encode-only** — do not submit on Xahau.
+XRPL-only port stubs (Vault/Loan/Batch/DelegateSet, codes 200+) stay **encode-only** - do not submit on Xahau.
 
 NFToken* types are catalog/encode-only on Xahau; **URIToken** is the live NFT model.
 
@@ -88,8 +88,8 @@ recommendedLiveNetwork(TxType::Payment);                     // Testnet
 
 | Class | Meaning | Examples |
 |-------|---------|----------|
-| **AllPublic** | Live on Mainnet / Testnet when amendment enabled | Payment, Remit, URIToken*, CronSet, SetRemarks, Invoke, Oracle, Clawback, … |
-| **EncodeOnly** | Encode OK; do not expect live success | NFToken*, AMM*, DID*, Credential*, MPT*, PermissionedDomain*, Batch, Vault*, Loan*, … |
+| **AllPublic** | Live on Mainnet / Testnet when amendment enabled | Payment, Remit, URIToken*, CronSet, SetRemarks, Invoke, Oracle, Clawback, ... |
+| **EncodeOnly** | Encode OK; do not expect live success | NFToken*, AMM*, DID*, Credential*, MPT*, PermissionedDomain*, Batch, Vault*, Loan*, ... |
 | **NotUserSubmit** | Network / pseudo txs | EnableAmendment, SetFee, UNLModify, Cron, GenesisMint, EmitFailure, UNLReport |
 
 ## Wiring checklist
@@ -119,7 +119,7 @@ TxCommon common;
 applyNetworkId(common, kNetworkTestnet);
 
 if (!xahau::isTxLiveEnabledOn(TxType::URITokenMint, NetworkId::Testnet)) {
-  // skip live submit — still may encode offline
+  // skip live submit - still may encode offline
 }
 ```
 
@@ -129,7 +129,7 @@ if (!xahau::isTxLiveEnabledOn(TxType::URITokenMint, NetworkId::Testnet)) {
 pio test -e native -f test_networks
 ```
 
-Validates hosts, NetworkIDs, and live-support coverage — **no network I/O**.
+Validates hosts, NetworkIDs, and live-support coverage - **no network I/O**.
 
 ## Faucets
 
@@ -137,6 +137,6 @@ Validates hosts, NetworkIDs, and live-support coverage — **no network I/O**.
 
 ## Related
 
-- [XAHAU_VS_XRPL.md](XAHAU_VS_XRPL.md) — NetworkID and type-code deltas vs XRPL
-- [REMAINING_GAPS.md](REMAINING_GAPS.md) — intentional opens (Import / SetHook serial / XChain / P1 absent)
-- [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md) — catalog-only families removed from `src`
+- [XAHAU_VS_XRPL.md](XAHAU_VS_XRPL.md) - NetworkID and type-code deltas vs XRPL
+- [REMAINING_GAPS.md](REMAINING_GAPS.md) - intentional opens (Import / SetHook serial / XChain / P1 absent)
+- [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md) - catalog-only families removed from `src`

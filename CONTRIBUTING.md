@@ -20,7 +20,7 @@ All host tests must pass before a PR is ready.
 Committed tests use **placeholders** only. For the full native suite:
 
 1. Copy `test/native/test_seeds.example.h` to `test/native/test_seeds.local.h`.
-2. Fill fixture seeds / addresses in the local file (gitignored — never commit it).
+2. Fill fixture seeds / addresses in the local file (gitignored - never commit it).
 3. Run `pio test -e native`.
 
 Without `test_seeds.local.h`, seed-dependent tests **skip** with a clear message; encode-only tests still pass (typically **61 pass / 62 skip**). With fixtures filled, expect **123/123**.
@@ -29,10 +29,10 @@ Examples ship `YOUR_WIFI_*`, `sEdPLACEHOLDER_*`, and `rYOUR_DESTINATION_ADDRESS`
 
 ## Project rules
 
-1. **Portable core** — no `Serial`, Wi-Fi, or NVS inside `codec/`, `crypto/`, or `sign/`.
-2. **One sign path** — transactions fill a `TxFieldBag`, then `signTx`. Avoid ad-hoc binary emitters.
-3. **No secrets** — never commit seeds, passwords, or private keys. Use placeholders in examples.
-4. **Host tests first** — add Unity tests under `test/native/` for codec, crypto, and RPC logic.
+1. **Portable core** - no `Serial`, Wi-Fi, or NVS inside `codec/`, `crypto/`, or `sign/`.
+2. **One sign path** - transactions fill a `TxFieldBag`, then `signTx`. Avoid ad-hoc binary emitters.
+3. **No secrets** - never commit seeds, passwords, or private keys. Use placeholders in examples.
+4. **Host tests first** - add Unity tests under `test/native/` for codec, crypto, and RPC logic.
 
 ## Style
 

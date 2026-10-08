@@ -1,4 +1,4 @@
-// client.h — high-level RPC client over IXahauTransport
+// client.h - high-level RPC client over IXahauTransport
 #pragma once
 
 #include <stddef.h>
@@ -26,7 +26,7 @@ struct FeeAndLedger {
   uint32_t ledgerIndex;
   /**
    * Suggested LastLedgerSequence = ledgerIndex + effectiveLedgerOffset().
-   * effective offset is max(ledgerOffset, kMinLedgerOffset) — see setLedgerOffset.
+   * effective offset is max(ledgerOffset, kMinLedgerOffset) - see setLedgerOffset.
    */
   uint32_t lastLedgerSequence;
 };
@@ -35,7 +35,7 @@ struct FeeAndLedger {
 constexpr uint32_t kMinLedgerOffset = 40;
 
 /**
- * High-level client: build request → transport → parse.
+ * High-level client: build request -> transport -> parse.
  * Does not own the transport.
  */
 class XahauRpcClient {
@@ -66,7 +66,7 @@ class XahauRpcClient {
   Status fetchFeeAndLedger(FeeAndLedger& out);
   /**
    * Validated ledger close_time in Ripple Epoch seconds (for Oracle LastUpdateTime).
-   * Prefer this over device NTP — NTP often runs ahead of UNL clocks → tecINVALID_UPDATE_TIME.
+   * Prefer this over device NTP - NTP often runs ahead of UNL clocks -> tecINVALID_UPDATE_TIME.
    */
   Status fetchLedgerCloseTime(uint32_t& closeTimeRipple);
   Status submitBlob(const char* txBlobHex, SubmitResult& out);
@@ -102,7 +102,7 @@ class XahauRpcClient {
                         SubmitResult& out, uint32_t pollIntervalMs = 500);
 
   /**
-   * account_objects → up to maxIds ledger indexes (32-byte).
+   * account_objects -> up to maxIds ledger indexes (32-byte).
    * typeFilter e.g. "vault", "state", or nullptr for all.
    */
   Status fetchAccountObjectIds(const char* account, const char* typeFilter, uint8_t outIds[][32],

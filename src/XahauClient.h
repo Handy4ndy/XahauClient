@@ -1,5 +1,5 @@
 /**
- * XahauClient — full Xahau client library for Arduino / ESP32
+ * XahauClient - full Xahau client library for Arduino / ESP32
  *
  * Single include for sketches:
  *   #include <XahauClient.h>
@@ -67,7 +67,7 @@ inline XahauStatus xahauDeriveKeysFromSeed(const char* seed, XahauKeyPair& keys)
 
 /**
  * Build family seed from 16-byte CSPRNG entropy (library does not generate RNG).
- * Always tell users to copy the seed offline — vault encryption is not recoverable.
+ * Always tell users to copy the seed offline - vault encryption is not recoverable.
  */
 inline XahauStatus xahauSeedFromEntropy(const uint8_t entropy[16], XahauCurve curve, char* out,
                                      size_t outCap) {

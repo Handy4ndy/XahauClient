@@ -1,4 +1,4 @@
-// tx_type.cpp — full Xahau transaction catalog (live type codes)
+// tx_type.cpp - full Xahau transaction catalog (live type codes)
 #include "tx_type.h"
 
 #include <string.h>

@@ -1,4 +1,4 @@
-// st_helpers.h — nested STArray / Issue / Oracle helpers
+// st_helpers.h - nested STArray / Issue / Oracle helpers
 #pragma once
 
 #include <stddef.h>
@@ -18,11 +18,11 @@ struct SignerEntryWire {
 Status buildSignerEntriesArray(const SignerEntryWire* entries, uint8_t count, uint8_t* out,
                                size_t outCap, size_t& outLen);
 
-/** Encode 20-byte currency (3-char ASCII, 40-hex, or "XRP"/empty → zeros). */
+/** Encode 20-byte currency (3-char ASCII, 40-hex, or "XRP"/empty -> zeros). */
 void encodeCurrency20(const char* currency, uint8_t out[20]);
 
 /**
- * Oracle PriceDataSeries body (no outer F018 header — setEmbedded adds it):
+ * Oracle PriceDataSeries body (no outer F018 header - setEmbedded adds it):
  * one PriceData object for BaseAsset/QuoteAsset + optional AssetPrice/Scale.
  */
 Status buildOraclePriceDataSeries(const char* baseAsset, const char* quoteAsset,

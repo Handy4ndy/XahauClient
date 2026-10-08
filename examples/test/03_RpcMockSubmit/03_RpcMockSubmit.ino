@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — 03_RpcMockSubmit
+ * XahauClient Example - 03_RpcMockSubmit
  *
  * Mock RPC submit flow
  *

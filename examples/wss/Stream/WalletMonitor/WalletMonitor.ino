@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — WalletMonitor
+ * XahauClient Example - WalletMonitor
  *
  * WSS wallet monitor
  *

@@ -1,4 +1,4 @@
-// phase2_extra.cpp — bulk Phase 2 transaction fillers
+// phase2_extra.cpp - bulk Phase 2 transaction fillers
 #include "phase2_extra.h"
 
 #include "../crypto/base58.h"
@@ -194,7 +194,7 @@ Status fillClawback(const ClawbackParams& p, const uint8_t* acc, const uint8_t* 
     if (st != Status::Ok) return st;
   } else if (p.holder[0]) {
     // Optional Holder only valid for MPT; ignore for IOU path if empty, reject if set with IOU?
-    // Protocol: must omit Holder for trust lines — only set when non-empty and MPT.
+    // Protocol: must omit Holder for trust lines - only set when non-empty and MPT.
   }
   return putAmt(bag, fc::Amount, p.amount);
 }

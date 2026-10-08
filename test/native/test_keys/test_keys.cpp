@@ -117,7 +117,7 @@ void test_generate_keypair_from_entropy_ed25519() {
   TEST_ASSERT_EQUAL(xahau::Curve::Ed25519, keys.curve);
   TEST_ASSERT_EQUAL_STRING(XAHAU_TEST_ADDR_ED2, keys.address);
 
-  // Round-trip: decode seed → same entropy
+  // Round-trip: decode seed -> same entropy
   uint8_t got[16];
   TEST_ASSERT_EQUAL(xahau::Status::Ok, xahau::decodeEd25519Seed(seed, got));
   TEST_ASSERT_EQUAL_UINT8_ARRAY(kFixedEntropy, got, 16);

@@ -1,4 +1,4 @@
-// Wave C unit tests: multi-sign helpers, issued arena, escrow condition
+// Unit tests: multi-sign helpers, issued arena, escrow condition
 #include <string.h>
 #include <unity.h>
 

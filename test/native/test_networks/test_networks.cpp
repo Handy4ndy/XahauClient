@@ -1,4 +1,4 @@
-// test_networks — Xahau network presets + NetworkID rules
+// test_networks - Xahau network presets + NetworkID rules
 #include <unity.h>
 
 #include "xahau/net/networks.h"

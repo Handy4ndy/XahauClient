@@ -1,13 +1,13 @@
 # Roadmap
 
-Historical phase checklist. For **current** 0.3.1 ship surface and intentional opens, see [LIBRARY_ROADMAP.md](LIBRARY_ROADMAP.md) and [REMAINING_GAPS.md](REMAINING_GAPS.md). Several Phase 4 nested fills (DID / Credential / MPT / Domain / XChain / Vault / Loan / Batch) were later removed from library `src` (catalog codes only) — see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md).
+Historical phase checklist. For **current** 0.3.1 ship surface and intentional opens, see [LIBRARY_ROADMAP.md](LIBRARY_ROADMAP.md) and [REMAINING_GAPS.md](REMAINING_GAPS.md). Several Phase 4 nested fills (DID / Credential / MPT / Domain / XChain / Vault / Loan / Batch) were later removed from library `src` (catalog codes only) - see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md).
 
-## Phase 0–3
+## Phase 0-3
 
 - [x] Scaffold, codec, dual-curve keys, core tx fills, RPC + mock/WS transport
 - Host tests through Phase 3: green
 
-## Phase 4 — Protocol automation + nested types (**COMPLETE**)
+## Phase 4 - Protocol automation + nested types (**COMPLETE**)
 
 ### Protocol automation
 
@@ -17,12 +17,12 @@ Historical phase checklist. For **current** 0.3.1 ship surface and intentional o
 
 ### Nested / advanced fills (HISTORICAL checklist)
 
-> **Note (0.3.1):** these Phase 4 fills were completed historically, then **removed from library `src` on 2026-09-28** except **OracleSet** (still shipped). Survivors are catalog `TxType` codes only — see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md). Do not treat the checkmarks below as current public APIs.
+> **Note (0.3.1):** these Phase 4 fills were completed historically, then **removed from library `src`** except **OracleSet** (still shipped). Survivors are catalog `TxType` codes only - see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md). Do not treat the checkmarks below as current public APIs.
 
 - [x] DIDSet / DIDDelete *(removed from src)*
 - [x] CredentialCreate / Accept / Delete *(removed from src)*
 - [x] AMMCreate / Deposit / Withdraw / Vote / Bid / Delete / Clawback *(removed from src)*
-- [x] OracleSet (PriceDataSeries) — **still shipped**
+- [x] OracleSet (PriceDataSeries) - **still shipped**
 - [x] MPTokenIssuanceCreate / Destroy / Set / Authorize *(removed from src)*
 - [x] PermissionedDomainSet / Delete *(removed from src)*
 - [x] DelegateSet *(removed from src)*
@@ -39,9 +39,9 @@ Historical phase checklist. For **current** 0.3.1 ship surface and intentional o
 
 ### Still optional / advanced (not in 0.3.1 ship surface)
 
-- XChain attestation collection txs — multi-object proofs *(out of scope)*
+- XChain attestation collection txs - multi-object proofs *(out of scope)*
 - Full STNumber encoder (historical note; Vault helpers removed from `src`)
 
-## Phase 5 — Product integration (out of library scope until requested)
+## Phase 5 - Product integration (out of library scope until requested)
 
 - [ ] Downstream products consume XahauClient as a library

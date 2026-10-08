@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TX = ROOT / "examples" / "tx"
 
-# Xahau docs feature groups — keep sketches under examples/tx/<Group>/<Name>/
+# Xahau docs feature groups - keep sketches under examples/tx/<Group>/<Name>/
 # See protocol/scripts/reorganize_examples.py and
 # https://Xahau.org/docs/references/protocol/transactions/types
 TX_GROUP = {
@@ -84,7 +84,7 @@ TX_GROUP = {
 
 HEADER = """/**
  * ============================================================================
- * XahauClient Example — {title}
+ * XahauClient Example - {title}
  * ============================================================================
  *
  * Transaction type: {tx_type} (catalog code {code})
@@ -92,7 +92,7 @@ HEADER = """/**
  * What this sketch does
  * ---------------------
  * 1. Reads your classic family seed (like a JS/Python Xahau library: paste the seed string).
- * 2. Derives address + keys (Ed25519 if seed starts with sEd…, else secp256k1).
+ * 2. Derives address + keys (Ed25519 if seed starts with sEd..., else secp256k1).
  * 3. Builds a {title} transaction using the library filler / builder.
  * 4. Optionally connects WiFi, opens a public cluster WebSocket, fetches Sequence/LLS/fee,
  *    signs, and submits.
@@ -115,12 +115,12 @@ HEADER = """/**
 
 CONFIG = """
 // ---------------------------------------------------------------------------
-// CONFIG — edit like a .js / .py script (seed + WiFi only)
+// CONFIG - edit like a .js / .py script (seed + WiFi only)
 // ---------------------------------------------------------------------------
 const char* WIFI_SSID     = "YOUR_WIFI_SSID";
 const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 
-// Classic family seed: "sEd…" (Ed25519) or "s…" (secp256k1).
+// Classic family seed: "sEd..." (Ed25519) or "s..." (secp256k1).
 // Fund via Testnet/Devnet faucet, then paste here (same idea as Wallet.from_seed).
 const char* XAHAU_SEED     = "sEdPLACEHOLDER_REPLACE_ME";
 
@@ -152,7 +152,7 @@ void setup() {{
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · {title} ==="));
+  Serial.println(F("=== XahauClient | {title} ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -174,7 +174,7 @@ void setup() {{
 """
 
 FILL_SIGN_BLOCK = """
-  // BSS (not stack) — ESP32 task stack is ~8 KiB; bags + WebSockets need room.
+  // BSS (not stack) - ESP32 task stack is ~8 KiB; bags + WebSockets need room.
   static char s_blob[2048];
   static xahau::TxFieldBag s_bag;
   auto doSign = [&]() -> xahau::Status {{
@@ -227,7 +227,7 @@ SETUP_TAIL = """
   Serial.print(F(":"));
   Serial.println(net.wsPort);
 
-  // CRITICAL: WebSocketsClient is large — never put WsXahauTransport on setup() stack.
+  // CRITICAL: WebSocketsClient is large - never put WsXahauTransport on setup() stack.
   static xahau::WsXahauTransport s_ws;
   static xahau::XahauRpcClient s_client(s_ws);
   s_ws.setEndpoint(net);
@@ -380,7 +380,7 @@ def build_examples():
         "Payment",
         0,
         1,
-        "AllPublic — Testnet or Mainnet. Classic XRP/IOU payment.",
+        "AllPublic - Testnet or Mainnet. Classic XRP/IOU payment.",
         f"""  strncpy(p.destination, "{DEST}", sizeof(p.destination) - 1);
   p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;  // 1 XRP
@@ -396,9 +396,9 @@ def build_examples():
         "AccountSet",
         3,
         1,
-        "AllPublic — set account flags/domain (example: asfDefaultRipple = 8).",
+        "AllPublic - set account flags/domain (example: asfDefaultRipple = 8).",
         """  p.hasSetFlag = true;
-  p.setFlag = 8;  // asfDefaultRipple — change as needed
+  p.setFlag = 8;  // asfDefaultRipple - change as needed
 """
         + common_fee(),
         "AccountSet",
@@ -410,7 +410,7 @@ def build_examples():
         "TrustSet",
         20,
         1,
-        "AllPublic — create/adjust trust line to an IOU issuer.",
+        "AllPublic - create/adjust trust line to an IOU issuer.",
         f"""  strncpy(p.limit.value, "1000", sizeof(p.limit.value) - 1);
   strncpy(p.limit.currency, "USD", sizeof(p.limit.currency) - 1);
   strncpy(p.limit.issuer, "{ISSUER}", sizeof(p.limit.issuer) - 1);
@@ -425,7 +425,7 @@ def build_examples():
         "OfferCreate",
         7,
         1,
-        "AllPublic — DEX order (TakerPays / TakerGets).",
+        "AllPublic - DEX order (TakerPays / TakerGets).",
         f"""  p.takerPays.kind = xahau::AmountKind::XrpDrops;
   p.takerPays.drops = 1000000ULL;
   p.takerGets.kind = xahau::AmountKind::Issued;
@@ -443,7 +443,7 @@ def build_examples():
         "OfferCancel",
         8,
         1,
-        "AllPublic — cancel offer by sequence.",
+        "AllPublic - cancel offer by sequence.",
         """  p.offerSequence = 1;
 """
         + common_fee(),
@@ -456,7 +456,7 @@ def build_examples():
         "TicketCreate",
         10,
         1,
-        "AllPublic — reserve ticket sequences.",
+        "AllPublic - reserve ticket sequences.",
         """  p.ticketCount = 1;
 """
         + common_fee(),
@@ -469,7 +469,7 @@ def build_examples():
         "SetRegularKey",
         5,
         1,
-        "AllPublic — set or clear a regular key.",
+        "AllPublic - set or clear a regular key.",
         f"""  strncpy(p.regularKey, "{DEST}", sizeof(p.regularKey) - 1);
 """
         + common_fee(),
@@ -482,7 +482,7 @@ def build_examples():
         "SignerListSet",
         12,
         1,
-        "AllPublic — multi-sign list (quorum 0 + empty = delete list demo).",
+        "AllPublic - multi-sign list (quorum 0 + empty = delete list demo).",
         """  p.signerQuorum = 0;
   p.entryCount = 0;
 """
@@ -496,7 +496,7 @@ def build_examples():
         "EscrowCreate",
         1,
         1,
-        "AllPublic — lock XRP until FinishAfter / CancelAfter.",
+        "AllPublic - lock XRP until FinishAfter / CancelAfter.",
         f"""  strncpy(p.destination, "{DEST}", sizeof(p.destination) - 1);
   p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;
@@ -513,7 +513,7 @@ def build_examples():
         "EscrowFinish",
         2,
         1,
-        "AllPublic — finish an escrow (Owner + OfferSequence).",
+        "AllPublic - finish an escrow (Owner + OfferSequence).",
         f"""  strncpy(p.owner, "{DEST}", sizeof(p.owner) - 1);
   p.offerSequence = 1;
 """
@@ -527,7 +527,7 @@ def build_examples():
         "EscrowCancel",
         4,
         1,
-        "AllPublic — cancel expired escrow.",
+        "AllPublic - cancel expired escrow.",
         f"""  strncpy(p.owner, "{DEST}", sizeof(p.owner) - 1);
   p.offerSequence = 1;
 """
@@ -541,7 +541,7 @@ def build_examples():
         "CheckCreate",
         16,
         1,
-        "AllPublic — create a Check (SendMax).",
+        "AllPublic - create a Check (SendMax).",
         f"""  strncpy(p.destination, "{DEST}", sizeof(p.destination) - 1);
   p.sendMax.kind = xahau::AmountKind::XrpDrops;
   p.sendMax.drops = 1000000ULL;
@@ -556,9 +556,9 @@ def build_examples():
         "CheckCash",
         17,
         1,
-        "AllPublic — cash a Check by ID.",
+        "AllPublic - cash a Check by ID.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.checkId)) {{
-    Serial.println(F("Bad CheckID hex — replace with real ID"));
+    Serial.println(F("Bad CheckID hex - replace with real ID"));
     return;
   }}
   p.amount.kind = xahau::AmountKind::XrpDrops;
@@ -574,7 +574,7 @@ def build_examples():
         "CheckCancel",
         18,
         1,
-        "AllPublic — cancel a Check by ID.",
+        "AllPublic - cancel a Check by ID.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.checkId)) {{
     Serial.println(F("Bad CheckID hex"));
     return;
@@ -590,7 +590,7 @@ def build_examples():
         "PaymentChannelCreate",
         13,
         1,
-        "AllPublic — open payment channel.",
+        "AllPublic - open payment channel.",
         f"""  strncpy(p.destination, "{DEST}", sizeof(p.destination) - 1);
   p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 10000000ULL;
@@ -608,7 +608,7 @@ def build_examples():
         "PaymentChannelFund",
         14,
         1,
-        "AllPublic — add XRP to a channel.",
+        "AllPublic - add XRP to a channel.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.channel)) {{
     Serial.println(F("Bad Channel ID hex"));
     return;
@@ -626,7 +626,7 @@ def build_examples():
         "PaymentChannelClaim",
         15,
         1,
-        "AllPublic — claim from channel (add Balance/Signature for real claims).",
+        "AllPublic - claim from channel (add Balance/Signature for real claims).",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.channel)) {{
     Serial.println(F("Bad Channel ID hex"));
     return;
@@ -642,7 +642,7 @@ def build_examples():
         "NFTokenMint",
         25,
         1,
-        "AllPublic — mint an NFToken.",
+        "AllPublic - mint an NFToken.",
         """  p.nfTokenTaxon = 0;
   strncpy(p.uri, "https://example.com/nft/1", sizeof(p.uri) - 1);
 """
@@ -656,7 +656,7 @@ def build_examples():
         "NFTokenBurn",
         26,
         1,
-        "AllPublic — burn an NFToken by ID.",
+        "AllPublic - burn an NFToken by ID.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.nfTokenId)) {{
     Serial.println(F("Bad NFTokenID hex"));
     return;
@@ -672,7 +672,7 @@ def build_examples():
         "NFTokenCreateOffer",
         27,
         1,
-        "AllPublic — sell/buy offer for an NFToken.",
+        "AllPublic - sell/buy offer for an NFToken.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.nfTokenId)) {{
     Serial.println(F("Bad NFTokenID hex"));
     return;
@@ -690,7 +690,7 @@ def build_examples():
         "NFTokenCancelOffer",
         28,
         1,
-        "AllPublic — cancel NFToken offer(s).",
+        "AllPublic - cancel NFToken offer(s).",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.offerIds[0])) {{
     Serial.println(F("Bad OfferID hex"));
     return;
@@ -707,7 +707,7 @@ def build_examples():
         "NFTokenAcceptOffer",
         29,
         1,
-        "AllPublic — accept sell and/or buy offer.",
+        "AllPublic - accept sell and/or buy offer.",
         f"""  p.hasSellOffer = true;
   if (!xahau::sketch::parseHash256("{HASH32}", p.sellOffer)) {{
     Serial.println(F("Bad SellOffer ID hex"));
@@ -724,7 +724,7 @@ def build_examples():
         "NFTokenModify",
         61,
         1,
-        "AllPublic (amendment) — modify NFToken URI.",
+        "AllPublic (amendment) - modify NFToken URI.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.nfTokenId)) {{
     Serial.println(F("Bad NFTokenID hex"));
     return;
@@ -741,7 +741,7 @@ def build_examples():
         "DepositPreauth",
         19,
         1,
-        "AllPublic — preauthorize an account for deposits.",
+        "AllPublic - preauthorize an account for deposits.",
         f"""  strncpy(p.authorize, "{DEST}", sizeof(p.authorize) - 1);
 """
         + common_fee(),
@@ -754,7 +754,7 @@ def build_examples():
         "AccountDelete",
         21,
         1,
-        "AllPublic — delete account (strict requirements).",
+        "AllPublic - delete account (strict requirements).",
         f"""  strncpy(p.destination, "{DEST}", sizeof(p.destination) - 1);
   Serial.println(F("WARNING: AccountDelete is irreversible when successful."));
 """
@@ -768,7 +768,7 @@ def build_examples():
         "Clawback",
         30,
         1,
-        "StableParallel — issuer claws back issued currency.",
+        "StableParallel - issuer claws back issued currency.",
         f"""  p.amount.kind = xahau::AmountKind::Issued;
   strncpy(p.amount.issued.value, "1", sizeof(p.amount.issued.value) - 1);
   strncpy(p.amount.issued.currency, "USD", sizeof(p.amount.issued.currency) - 1);
@@ -783,18 +783,18 @@ def build_examples():
         (
             "DIDSet",
             49,
-            "DevnetFirst — set DID Document fields.",
+            "DevnetFirst - set DID Document fields.",
             """  strncpy(p.uri, "did:example:esp32", sizeof(p.uri) - 1);
   strncpy(p.data, "{}", sizeof(p.data) - 1);
 """
             + common_fee(),
             False,
         ),
-        ("DIDDelete", 50, "DevnetFirst — delete DID object.", common_fee(), False),
+        ("DIDDelete", 50, "DevnetFirst - delete DID object.", common_fee(), False),
         (
             "CredentialCreate",
             58,
-            "DevnetFirst — issue credential to Subject.",
+            "DevnetFirst - issue credential to Subject.",
             f"""  strncpy(p.subject, "{DEST}", sizeof(p.subject) - 1);
   strncpy(p.credentialType, "KYC", sizeof(p.credentialType) - 1);
 """
@@ -804,7 +804,7 @@ def build_examples():
         (
             "CredentialAccept",
             59,
-            "DevnetFirst — subject accepts credential.",
+            "DevnetFirst - subject accepts credential.",
             f"""  strncpy(p.issuer, "{ISSUER}", sizeof(p.issuer) - 1);
   strncpy(p.credentialType, "KYC", sizeof(p.credentialType) - 1);
 """
@@ -814,7 +814,7 @@ def build_examples():
         (
             "CredentialDelete",
             60,
-            "DevnetFirst — delete credential.",
+            "DevnetFirst - delete credential.",
             f"""  strncpy(p.issuer, "{ISSUER}", sizeof(p.issuer) - 1);
   strncpy(p.subject, "{DEST}", sizeof(p.subject) - 1);
   strncpy(p.credentialType, "KYC", sizeof(p.credentialType) - 1);
@@ -825,7 +825,7 @@ def build_examples():
         (
             "OracleSet",
             51,
-            "DevnetFirst — publish oracle price data.",
+            "DevnetFirst - publish oracle price data.",
             """  p.oracleDocumentID = 1;
   p.lastUpdateTime = 1700000000UL;
   strncpy(p.baseAsset, "XRP", sizeof(p.baseAsset) - 1);
@@ -846,7 +846,7 @@ def build_examples():
         "OracleDelete",
         52,
         2,
-        "DevnetFirst — delete oracle document.",
+        "DevnetFirst - delete oracle document.",
         """  p.oracleDocumentID = 1;
 """
         + common_fee(),
@@ -860,7 +860,7 @@ def build_examples():
         "AMMCreate",
         35,
         1,
-        "StableParallel — create AMM pool.",
+        "StableParallel - create AMM pool.",
         f"""  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 10000000ULL;
   p.amount2.kind = xahau::AmountKind::Issued;
@@ -884,7 +884,7 @@ def build_examples():
         "AMMDeposit",
         36,
         1,
-        "StableParallel — deposit into AMM.",
+        "StableParallel - deposit into AMM.",
         amm
         + """  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;
@@ -899,7 +899,7 @@ def build_examples():
         "AMMWithdraw",
         37,
         1,
-        "StableParallel — withdraw from AMM.",
+        "StableParallel - withdraw from AMM.",
         amm
         + """  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;
@@ -914,20 +914,20 @@ def build_examples():
         "AMMVote",
         38,
         1,
-        "StableParallel — vote trading fee.",
+        "StableParallel - vote trading fee.",
         amm + """  p.tradingFee = 500;\n""" + common_fee(),
         "AMMVote",
         False,
     )
-    add(E, "AMMBid", "AMMBid", 39, 1, "StableParallel — bid for auction slot.", amm + common_fee(), "AMMBid", False)
-    add(E, "AMMDelete", "AMMDelete", 40, 1, "StableParallel — delete empty AMM.", amm + common_fee(), "AMMDelete", False)
+    add(E, "AMMBid", "AMMBid", 39, 1, "StableParallel - bid for auction slot.", amm + common_fee(), "AMMBid", False)
+    add(E, "AMMDelete", "AMMDelete", 40, 1, "StableParallel - delete empty AMM.", amm + common_fee(), "AMMDelete", False)
     add(
         E,
         "AMMClawback",
         "AMMClawback",
         31,
         1,
-        "StableParallel — clawback from AMM.",
+        "StableParallel - clawback from AMM.",
         f"""  strncpy(p.assetCurrency, "USD", sizeof(p.assetCurrency) - 1);
   strncpy(p.assetIssuer, keys.address, sizeof(p.assetIssuer) - 1);
   strncpy(p.holder, "{DEST}", sizeof(p.holder) - 1);
@@ -946,7 +946,7 @@ def build_examples():
         "MPTokenIssuanceCreate",
         54,
         2,
-        "DevnetFirst — create MPT issuance.",
+        "DevnetFirst - create MPT issuance.",
         """  p.assetScale = 2;
   p.maximumAmount = 1000000ULL;
 """
@@ -965,7 +965,7 @@ def build_examples():
             folder,
             code,
             2,
-            f"DevnetFirst — {note}.",
+            f"DevnetFirst - {note}.",
             f"""  if (!xahau::sketch::parseIssuanceId("{ISS24}", p.issuanceId)) {{
     Serial.println(F("Bad MPTokenIssuanceID hex (48 chars)"));
     return;
@@ -981,7 +981,7 @@ def build_examples():
         "PermissionedDomainSet",
         62,
         2,
-        "DevnetFirst — set permissioned domain.",
+        "DevnetFirst - set permissioned domain.",
         f"""  memset(p.domainId, 0x11, sizeof(p.domainId));
   strncpy(p.credentialType, "KYC", sizeof(p.credentialType) - 1);
   strncpy(p.credentialIssuer, "{ISSUER}", sizeof(p.credentialIssuer) - 1);
@@ -996,7 +996,7 @@ def build_examples():
         "PermissionedDomainDelete",
         63,
         2,
-        "DevnetFirst — delete permissioned domain.",
+        "DevnetFirst - delete permissioned domain.",
         """  memset(p.domainId, 0x11, sizeof(p.domainId));
 """
         + common_fee(),
@@ -1009,7 +1009,7 @@ def build_examples():
         "DelegateSet",
         64,
         2,
-        "DevnetFirst — delegate permissions.",
+        "DevnetFirst - delegate permissions.",
         f"""  strncpy(p.authorize, "{DEST}", sizeof(p.authorize) - 1);
 """
         + common_fee(),
@@ -1022,7 +1022,7 @@ def build_examples():
         "Batch",
         71,
         2,
-        "DevnetFirst — batch envelope (skeleton; extend RawTransactions for production).",
+        "DevnetFirst - batch envelope (skeleton; extend RawTransactions for production).",
         common_fee()
         + """  Serial.println(F("Note: Batch fill is a skeleton example."));
 """,
@@ -1035,7 +1035,7 @@ def build_examples():
         "VaultCreate",
         65,
         2,
-        "DevnetFirst — create vault (prefer Devnet).",
+        "DevnetFirst - create vault (prefer Devnet).",
         f"""  strncpy(p.assetCurrency, "USD", sizeof(p.assetCurrency) - 1);
   strncpy(p.assetIssuer, "{ISSUER}", sizeof(p.assetIssuer) - 1);
   p.assetsMaximum = 1000000ULL;
@@ -1054,7 +1054,7 @@ def build_examples():
             folder,
             code,
             2,
-            f"DevnetFirst — {note}.",
+            f"DevnetFirst - {note}.",
             f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.vaultId)) {{
     Serial.println(F("Bad VaultID hex"));
     return;
@@ -1070,7 +1070,7 @@ def build_examples():
         "VaultDeposit",
         68,
         2,
-        "DevnetFirst — deposit into vault.",
+        "DevnetFirst - deposit into vault.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.vaultId)) {{
     Serial.println(F("Bad VaultID hex"));
     return;
@@ -1088,7 +1088,7 @@ def build_examples():
         "VaultWithdraw",
         69,
         2,
-        "DevnetFirst — withdraw from vault.",
+        "DevnetFirst - withdraw from vault.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.vaultId)) {{
     Serial.println(F("Bad VaultID hex"));
     return;
@@ -1107,7 +1107,7 @@ def build_examples():
         "VaultClawback",
         70,
         2,
-        "DevnetFirst — clawback from vault holder.",
+        "DevnetFirst - clawback from vault holder.",
         f"""  if (!xahau::sketch::parseHash256("{HASH32}", p.vaultId)) {{
     Serial.println(F("Bad VaultID hex"));
     return;
@@ -1132,7 +1132,7 @@ def build_examples():
         "XChainCreateBridge",
         48,
         1,
-        "StableParallel — create cross-chain bridge.",
+        "StableParallel - create cross-chain bridge.",
         xbridge
         + """  p.minAccountCreateAmount.kind = xahau::AmountKind::XrpDrops;
   p.minAccountCreateAmount.drops = 1000000ULL;
@@ -1147,7 +1147,7 @@ def build_examples():
         "XChainModifyBridge",
         47,
         1,
-        "StableParallel — modify bridge.",
+        "StableParallel - modify bridge.",
         xbridge + common_fee(),
         "XChainModifyBridge",
         False,
@@ -1158,7 +1158,7 @@ def build_examples():
         "XChainCreateClaimID",
         41,
         1,
-        "StableParallel — create claim ID.",
+        "StableParallel - create claim ID.",
         xbridge + common_fee(),
         "XChainCreateClaimID",
         False,
@@ -1169,7 +1169,7 @@ def build_examples():
         "XChainCommit",
         42,
         1,
-        "StableParallel — commit for cross-chain claim.",
+        "StableParallel - commit for cross-chain claim.",
         xbridge
         + """  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;
@@ -1185,7 +1185,7 @@ def build_examples():
         "XChainClaim",
         43,
         1,
-        "StableParallel — claim on destination chain.",
+        "StableParallel - claim on destination chain.",
         xbridge
         + f"""  p.xChainClaimID = 1;
   p.amount.kind = xahau::AmountKind::XrpDrops;
@@ -1202,7 +1202,7 @@ def build_examples():
         "XChainAccountCreateCommit",
         44,
         1,
-        "StableParallel — account-create commit.",
+        "StableParallel - account-create commit.",
         xbridge
         + f"""  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 10000000ULL;
@@ -1218,7 +1218,7 @@ def build_examples():
         "XChainAddClaimAttestation",
         45,
         1,
-        "StableParallel — witness claim attestation (needs real witness signature).",
+        "StableParallel - witness claim attestation (needs real witness signature).",
         f"""  strncpy(p.base.lockingDoor, "{DEST}", sizeof(p.base.lockingDoor) - 1);
   strncpy(p.base.issuingDoor, "{ISSUER}", sizeof(p.base.issuingDoor) - 1);
   memcpy(p.base.publicKey, keys.publicKey, 33);
@@ -1242,7 +1242,7 @@ def build_examples():
         "XChainAddAccountCreateAttestation",
         46,
         1,
-        "StableParallel — witness account-create attestation.",
+        "StableParallel - witness account-create attestation.",
         f"""  strncpy(p.base.lockingDoor, "{DEST}", sizeof(p.base.lockingDoor) - 1);
   strncpy(p.base.issuingDoor, "{ISSUER}", sizeof(p.base.issuingDoor) - 1);
   memcpy(p.base.publicKey, keys.publicKey, 33);
@@ -1268,15 +1268,15 @@ def build_examples():
     return;
   }}
 """
-    add(E, "LoanBrokerSet", "LoanBrokerSet", 74, 2, "DevnetFirst — create/update loan broker.", lb + common_fee(), "LoanBrokerSet", True)
-    add(E, "LoanBrokerDelete", "LoanBrokerDelete", 75, 2, "DevnetFirst — delete loan broker.", lb + common_fee(), "LoanBrokerDelete", True)
+    add(E, "LoanBrokerSet", "LoanBrokerSet", 74, 2, "DevnetFirst - create/update loan broker.", lb + common_fee(), "LoanBrokerSet", True)
+    add(E, "LoanBrokerDelete", "LoanBrokerDelete", 75, 2, "DevnetFirst - delete loan broker.", lb + common_fee(), "LoanBrokerDelete", True)
     add(
         E,
         "LoanBrokerCoverDeposit",
         "LoanBrokerCoverDeposit",
         76,
         2,
-        "DevnetFirst — deposit first-loss cover.",
+        "DevnetFirst - deposit first-loss cover.",
         lb
         + """  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;
@@ -1291,7 +1291,7 @@ def build_examples():
         "LoanBrokerCoverWithdraw",
         77,
         2,
-        "DevnetFirst — withdraw cover.",
+        "DevnetFirst - withdraw cover.",
         lb
         + """  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;
@@ -1306,7 +1306,7 @@ def build_examples():
         "LoanBrokerCoverClawback",
         78,
         2,
-        "DevnetFirst — clawback cover.",
+        "DevnetFirst - clawback cover.",
         lb
         + f"""  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;
@@ -1333,20 +1333,20 @@ def build_examples():
         "LoanSet",
         80,
         2,
-        "DevnetFirst — create/update loan.",
+        "DevnetFirst - create/update loan.",
         loan + f"""  strncpy(p.counterparty, "{DEST}", sizeof(p.counterparty) - 1);\n""" + common_fee(),
         "LoanSet",
         True,
     )
-    add(E, "LoanDelete", "LoanDelete", 81, 2, "DevnetFirst — delete loan.", loan + common_fee(), "LoanDelete", True)
-    add(E, "LoanManage", "LoanManage", 82, 2, "DevnetFirst — manage loan.", loan + common_fee(), "LoanManage", True)
+    add(E, "LoanDelete", "LoanDelete", 81, 2, "DevnetFirst - delete loan.", loan + common_fee(), "LoanDelete", True)
+    add(E, "LoanManage", "LoanManage", 82, 2, "DevnetFirst - manage loan.", loan + common_fee(), "LoanManage", True)
     add(
         E,
         "LoanPay",
         "LoanPay",
         84,
         2,
-        "DevnetFirst — loan payment.",
+        "DevnetFirst - loan payment.",
         loan
         + """  p.amount.kind = xahau::AmountKind::XrpDrops;
   p.amount.drops = 1000000ULL;

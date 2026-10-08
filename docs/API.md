@@ -24,7 +24,7 @@ Version macros: `XAHAU_CLIENT_VERSION`, `XAHAU_CLIENT_VERSION_MAJOR/MINOR/PATCH`
 Sketch / application
   ├── XahauRpcClient + IXahauTransport   (Mock or Ws)
   ├── buildAndSign* / fill* + signTx
-  │     └── TxFieldBag → serialize → STX sign → hex
+  │     └── TxFieldBag -> serialize -> STX sign -> hex
   ├── deriveKeysFromSeed / secureClear
   └── NetworkEndpoint presets (mainnet / testnet; NetworkID 21337/21338)
 ```
@@ -35,9 +35,9 @@ Sketch / application
 
 | API | Description |
 |-----|-------------|
-| `deriveKeysFromSeed(seed, KeyPair&)` | Auto-detect `sEd…` → Ed25519, else secp256k1 |
+| `deriveKeysFromSeed(seed, KeyPair&)` | Auto-detect `sEd...` -> Ed25519, else secp256k1 |
 | `deriveKeysFromSeed(seed, Curve, KeyPair&)` | Explicit curve |
-| `encodeEd25519Seed` / `encodeSecp256k1Seed` | 16-byte entropy → family seed (base58) |
+| `encodeEd25519Seed` / `encodeSecp256k1Seed` | 16-byte entropy -> family seed (base58) |
 | `seedFromEntropy(entropy16, Curve, out, cap)` | Encode seed only (no RNG inside library) |
 | `generateKeyPairFromEntropy(...)` | Encode seed + derive `KeyPair` |
 | `secureClear(KeyPair&)` | Wipe private material |
@@ -74,8 +74,8 @@ Host goldens: `test/vectors/keys/generate_seed.json` (aligned with `ripple-keypa
 
 1. Fill a `*Params` struct (`TxCommon`: sequence, LLS, fee, flags).
 2. Call either:
-   - `fillName(params, accountId, pubKey, bag)` then `signTx(bag, keys, hex, cap)`, or
-   - `buildAndSignName(keys, params, hex, cap)` where available.
+ - `fillName(params, accountId, pubKey, bag)` then `signTx(bag, keys, hex, cap)`, or
+ - `buildAndSignName(keys, params, hex, cap)` where available.
 
 ### Modules
 
@@ -87,7 +87,7 @@ Host goldens: `test/vectors/keys/generate_seed.json` (aligned with `ripple-keypa
 | `offer.h` | OfferCreate, OfferCancel |
 | `account_keys.h` | TicketCreate, SetRegularKey, SignerListSet |
 | `phase2_extra.h` | Escrow*, Check*, PayChan*, DepositPreauth, AccountDelete, Clawback, OracleDelete |
-| `phase4_extra.h` | `fillOracleSet` only (XRPL-port EncodeOnly families removed 2026-09-28; catalog codes remain in `tx_type.h`) |
+| `phase4_extra.h` | `fillOracleSet` only (XRPL-port EncodeOnly families removed; catalog codes remain in `tx_type.h`) |
 | `xahau_extra.h` | URIToken*, Remit, ClaimReward, CronSet, SetRemarks, Invoke, Import, SetHook (`fillSetHook` + `signTx`; **no** `buildAndSignSetHook`), plus `buildAndSignOracleSet` |
 | `tx_type.h` | Full `TxType` catalog + maturity |
 
@@ -99,7 +99,7 @@ Host goldens: `test/vectors/keys/generate_seed.json` (aligned with `ripple-keypa
 |-----|-------------|
 | `txTypeCatalog()` / `txTypeCatalogCount()` | Registry table |
 | `txTypeName(TxType)` | String name |
-| `txTypeLookupByName` | Name → info |
+| `txTypeLookupByName` | Name -> info |
 
 ### Live-support helpers (`networks.h`)
 
@@ -107,11 +107,11 @@ Host goldens: `test/vectors/keys/generate_seed.json` (aligned with `ripple-keypa
 |-----|-------------|
 | `txLiveSupport(TxType)` | AllPublic / EncodeOnly / NotUserSubmit |
 | `recommendedLiveNetwork(TxType)` | Suggested public net for smoke tests (`Custom` if none live) |
-| `amendmentStatus` / `amendmentEnabledOn` | Per-net amendment ON/OFF/ABSENT (2026-07-14 matrix) |
-| `txPrimaryAmendment` | Tx type → gating amendment |
+| `amendmentStatus` / `amendmentEnabledOn` | Per-net amendment ON/OFF/ABSENT (per-net feature probe) |
+| `txPrimaryAmendment` | Tx type -> gating amendment |
 | `isTxLiveEnabledOn(TxType, NetworkId)` | Whether live submit is expected on that public net |
 
-Offline encode/sign applies to **shipped** fill/sign helpers. Catalog-only `TxType` codes (former EncodeOnly XRPL-port families) have **no** fill/sign in `src` after 2026-09-28 — see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md). Use `isTxLiveEnabledOn` to skip live smoke when an amendment is absent.
+Offline encode/sign applies to **shipped** fill/sign helpers. Catalog-only `TxType` codes (former EncodeOnly XRPL-port families) have **no** fill/sign in `src` - see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md). Use `isTxLiveEnabledOn` to skip live smoke when an amendment is absent.
 
 ---
 
@@ -120,9 +120,9 @@ Offline encode/sign applies to **shipped** fill/sign helpers. Catalog-only `TxTy
 | Type / API | Description |
 |------------|-------------|
 | `TxFieldBag` | Fixed slots + arena; sorted field codes |
-| `bagSetCommon` | TransactionType, Account, SigningPubKey, Fee, Sequence, … |
+| `bagSetCommon` | TransactionType, Account, SigningPubKey, Fee, Sequence, ... |
 | `xahauSerialize` | Canonical STObject bytes |
-| `STNumber` helpers | Decimal → 12-byte STNumber |
+| `STNumber` helpers | Decimal -> 12-byte STNumber |
 
 Caps: `XAHAU_TX_FIELD_BAG_MAX_SLOTS` (default 32), `XAHAU_TX_FIELD_BAG_ARENA` (default 12288; Tier A SetHook CreateCode <= 8 KiB).
 
@@ -173,7 +173,7 @@ Pure functions (no I/O). Strings are **validated / escaped** before JSON emissio
 | `rpcBuildSubscribeEx` / `UnsubscribeEx` | `SubscribeParams` |
 | `rpcBuildUnsubscribe*` / `rpcBuildSubscribeLedger` | `unsubscribe` |
 
-**Wallet product plan:** builders land first → host + ClientTest RPC suite verify → then wallet-v2 wires `rawRequest` / thin helpers to showcase capacity. Deferred for later waves: `path_find`, `ripple_path_find`, full `ledger_entry` type matrix, `mpt_holders`, server-side `sign*`.
+**Wallet product plan:** builders land first -> host + ClientTest RPC suite verify -> then wallet-v2 wires `rawRequest` / thin helpers to showcase capacity. Deferred for later waves: `path_find`, `ripple_path_find`, full `ledger_entry` type matrix, `mpt_holders`, server-side `sign*`.
 
 ### Parsers (lightweight)
 
@@ -210,14 +210,14 @@ client.setResponseBuffer(buf, cap);  // optional larger buffer
 | `fetchFeeDrops` / `fetchFeeAndLedger` | Fee (+ ledger / LLS) |
 | `submitBlob` / `submitBlobFailHard` | Submit signed hex. Returns `Ok` (tes), **`Queued`** (terQUEUED), or `Rejected`. Same-blob retry once on transport `Timeout`. |
 | `fetchTxResult` | Look up engine result by hash (`tx` RPC) |
-| `waitForOutcome` | Poll until final result, LLS exceeded, or timeout — **never re-signs** |
+| `waitForOutcome` | Poll until final result, LLS exceeded, or timeout - **never re-signs** |
 | `fetchAccountObjectIds` | Generic object indexes |
 | `rawRequest` | Send prebuilt JSON |
 | `subscribeLedger` / `subscribeStreams` / `subscribeAccounts` / `subscribeAccountsProposed` / `subscribe` / `subscribeEx` | Ack only; pushes via stream handler |
 | `unsubscribe*` / `unsubscribeEx` | Tear down subscriptions |
 | `poll` | Drain WebSocket while subscribed (`WsXahauTransport` loops underneath) |
 
-### Streams (subscribe push) — wallet / monitor path
+### Streams (subscribe push) - wallet / monitor path
 
 Official reference: [subscribe](https://xahau.network/docs/features/http-websocket-apis/public-api-methods/).
 
@@ -253,9 +253,9 @@ client.unsubscribeEx(p);
 | Stream | Push type | Clio public? | ESP32 note |
 |--------|-----------|--------------|------------|
 | `ledger` | `ledgerClosed` | Yes | **Preferred** for LLS / fee clock |
-| `transactions` | `transaction` | Yes | High volume — avoid on device |
-| `transactions_proposed` | `transaction` | Yes | High volume — prefer `accounts_proposed` |
-| `validations` | `validationReceived` | Yes | Very high volume — avoid |
+| `transactions` | `transaction` | Yes | High volume - avoid on device |
+| `transactions_proposed` | `transaction` | Yes | High volume - prefer `accounts_proposed` |
+| `validations` | `validationReceived` | Yes | Very high volume - avoid |
 | `consensus` | `consensusPhase` | **No** (`reportingUnsupported`) | rippled only |
 | `server` | `serverStatus` | **No** | rippled only |
 | `manifests` | `manifestReceived` | Yes | Niche |
@@ -266,7 +266,7 @@ client.unsubscribeEx(p);
 
 | Field | Library | Notes |
 |-------|---------|-------|
-| `accounts` | Yes | Validated txs affecting address(es) — **wallet P0** |
+| `accounts` | Yes | Validated txs affecting address(es) - **wallet P0** |
 | `accounts_proposed` | Yes (`subscribeAccountsProposed` / `SubscribeParams`) | Pending + validated for address |
 | `books` | Deferred | DEX builders not in MVP |
 | `url` callbacks | Non-goal | Admin JSON-RPC |
@@ -276,7 +276,7 @@ client.unsubscribeEx(p);
 - Stream handler receives a **NUL-terminated** copy into `streamScratch_` (**4096** bytes); larger frames are **truncated**.
 - Do not call `request` / `subscribe*` from the handler (non-reentrant).
 - `subscribe*` returns `Rejected` if ack contains `reportingUnsupported` (Clio).
-- Struct event types may grow — **zero-init** before parse.
+- Struct event types may grow - **zero-init** before parse.
 - Signing / encode paths are unchanged (additive network surface only).
 - Examples: `examples/wss/Stream/LedgerStream`, `AccountStream`, `WalletMonitor`.
 
@@ -294,17 +294,17 @@ bagPrepareMultiSign(bag);
 MultiSigner s1, s2;
 multiSignAs(bag, keys1, s1);
 multiSignAs(bag, keys2, s2);
-// 4) combine → hex blob
+// 4) combine -> hex blob
 MultiSigner all[] = {s1, s2};
 multiSignFinalize(bag, all, 2, outHex, cap);
 ```
 
-Loan dual-sign / Batch fill helpers were **removed** from library `src` on 2026-09-28 (XRPL-port EncodeOnly cut). Catalog `TxType` codes remain; see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md).
+Loan dual-sign / Batch fill helpers were **removed** from library `src` (XRPL-port EncodeOnly cut). Catalog `TxType` codes remain; see [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md).
 
 ### Submit policy (production)
 
 1. Prefer `xahau::sketch::submitAndWait` (or `submitBlob` + `waitForOutcome`).
-2. **Never** re-sign with a new Sequence on `Status::Queued` or after `Timeout` if a hash was returned — resolve by hash first.
+2. **Never** re-sign with a new Sequence on `Status::Queued` or after `Timeout` if a hash was returned - resolve by hash first.
 3. Identical blob re-submit is safe (idempotent); a **new** Sequence is a second payment.
 
 ### Transports
@@ -320,7 +320,7 @@ Loan dual-sign / Batch fill helpers were **removed** from library `src` on 2026-
 
 ```cpp
 WsXahauTransport ws;
-applyNetworkTransport(ws, networkFromIndex(XAHAU_NETWORK));  // Mainnet → fail-closed
+applyNetworkTransport(ws, networkFromIndex(XAHAU_NETWORK));  // Mainnet -> fail-closed
 // Mainnet only: also set fingerprint or CA
 // ws.setSslFingerprint("AA:BB:...");
 ```
@@ -329,10 +329,10 @@ applyNetworkTransport(ws, networkFromIndex(XAHAU_NETWORK));  // Mainnet → fail
 
 | Resource | Policy |
 |----------|--------|
-| `signTx` on ESP32 | **Not re-entrant** — static BSS buffers by default. One sign at a time. Host builds use stack buffers. |
-| `scratchSignBag()` | Shared static bag — one `buildAndSign*` / fill+sign path at a time. |
-| `XahauRpcClient` response buffer | Default static 12 KiB — one client request at a time per process unless `setResponseBuffer`. |
-| `WsXahauTransport` | One active callback pointer — do not call `request()` concurrently from two tasks. |
+| `signTx` on ESP32 | **Not re-entrant** - static BSS buffers by default. One sign at a time. Host builds use stack buffers. |
+| `scratchSignBag()` | Shared static bag - one `buildAndSign*` / fill+sign path at a time. |
+| `XahauRpcClient` response buffer | Default static 12 KiB - one client request at a time per process unless `setResponseBuffer`. |
+| `WsXahauTransport` | One active callback pointer - do not call `request()` concurrently from two tasks. |
 
 ---
 
@@ -342,7 +342,7 @@ applyNetworkTransport(ws, networkFromIndex(XAHAU_NETWORK));  // Mainnet → fail
 |--------|-----|----------------|
 | `kNetworkMainnet` | xahau.network:**443** (NetworkID **21337**) | same |
 | `kNetworkTestnet` | xahau-test.net:**443** (NetworkID **21338**) | same |
-| *(no Devnet preset)* | — | Xahau has Mainnet+Testnet only in this library |
+| *(no Devnet preset)* | - | Xahau has Mainnet+Testnet only in this library |
 
 ```cpp
 WsXahauTransport ws(kNetworkTestnet);
@@ -369,7 +369,7 @@ See [NETWORKS.md](NETWORKS.md).
 
 ## Status codes (`Status`)
 
-`Ok`, `InvalidArgument`, `BufferTooSmall`, `InvalidSeed`, `InvalidAddress`, `DecodeFailed`, `CryptoFailed`, `Timeout`, `Rejected`, `TransportFailed`, …
+`Ok`, `InvalidArgument`, `BufferTooSmall`, `InvalidSeed`, `InvalidAddress`, `DecodeFailed`, `CryptoFailed`, `Timeout`, `Rejected`, `TransportFailed`, ...
 
 Use `statusName(Status)` for human-readable strings.
 

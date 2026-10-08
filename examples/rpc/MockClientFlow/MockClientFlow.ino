@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — MockClientFlow
+ * XahauClient Example - MockClientFlow
  *
  * Mock client Payment flow
  *
@@ -27,7 +27,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient RPC offline · MockClientFlow (A→B) ==="));
+  Serial.println(F("=== XahauClient RPC offline | MockClientFlow (A->B) ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 

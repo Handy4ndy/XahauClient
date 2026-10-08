@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — BuildAccountInfo
+ * XahauClient Example - BuildAccountInfo
  *
  * RPC builder: account_info
  *
@@ -18,7 +18,7 @@ const char* ACCOUNT = "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh";
 void setup() {
   Serial.begin(115200);
   delay(1500);
-  Serial.println(F("=== XahauClient RPC offline · BuildAccountInfo ==="));
+  Serial.println(F("=== XahauClient RPC offline | BuildAccountInfo ==="));
 
   char req[192];
   xahau::Status st = xahau::rpcBuildAccountInfo(ACCOUNT, req, sizeof(req));

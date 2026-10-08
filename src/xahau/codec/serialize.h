@@ -1,4 +1,4 @@
-// serialize.h — bag → canonical STObject bytes
+// serialize.h - bag -> canonical STObject bytes
 #pragma once
 
 #include <stddef.h>

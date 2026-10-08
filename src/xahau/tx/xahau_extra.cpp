@@ -1,4 +1,4 @@
-// xahau_extra.cpp — Xahau-native transaction builders
+// xahau_extra.cpp - Xahau-native transaction builders
 #include "xahau_extra.h"
 
 #include "phase4_extra.h"
@@ -486,7 +486,7 @@ Status buildAndSignOracleSet(const KeyPair& keys, const OracleSetParams& p, char
 
 
 // ---------------------------------------------------------------------------
-// Cron (92) emitted-tx — minimal field walker (not a general FieldReader)
+// Cron (92) emitted-tx - minimal field walker (not a general FieldReader)
 // ---------------------------------------------------------------------------
 namespace {
 
@@ -590,7 +590,7 @@ Status decodeEmittedCron(const uint8_t* blob, size_t len, CronEmittedView& out) 
       if (i + 8 > len) return Status::InvalidField;
       i += 8;
     } else {
-      // Unknown STI type — cannot skip without a full FieldReader.
+      // Unknown STI type - cannot skip without a full FieldReader.
       return Status::NotImplemented;
     }
   }

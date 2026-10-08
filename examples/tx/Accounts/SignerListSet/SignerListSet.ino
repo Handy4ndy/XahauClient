@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — SignerListSet
+ * XahauClient Example - SignerListSet
  *
  * SignerListSet transaction
  *
@@ -31,7 +31,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · SignerListSet ==="));
+  Serial.println(F("=== XahauClient | SignerListSet ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 

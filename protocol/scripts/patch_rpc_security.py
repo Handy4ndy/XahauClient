@@ -4,7 +4,7 @@ from pathlib import Path
 
 RPC = Path(__file__).resolve().parents[2] / "src" / "Xahau" / "rpc" / "rpc.cpp"
 
-NEW_PREFIX = r'''// rpc.cpp — JSON-RPC builders/parsers without ArduinoJson
+NEW_PREFIX = r'''// rpc.cpp - JSON-RPC builders/parsers without ArduinoJson
 #include "rpc.h"
 
 #include <stdarg.h>

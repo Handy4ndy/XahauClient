@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — LedgerServerRpcLive
+ * XahauClient Example - LedgerServerRpcLive
  *
  * Live ledger/server RPC catalog
  *
@@ -58,7 +58,7 @@ static void live(const char* label, xahau::Status buildSt) {
 void setup() {
   Serial.begin(115200);
   delay(1500);
-  Serial.println(F("=== XahauClient WSS live · Ledger/Server RPC catalog ==="));
+  Serial.println(F("=== XahauClient WSS live | Ledger/Server RPC catalog ==="));
   Serial.println(XAHAU_CLIENT_VERSION);
 
   if (!xahau::sketch::wifiConnect(WIFI_SSID, WIFI_PASSWORD)) {
@@ -90,7 +90,7 @@ void setup() {
   live("random", xahau::rpcBuildRandom(s_req, sizeof(s_req)));
   live("server_info", xahau::rpcBuildServerInfo(s_req, sizeof(s_req)));
   live("server_state", xahau::rpcBuildServerState(s_req, sizeof(s_req)));
-  // server_definitions can be huge — still exercise command (may truncate resp)
+  // server_definitions can be huge - still exercise command (may truncate resp)
   live("server_definitions", xahau::rpcBuildServerDefinitions(s_req, sizeof(s_req)));
   live("ledger_closed", xahau::rpcBuildLedgerClosed(s_req, sizeof(s_req)));
   live("ledger_current", xahau::rpcBuildLedgerCurrent(s_req, sizeof(s_req)));
@@ -103,7 +103,7 @@ void setup() {
       "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";
   live("ledger_entry by index",
        xahau::rpcBuildLedgerEntryByIndex(kDummy, s_req, sizeof(s_req)));
-  // vault_info JSON builder removed 2026-09-28 (Vault EncodeOnly cut).
+  // vault_info JSON builder removed (Vault EncodeOnly cut).
 
   Serial.print(F("live_ok="));
   Serial.print(s_ok);

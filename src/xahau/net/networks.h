@@ -1,6 +1,6 @@
-// networks.h — Xahau Mainnet / Testnet presets + live amendment matrix
+// networks.h - Xahau Mainnet / Testnet presets + live amendment matrix
 // Protocol network IDs: Mainnet 21337, Testnet 21338 (NetworkID required on all txs).
-// Matrix as_of: 2026-07-19 via https://xahau.network/rpc server_definitions
+// Amendment flags observed via https://xahau.network/rpc server_definitions
 #pragma once
 
 #include <stdint.h>
@@ -46,7 +46,7 @@ struct NetworkEndpoint {
   uint32_t protocolNetworkId;
 };
 
-/** Xahau Mainnet — production (XAH, real value). */
+/** Xahau Mainnet - production (XAH, real value). */
 inline const NetworkEndpoint kNetworkMainnet = {
     NetworkId::Mainnet,
     "mainnet",
@@ -64,7 +64,7 @@ inline const NetworkEndpoint kNetworkMainnet = {
     kProtocolNetworkIdMainnet};
 
 /**
- * Xahau Testnet — app testing / faucets.
+ * Xahau Testnet - app testing / faucets.
  * WSS: xahau-test.net:443
  */
 inline const NetworkEndpoint kNetworkTestnet = {
@@ -374,7 +374,7 @@ inline TxLiveSupport txLiveSupport(TxType t) {
     case TxType::NFTokenCancelOffer:
     case TxType::NFTokenAcceptOffer:
     case TxType::NFTokenModify:
-    // XRPL-port stubs (library type codes 200+) — not live on Xahau public nets
+    // XRPL-port stubs (library type codes 200+) - not live on Xahau public nets
     case TxType::Batch:
     case TxType::DelegateSet:
     case TxType::VaultCreate:

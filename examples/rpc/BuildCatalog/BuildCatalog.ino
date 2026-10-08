@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — BuildCatalog
+ * XahauClient Example - BuildCatalog
  *
  * RPC request-builder catalog
  *
@@ -51,7 +51,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient RPC offline · BuildCatalog ==="));
+  Serial.println(F("=== XahauClient RPC offline | BuildCatalog ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -116,10 +116,10 @@ void setup() {
        xahau::rpcBuildDepositAuthorized(s_addrA, s_addrB, s_req, sizeof(s_req)));
   line("rpcBuildBookOffers XAH/USD",
        xahau::rpcBuildBookOffers("XAH", nullptr, "USD", s_addrB, 10, s_req, sizeof(s_req)));
-  // AMM info builder removed 2026-09-28 (EncodeOnly cut).
+  // AMM info builder removed (EncodeOnly cut).
   line("rpcBuildLedgerEntryByIndex",
        xahau::rpcBuildLedgerEntryByIndex(kHash, s_req, sizeof(s_req)));
-  // vault_info builder removed 2026-09-28 (EncodeOnly cut).
+  // vault_info builder removed (EncodeOnly cut).
   line("rpcBuildNftInfo", xahau::rpcBuildNftInfo(kHash, s_req, sizeof(s_req)));
   line("rpcBuildNftBuyOffers", xahau::rpcBuildNftBuyOffers(kHash, 10, s_req, sizeof(s_req)));
   line("rpcBuildNftSellOffers", xahau::rpcBuildNftSellOffers(kHash, 10, s_req, sizeof(s_req)));

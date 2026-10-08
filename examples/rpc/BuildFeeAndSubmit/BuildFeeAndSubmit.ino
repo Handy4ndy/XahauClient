@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — BuildFeeAndSubmit
+ * XahauClient Example - BuildFeeAndSubmit
  *
  * RPC builders: fee + submit
  *
@@ -18,7 +18,7 @@ const char* TX_BLOB_HEX = "12000022800000002400000001";
 void setup() {
   Serial.begin(115200);
   delay(1500);
-  Serial.println(F("=== XahauClient RPC offline · BuildFeeAndSubmit ==="));
+  Serial.println(F("=== XahauClient RPC offline | BuildFeeAndSubmit ==="));
 
   char req[256];
   xahau::Status st = xahau::rpcBuildFee(req, sizeof(req));

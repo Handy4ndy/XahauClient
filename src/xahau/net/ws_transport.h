@@ -1,4 +1,4 @@
-// ws_transport.h — ESP32 WebSocket JSON-RPC transport (optional)
+// ws_transport.h - ESP32 WebSocket JSON-RPC transport (optional)
 #pragma once
 
 #include "../platform/xahau_platform.h"
@@ -36,7 +36,7 @@ using WsYieldHandler = void (*)(void* user);
  * JSON-RPC over WebSocketsClient (wss).
  *
  * Connection policy:
- * - Reuses one TLS/WS session across request() calls (Wave D).
+ * - Reuses one TLS/WS session across request() calls.
  * - Injects a monotonic numeric "id" into each request and matches the response
  *   "id" so interleaved/server chatter is ignored.
  * - Unmatched TEXT frames are delivered to the stream handler (subscribe pushes).
@@ -44,7 +44,7 @@ using WsYieldHandler = void (*)(void* user);
  *
  * TLS (see docs/SECURITY.md + applyDefaultTlsPolicy):
  * - Default: SSL on; optional fingerprint / CA PEM.
- * - requireSslPin_ true without pin/CA → fail closed.
+ * - requireSslPin_ true without pin/CA -> fail closed.
  *
  * Depends on: WebSockets library, WiFi already connected.
  */
@@ -146,7 +146,7 @@ class WsXahauTransport : public IXahauTransport {
   volatile bool responseReady_;
   uint32_t nextId_;
   uint32_t expectedId_;
-  // BSS request wire buffer — never put multi-KB JSON on loopTask stack (stack canary panics).
+  // BSS request wire buffer - never put multi-KB JSON on loopTask stack (stack canary panics).
   // Tier A SetHook: submit JSON with ~8 KiB CreateCode hex blob (~17 KiB).
   char wiredReq_[17408];
   // Scratch for stream pushes (NUL-terminated for handlers).

@@ -1,4 +1,4 @@
-// account_keys.h — TicketCreate, SetRegularKey, SignerListSet
+// account_keys.h - TicketCreate, SetRegularKey, SignerListSet
 #pragma once
 
 #include "../codec/st_helpers.h"

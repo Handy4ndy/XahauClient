@@ -1,8 +1,8 @@
-# net/ — optional network transports
+# net/ - optional network transports
 
 ## Mock (always available)
 
-`Xahau/rpc/mock_transport.h` — scripted responses for host unit tests.
+`Xahau/rpc/mock_transport.h` - scripted responses for host unit tests.
 
 ## ESP32 WebSocket
 

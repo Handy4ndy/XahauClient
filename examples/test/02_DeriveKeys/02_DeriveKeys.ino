@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — 02_DeriveKeys
+ * XahauClient Example - 02_DeriveKeys
  *
  * Key derivation from family seed
  *

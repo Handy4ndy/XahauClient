@@ -1,4 +1,4 @@
-// bip66.h — minimal BIP66 DER encode for ECDSA r||s
+// bip66.h - minimal BIP66 DER encode for ECDSA r||s
 #pragma once
 
 #include <stddef.h>

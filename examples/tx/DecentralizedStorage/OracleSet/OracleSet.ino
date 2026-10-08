@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — OracleSet
+ * XahauClient Example - OracleSet
  *
  * OracleSet transaction
  *
@@ -21,12 +21,12 @@ SET_LOOP_TASK_STACK_SIZE(16 * 1024);
 #endif
 
 // ---------------------------------------------------------------------------
-// CONFIG — edit like a .js / .py script
+// CONFIG - edit like a .js / .py script
 // ---------------------------------------------------------------------------
 const char* WIFI_SSID     = "YOUR_WIFI_SSID";
 const char* WIFI_PASSWORD = "YOUR_WIFI_PASSWORD";
 
-// Classic family seed: "sEd…" (Ed25519) or "s…" (secp256k1).
+// Classic family seed: "sEd..." (Ed25519) or "s..." (secp256k1).
 const char* XAHAU_SEED    = "sEdPLACEHOLDER_REPLACE_ME";
 
 // 0 = Mainnet (NetworkID 21337), 1 = Testnet (NetworkID 21338)
@@ -50,7 +50,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · OracleSet ==="));
+  Serial.println(F("=== XahauClient | OracleSet ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -150,7 +150,7 @@ void setup() {
   // Re-apply NetworkID in case prepareCommon defaulted (it preserves if already set).
   xahau::sketch::applyNetworkId(p.common, net);
 
-  // LastUpdateTime is UNIX epoch (XLS-47). Derive from ledger close_time (Ripple→Unix).
+  // LastUpdateTime is UNIX epoch (XLS-47). Derive from ledger close_time (Ripple->Unix).
   {
     uint32_t closeRipple = 0;
     if (s_client.fetchLedgerCloseTime(closeRipple) == xahau::Status::Ok && closeRipple > 0) {

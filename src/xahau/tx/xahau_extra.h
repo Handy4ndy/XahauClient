@@ -1,4 +1,4 @@
-// xahau_extra.h — Xahau-native transaction builders (Hooks, URIToken, Remit, …)
+// xahau_extra.h - Xahau-native transaction builders (Hooks, URIToken, Remit, ...)
 #pragma once
 
 #include "../codec/tx_field_bag.h"
@@ -10,7 +10,7 @@
 namespace xahau {
 
 // ---------------------------------------------------------------------------
-// Invoke — call hooks on an account (type 99)
+// Invoke - call hooks on an account (type 99)
 // ---------------------------------------------------------------------------
 struct InvokeParams {
   TxCommon common;
@@ -19,15 +19,15 @@ struct InvokeParams {
 };
 
 // ---------------------------------------------------------------------------
-// ClaimReward — balance / IOU rewards (type 98)
+// ClaimReward - balance / IOU rewards (type 98)
 //
-// XAH genesis: set issuer = genesis (rHb9…), leave claimCurrency empty.
+// XAH genesis: set issuer = genesis (rHb9...), leave claimCurrency empty.
 //   Requires Issuer Hook that fires on ClaimReward (mainnet genesis has it;
-//   testnet genesis currently does NOT → tecNO_TARGET).
+//   testnet genesis currently does NOT -> tecNO_TARGET).
 // IOU: set issuer = IOU issuer AND claimCurrency = {currency, issuer}.
 //   Requires trustline + issuer Hook on ClaimReward (IOURewardClaim).
 // Opt-out: set optOut=true (Flags tfOptOut=1); omit issuer / claimCurrency.
-// Empty issuer without optOut is invalid for a claim (not “default genesis”).
+// Empty issuer without optOut is invalid for a claim (not "default genesis").
 // ---------------------------------------------------------------------------
 struct ClaimRewardParams {
   TxCommon common;
@@ -41,7 +41,7 @@ struct ClaimRewardParams {
 };
 
 // ---------------------------------------------------------------------------
-// Import — xPOP import / key sync (type 97)
+// Import - xPOP import / key sync (type 97)
 // ---------------------------------------------------------------------------
 struct ImportParams {
   TxCommon common;
@@ -52,7 +52,7 @@ struct ImportParams {
 };
 
 // ---------------------------------------------------------------------------
-// Remit — multi-asset push payment (type 95) — XAH amount + destination
+// Remit - multi-asset push payment (type 95) - XAH amount + destination
 // Encodes Remit.Amounts STArray (one AmountEntry), not top-level Amount.
 // ---------------------------------------------------------------------------
 struct RemitParams {
@@ -75,7 +75,7 @@ struct RemitParams {
 };
 
 // ---------------------------------------------------------------------------
-// CronSet — schedule hook self-invocations (type 93)
+// CronSet - schedule hook self-invocations (type 93)
 // ---------------------------------------------------------------------------
 struct CronSetParams {
   TxCommon common;
@@ -87,7 +87,7 @@ struct CronSetParams {
 };
 
 // ---------------------------------------------------------------------------
-// SetRemarks — key/value remarks on an owned object (type 94)
+// SetRemarks - key/value remarks on an owned object (type 94)
 // ---------------------------------------------------------------------------
 struct SetRemarksParams {
   TxCommon common;
@@ -102,7 +102,7 @@ struct SetRemarksParams {
 };
 
 // ---------------------------------------------------------------------------
-// URITokenMint (type 45) — simplified mint
+// URITokenMint (type 45) - simplified mint
 // ---------------------------------------------------------------------------
 struct URITokenMintParams {
   TxCommon common;
@@ -122,7 +122,7 @@ struct URITokenBurnParams {
 };
 
 // ---------------------------------------------------------------------------
-// URITokenBuy (type 47) — buy a listed URIToken
+// URITokenBuy (type 47) - buy a listed URIToken
 // ---------------------------------------------------------------------------
 struct URITokenBuyParams {
   TxCommon common;
@@ -155,7 +155,7 @@ struct URITokenCancelSellOfferParams {
 };
 
 // ---------------------------------------------------------------------------
-// SetHook (type 22) — install a single hook WASM blob (Tier A: CreateCode <= 8 KiB)
+// SetHook (type 22) - install a single hook WASM blob (Tier A: CreateCode <= 8 KiB)
 // ---------------------------------------------------------------------------
 struct SetHookParams {
   TxCommon common;
@@ -171,7 +171,7 @@ struct SetHookParams {
         hookApiVersion(0),
         hookFlags(1) {
     secureZero(hookNamespace, 32);
-    // default HookOn: all bits set — caller should set explicitly for production
+    // default HookOn: all bits set - caller should set explicitly for production
     for (int i = 0; i < 32; ++i) hookOn[i] = 0xFF;
   }
 };
@@ -213,12 +213,12 @@ Status buildAndSignURITokenCancelSellOffer(const KeyPair&, const URITokenCancelS
                                            char*, size_t);
 Status buildAndSignOracleSet(const KeyPair&, const OracleSetParams&, char*, size_t);
 
-// Re-export OracleSetParams from phase4 — build helper lives here for umbrella ease.
+// Re-export OracleSetParams from phase4 - build helper lives here for umbrella ease.
 // (fillOracleSet is in phase4_extra.h)
 
 
 // ---------------------------------------------------------------------------
-// Cron (type 92) — network-emitted pseudo-tx (userSubmittable=false)
+// Cron (type 92) - network-emitted pseudo-tx (userSubmittable=false)
 // No fill*/buildAndSign*. Minimal field-walker decode for known Cron fields
 // (UInt16/UInt32/Amount-XRP/Blob/AccountID). Not a general STObject reader.
 // ---------------------------------------------------------------------------

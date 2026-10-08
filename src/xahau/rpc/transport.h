@@ -1,4 +1,4 @@
-// transport.h — pluggable JSON-RPC transport (no sockets in core)
+// transport.h - pluggable JSON-RPC transport (no sockets in core)
 #pragma once
 
 #include <stddef.h>

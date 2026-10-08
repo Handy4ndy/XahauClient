@@ -2,12 +2,12 @@
 
 ## Principles
 
-1. **One serialization path** — every transaction becomes a `TxFieldBag`, then `xahauSerialize` + `signTx`. No per-tx hand-rolled binary emitters that diverge.
-2. **Core is portable** — no `String`, `Serial`, Wi-Fi, or NVS in `codec` / `crypto` / `sign`. Arduino is a consumer platform, not a core dependency.
-3. **Both curves from day one** — Ed25519 (`sEd…`) and secp256k1 (classic `s…`); signing selects the algorithm from key material.
-4. **Full catalog** — all Xahau user-submittable transaction types exist in `TxType` + registry. Maturity is per-type (`Catalog` → `Encode` → `Validate` → `Golden`).
-5. **Network is optional** — RPC JSON builders are pure string logic; sockets live behind `IXahauTransport`.
-6. **Test on host** — codec and signing are proven with Unity on `platform = native` before any flash.
+1. **One serialization path** - every transaction becomes a `TxFieldBag`, then `xahauSerialize` + `signTx`. No per-tx hand-rolled binary emitters that diverge.
+2. **Core is portable** - no `String`, `Serial`, Wi-Fi, or NVS in `codec` / `crypto` / `sign`. Arduino is a consumer platform, not a core dependency.
+3. **Both curves from day one** - Ed25519 (`sEd...`) and secp256k1 (classic `s...`); signing selects the algorithm from key material.
+4. **Full catalog** - all Xahau user-submittable transaction types exist in `TxType` + registry. Maturity is per-type (`Catalog` -> `Encode` -> `Validate` -> `Golden`).
+5. **Network is optional** - RPC JSON builders are pure string logic; sockets live behind `IXahauTransport`.
+6. **Test on host** - codec and signing are proven with Unity on `platform = native` before any flash.
 
 ## Layers
 
@@ -60,7 +60,7 @@ Typed params (PaymentParams, ...)
 ## Registry
 
 Each `TxType` has a name, wire code, maturity, and (usually) a typed filler.  
-Signing never switches on transaction type — only on the bag contents and key curve.
+Signing never switches on transaction type - only on the bag contents and key curve.
 
 ## Protocol tables
 

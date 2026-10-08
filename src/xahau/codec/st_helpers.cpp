@@ -89,14 +89,14 @@ static Status appendOraclePriceDataObject(const char* baseAsset, const char* quo
   encodeCurrency20(baseAsset, base);
   encodeCurrency20(quoteAsset, quote);
 
-  // PriceData STObject header type 14 nth 32: type < 16, field >= 16 → 0xE0, 0x20
+  // PriceData STObject header type 14 nth 32: type < 16, field >= 16 -> 0xE0, 0x20
   Status st = writeByte(out, pos, outCap, 0xE0);
   if (st != Status::Ok) return st;
   st = writeByte(out, pos, outCap, 0x20);
   if (st != Status::Ok) return st;
 
   if (hasPrice) {
-    // AssetPrice UInt64 type 3 nth 23 → 0x30, 0x17
+    // AssetPrice UInt64 type 3 nth 23 -> 0x30, 0x17
     st = writeFieldHeader(out, pos, outCap, 3, 23);
     if (st != Status::Ok) return st;
     st = writeUInt64BE(out, pos, outCap, assetPrice);

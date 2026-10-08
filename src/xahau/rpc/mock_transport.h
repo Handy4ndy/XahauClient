@@ -1,4 +1,4 @@
-// mock_transport.h — scripted IXahauTransport for host tests
+// mock_transport.h - scripted IXahauTransport for host tests
 #pragma once
 
 #include <stddef.h>
@@ -19,7 +19,7 @@ namespace xahau {
 
 /**
  * Matches requests by substring (e.g. "account_info") and returns a canned JSON body.
- * Call order is FIFO among scripts that match; unmatched → TransportFailed.
+ * Call order is FIFO among scripts that match; unmatched -> TransportFailed.
  */
 class MockXahauTransport : public IXahauTransport {
  public:

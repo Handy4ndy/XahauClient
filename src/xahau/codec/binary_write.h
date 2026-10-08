@@ -1,4 +1,4 @@
-// binary_write.h — low-level Xahau binary field writers
+// binary_write.h - low-level Xahau binary field writers
 #pragma once
 
 #include <stddef.h>

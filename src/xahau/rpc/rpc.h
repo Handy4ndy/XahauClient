@@ -1,4 +1,4 @@
-// rpc.h — pure JSON-RPC request builders + response parsers (no I/O)
+// rpc.h - pure JSON-RPC request builders + response parsers (no I/O)
 #pragma once
 
 #include <stddef.h>
@@ -103,7 +103,7 @@ Status rpcBuildLedgerEntryAccountRoot(const char* account, char* out, size_t out
 // Transactions
 Status rpcBuildTx(const char* txHashHex, bool binary, char* out, size_t outCap);
 Status rpcBuildSubmitMultisigned(const char* txJson, char* out, size_t outCap);
-/** transaction_entry — tx must be in the specified ledger. */
+/** transaction_entry - tx must be in the specified ledger. */
 Status rpcBuildTransactionEntry(const char* txHashHex, const char* ledgerIndex, char* out,
                                 size_t outCap);
 
@@ -112,7 +112,7 @@ Status rpcBuildDepositAuthorized(const char* sourceAccount, const char* destinat
                                  char* out, size_t outCap);
 /* AMM info JSON builder removed 2026-09-28 (EncodeOnly cut). */
 /**
- * book_offers: XAH/XRP-style vs issued currency (empty issuer => native on that side is invalid —
+ * book_offers: XAH/XRP-style vs issued currency (empty issuer => native on that side is invalid - 
  * pass currency "XAH" (or "XRP" alias) with null/empty issuer for pure native side).
  * gets/pays: ISO code or 40-hex currency; issuer classic address or empty for native (XAH).
  */
@@ -223,7 +223,7 @@ Status rpcParseAccountInfoSnapshot(const char* json, AccountInfoSnapshot& out);
 
 /**
  * Collect up to maxIds 32-byte indexes from "index":"<64 hex>" occurrences in JSON.
- * Optionally require a nearby type marker (e.g. "\"LedgerEntryType\":\"Escrow\"") —
+ * Optionally require a nearby type marker (e.g. "\"LedgerEntryType\":\"Escrow\"") - 
  * pass typeMarker=nullptr to accept all indexes.
  */
 Status rpcParseObjectIds(const char* json, const char* typeMarker, uint8_t outIds[][32],
@@ -237,7 +237,7 @@ Status rpcParseFirstObjectId(const char* json, const char* typeMarker, uint8_t o
 Status rpcHexToHash256(const char* hex64, uint8_t out[32]);
 
 // ---------------------------------------------------------------------------
-// Stream (subscription push) parsers — HandySockets / ledger-monitor style
+// Stream (subscription push) parsers - HandySockets / ledger-monitor style
 // ---------------------------------------------------------------------------
 
 enum class StreamMessageType : uint8_t {
@@ -258,7 +258,7 @@ Status rpcParseStreamMessageType(const char* json, StreamMessageType& out);
 
 /**
  * ledgerClosed stream fields (subset used by monitors).
- * Struct may grow — zero-initialize whole struct before parse.
+ * Struct may grow - zero-initialize whole struct before parse.
  * hash is 64 hex chars + NUL when present.
  */
 struct LedgerClosedEvent {
@@ -276,13 +276,13 @@ struct LedgerClosedEvent {
 
 Status rpcParseLedgerClosedEvent(const char* json, LedgerClosedEvent& out);
 
-/** Optional long field — caller supplies buffer (range string can be large). */
+/** Optional long field - caller supplies buffer (range string can be large). */
 Status rpcParseLedgerClosedValidatedLedgers(const char* json, char* out, size_t outCap);
 
 /**
  * Transaction stream: type "transaction" (accounts / books / global streams).
  * Prefers API v2 top-level hash/engine_result; also scans nested tx_json fields.
- * Struct may grow — zero-initialize whole struct before parse.
+ * Struct may grow - zero-initialize whole struct before parse.
  */
 struct TransactionStreamEvent {
   char hash[65];

@@ -1,4 +1,4 @@
-// Phase4 host tests — OracleSet + protocol field table (EncodeOnly families cut 2026-09-28)
+// Phase4 host tests - OracleSet + protocol field table (EncodeOnly families cut 2026-09-28)
 #include <unity.h>
 #include <string.h>
 #include "XahauClient.h"

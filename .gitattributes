@@ -1,7 +1,7 @@
 # Auto detect text files; normalize line endings
 * text=auto
 
-# Source / docs — LF in repo
+# Source / docs - LF in repo
 *.ino text eol=lf
 *.h text eol=lf
 *.hpp text eol=lf

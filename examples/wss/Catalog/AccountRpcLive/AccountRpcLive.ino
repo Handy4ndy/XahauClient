@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — AccountRpcLive
+ * XahauClient Example - AccountRpcLive
  *
  * Live account_* RPC catalog
  *
@@ -89,7 +89,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient WSS live · AccountRpc catalog ==="));
+  Serial.println(F("=== XahauClient WSS live | AccountRpc catalog ==="));
   Serial.println(XAHAU_CLIENT_VERSION);
 
   if (!xahau::sketch::wifiConnect(WIFI_SSID, WIFI_PASSWORD)) {

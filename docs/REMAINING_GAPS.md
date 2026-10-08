@@ -2,8 +2,8 @@
 
 Summary for **XahauClient 0.3.1**.
 
-This lists what is **intentionally open** — not defects in the published ship surface.
-Encode-only XRPL-port fill/sign APIs were removed from library `src` on 2026-09-28 (catalog type codes only). Details: [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md), [LIBRARY_ROADMAP.md](LIBRARY_ROADMAP.md).
+This lists what is **intentionally open** - not defects in the published ship surface.
+Encode-only XRPL-port fill/sign APIs were removed from library `src` (catalog type codes only). Details: [ENCODE_ONLY_STUBS.md](ENCODE_ONLY_STUBS.md), [LIBRARY_ROADMAP.md](LIBRARY_ROADMAP.md).
 
 ## Intentional opens
 

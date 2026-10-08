@@ -8,7 +8,7 @@
 void test_field_header_compact() {
   uint8_t buf[8];
   size_t pos = 0;
-  // TransactionType = type 1, nth 2 → 0x12
+  // TransactionType = type 1, nth 2 -> 0x12
   TEST_ASSERT_EQUAL(xahau::Status::Ok, xahau::writeFieldHeader(buf, pos, sizeof(buf), 1, 2));
   TEST_ASSERT_EQUAL_UINT(1, pos);
   TEST_ASSERT_EQUAL_HEX8(0x12, buf[0]);

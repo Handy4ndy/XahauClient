@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — 05_MultiSignOffline
+ * XahauClient Example - 05_MultiSignOffline
  *
  * Offline multi-sign
  *
@@ -18,13 +18,13 @@ const char* XAHAU_SEED = "sEdPLACEHOLDER_REPLACE_ME";
 void setup() {
   Serial.begin(115200);
   delay(1500);
-  Serial.println(F("=== XahauClient · MultiSign Offline ==="));
+  Serial.println(F("=== XahauClient | MultiSign Offline ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
   xahau::KeyPair keys;
   if (xahau::deriveKeysFromSeed(XAHAU_SEED, keys) != xahau::Status::Ok) {
-    Serial.println(F("Bad seed — paste a faucet sEd… seed for a real encode."));
+    Serial.println(F("Bad seed - paste a faucet sEd... seed for a real encode."));
     return;
   }
   Serial.print(F("Account: "));

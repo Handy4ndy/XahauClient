@@ -1,4 +1,4 @@
-// phase2_extra.h — Escrow, Check, PayChan, misc fills (Phase 2; NFToken encode stubs removed 2026-09-28)
+// phase2_extra.h - Escrow, Check, PayChan, misc fills (Phase 2; NFToken encode stubs removed 2026-09-28)
 #pragma once
 
 #include "../codec/tx_field_bag.h"
@@ -111,7 +111,7 @@ struct AccountDeleteParams {
   AccountDeleteParams() { destination[0] = '\0'; }
 };
 /**
- * Clawback — trust-line IOU or MPT.
+ * Clawback - trust-line IOU or MPT.
  * IOU: Amount = Issued (issuer field = holder), omit Holder.
  * MPT: Amount = Mpt (issuance + value), Holder required; create needs tfMPTCanClawback.
  */

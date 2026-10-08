@@ -26,14 +26,14 @@ Status buildSignersArray(const MultiSigner* signers, uint8_t count, uint8_t* out
   size_t pos = 0;
   for (uint8_t i = 0; i < count; ++i) {
     if (signers[i].signatureLen == 0) return Status::MissingField;
-    // Signer STObject header: type 14 nth 16 → 0xE0, 0x10 (type<16, field>=16)
+    // Signer STObject header: type 14 nth 16 -> 0xE0, 0x10 (type<16, field>=16)
     Status st = writeByte(out, pos, outCap, 0xE0);
     if (st != Status::Ok) return st;
     st = writeByte(out, pos, outCap, 0x10);
     if (st != Status::Ok) return st;
 
     // Canonical field order inside Signer (ascending type/nth):
-    //   SigningPubKey (7,3) → TxnSignature (7,4) → Account (8,1)
+    //   SigningPubKey (7,3) -> TxnSignature (7,4) -> Account (8,1)
     // (Account-first wire order is non-canonical and yields invalidTransaction.)
 
     // SigningPubKey (7,3)
@@ -85,7 +85,7 @@ Status multiSignMessage(const TxFieldBag& bag, const uint8_t signerAccountId[20]
   // HashPrefix::transactionMultiSig = "SMT\0"
   // Wire for multi-sign (ripple-binary-codec multiSigningData):
   //   SMT\0 || serialized_tx (no TxnSignature/Signers) || AccountID(20) as SUFFIX
-  // (Account is after the tx body — not between prefix and body.)
+  // (Account is after the tx body - not between prefix and body.)
   static const uint8_t kPrefix[4] = {0x53, 0x4D, 0x54, 0x00};
   const size_t need = 4 + unsignedLen + 20;
   if (need > outMsgCap) return Status::BufferTooSmall;

@@ -1,4 +1,4 @@
-// ws_transport.cpp — ESP32 WebSocket transport (persistent + JSON-RPC id match)
+// ws_transport.cpp - ESP32 WebSocket transport (persistent + JSON-RPC id match)
 //
 // IMPORTANT: Arduino IDE compiles this file with library flags only (not sketch
 // #defines). XAHAU_FEATURE_NET defaults to 1 on Arduino so this TU is not empty.
@@ -168,7 +168,7 @@ void WsXahauTransport::onEvent(WStype_t type, uint8_t* payload, size_t length) {
         if (n + 1 > respCap_) {
           // Truncate oversized RPC into respBuf_ (engine_result/hash are near the
           // start of submit responses). Previously we dropped the frame, which
-          // left request() spinning until Status::Timeout with empty hash —
+          // left request() spinning until Status::Timeout with empty hash - 
           // the SetHook BIP serial reliability failure mode on ESP32.
           size_t copy = respCap_ - 1;
           memcpy(respBuf_, payload, copy);
@@ -178,7 +178,7 @@ void WsXahauTransport::onEvent(WStype_t type, uint8_t* payload, size_t length) {
             responseReady_ = true;
             break;
           }
-          // Uncorrelated oversized — may still be a stream push.
+          // Uncorrelated oversized - may still be a stream push.
           if (streamHandler_) {
             size_t sn = copy;
             if (sn >= sizeof(streamScratch_)) sn = sizeof(streamScratch_) - 1;
@@ -195,7 +195,7 @@ void WsXahauTransport::onEvent(WStype_t type, uint8_t* payload, size_t length) {
           responseReady_ = true;
           break;
         }
-        // Unmatched while waiting (ledgerClosed etc.) → stream handler
+        // Unmatched while waiting (ledgerClosed etc.) -> stream handler
         if (streamHandler_) {
           size_t sn = n;
           if (sn >= sizeof(streamScratch_)) sn = sizeof(streamScratch_) - 1;
@@ -264,7 +264,7 @@ Status WsXahauTransport::request(const char* jsonReq, char* resp, size_t respCap
   if (!jsonReq || !resp || respCap < 2 || !host_) return Status::InvalidArgument;
 
   // Inject numeric id for response correlation: {"id":N, ...}
-  // Use member BSS buffer wiredReq_ — stack char wired[3200] + TLS blew loopTask canary
+  // Use member BSS buffer wiredReq_ - stack char wired[3200] + TLS blew loopTask canary
   // (ClientTest panics on server_info / account_lines / ledger).
   const uint32_t reqId = nextId_++;
   if (nextId_ == 0) nextId_ = 1;
@@ -289,7 +289,7 @@ Status WsXahauTransport::request(const char* jsonReq, char* resp, size_t respCap
   }
 
   if (!ws_.sendTXT(wiredReq_)) {
-    // Connection may be half-dead — force reconnect once.
+    // Connection may be half-dead - force reconnect once.
     close();
     cst = ensureConnected(timeoutMs);
     if (cst != Status::Ok) {

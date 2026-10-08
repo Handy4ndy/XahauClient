@@ -1,4 +1,4 @@
-// keys.h — seed derivation and keypair management (Ed25519 + secp256k1)
+// keys.h - seed derivation and keypair management (Ed25519 + secp256k1)
 #pragma once
 
 #include "../core/xahau_error.h"
@@ -9,8 +9,8 @@ namespace xahau {
 
 /**
  * Derive KeyPair from classic family seed (base58).
- * - sEd… → Curve::Ed25519
- * - s… (non-Ed) → Curve::Secp256k1
+ * - sEd... -> Curve::Ed25519
+ * - s... (non-Ed) -> Curve::Secp256k1
  */
 Status deriveKeysFromSeed(const char* seedBase58, KeyPair& out);
 
@@ -20,9 +20,9 @@ Status deriveKeysFromSeed(const char* seedBase58, Curve curve, KeyPair& out);
 /**
  * Encode a family seed from 16 bytes of entropy (does **not** generate randomness).
  * Caller must supply cryptographically secure entropy (e.g. hardware RNG).
- * - Curve::Ed25519 → sEd…
- * - Curve::Secp256k1 → classic s…
- * @param outCap Must be ≥ kFamilySeedBufSize (32).
+ * - Curve::Ed25519 -> sEd...
+ * - Curve::Secp256k1 -> classic s...
+ * @param outCap Must be >= kFamilySeedBufSize (32).
  *
  * Application note: after encrypting the seed into a vault, it is not recoverable
  * from the device. Always instruct the user to copy and store the seed offline

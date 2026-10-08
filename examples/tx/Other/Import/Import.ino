@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — Import
+ * XahauClient Example - Import
  *
  * Import transaction (encode; needs xPOP to submit)
  *
@@ -27,14 +27,14 @@ const int   XAHAU_NETWORK = 1;
 const bool  DO_SUBMIT     = false;  // offline by default for library example
 const bool  PRINT_BLOB    = true;
 
-// Minimal fake blob so fillImport encodes (NOT a valid xPOP — encode path only).
+// Minimal fake blob so fillImport encodes (NOT a valid xPOP - encode path only).
 static const uint8_t kFakeXpop[8] = {0xDE, 0xAD, 0xBE, 0xEF, 0x01, 0x02, 0x03, 0x04};
 
 void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · Import ==="));
+  Serial.println(F("=== XahauClient | Import ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
 
@@ -70,7 +70,7 @@ void setup() {
   auto doSign = [&]() -> xahau::Status {
     return xahau::buildAndSignImport(keys, p, s_blob, sizeof(s_blob));
   };
-  Serial.println(F("NOTE: fake xPOP — DO_SUBMIT should stay false until a real fixture."));
+  Serial.println(F("NOTE: fake xPOP - DO_SUBMIT should stay false until a real fixture."));
 
   st = doSign();
   Serial.print(F("sign: "));
@@ -84,7 +84,7 @@ void setup() {
     Serial.println(s_blob);
   }
   if (!DO_SUBMIT) {
-    Serial.println(F("DO_SUBMIT=false — offline only. Done."));
+    Serial.println(F("DO_SUBMIT=false - offline only. Done."));
     xahau::secureClear(keys);
     return;
   }
@@ -118,7 +118,7 @@ void setup() {
   }
   xahau::sketch::submitAndLog(s_client, s_blob);
 #else
-  Serial.println(F("XAHAU_FEATURE_NET disabled — cannot submit."));
+  Serial.println(F("XAHAU_FEATURE_NET disabled - cannot submit."));
 #endif
   xahau::secureClear(keys);
   Serial.println(F("Done."));

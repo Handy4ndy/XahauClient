@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — Remit
+ * XahauClient Example - Remit
  *
  * Remit transaction
  *
@@ -30,10 +30,10 @@ const bool  PRINT_BLOB    = true;
 // 0=XAH  1=+MintURIToken  2=XAH+USD  3=URITokenIDs  4=XAH+USD+URITokenIDs
 const int   REMIT_MODE    = 2;  // showcase multi-IOU by default in this example
 const char* MINT_URI      = "https://example.com/remit-mint/1";
-// IOU issuer for modes 2/4 — replace with a real issuer before live submit
+// IOU issuer for modes 2/4 - replace with a real issuer before live submit
 const char* USD_ISSUER    = "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh";
 const char* DEST_ACCOUNT  = "rYOUR_DESTINATION_ADDRESS";  // replace with your destination r-address
-// Placeholder URITokenID for modes 3/4 (64 hex) — replace before live
+// Placeholder URITokenID for modes 3/4 (64 hex) - replace before live
 const char* URI_TOKEN_ID_HEX =
     "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";
 
@@ -41,7 +41,7 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   Serial.println();
-  Serial.println(F("=== XahauClient · Remit ==="));
+  Serial.println(F("=== XahauClient | Remit ==="));
   Serial.print(F("Library "));
   Serial.println(XAHAU_CLIENT_VERSION);
   Serial.print(F("REMIT_MODE="));
@@ -131,7 +131,7 @@ void setup() {
     Serial.println(s_blob);
   }
   if (!DO_SUBMIT) {
-    Serial.println(F("DO_SUBMIT=false — offline only. Done."));
+    Serial.println(F("DO_SUBMIT=false - offline only. Done."));
     xahau::secureClear(keys);
     return;
   }
@@ -172,7 +172,7 @@ void setup() {
   }
   xahau::sketch::submitAndLog(s_client, s_blob);
 #else
-  Serial.println(F("XAHAU_FEATURE_NET disabled — cannot submit."));
+  Serial.println(F("XAHAU_FEATURE_NET disabled - cannot submit."));
 #endif
   xahau::secureClear(keys);
   Serial.println(F("Done."));

@@ -1,4 +1,4 @@
-// rpc.cpp — JSON-RPC builders/parsers without ArduinoJson
+// rpc.cpp - JSON-RPC builders/parsers without ArduinoJson
 #include "rpc.h"
 
 #include "../crypto/base58.h"
@@ -38,7 +38,7 @@ static bool isSafeAccountId(const char* s) {
     if (!isBase58Char(*p)) return false;
     if (n >= 40) return false;
   }
-  if (n < 25) return false;  // typical classic addresses ~25–35 chars
+  if (n < 25) return false;  // typical classic addresses ~25-35 chars
   uint8_t accountId[20];
   return decodeClassicAddress(s, accountId) == Status::Ok;
 }
@@ -536,7 +536,7 @@ Status rpcBuildAccountOffers(const char* account, uint32_t limit, char* out, siz
 }
 
 Status rpcBuildGatewayBalances(const char* account, char* out, size_t outCap) {
-  // strict account, ledger validated — hot/cold wallet inventory for issuers
+  // strict account, ledger validated - hot/cold wallet inventory for issuers
   return buildAccountCmdValidated("gateway_balances", account, out, outCap);
 }
 
@@ -1188,7 +1188,7 @@ Status rpcParseTransactionStreamEvent(const char* json, TransactionStreamEvent& 
       Status::Ok) {
     out.engineResult[0] = '\0';
   }
-  // TransactionType / Account / Destination — first match (often under tx_json)
+  // TransactionType / Account / Destination - first match (often under tx_json)
   if (rpcParseStringField(json, "\"TransactionType\"", out.txType, sizeof(out.txType)) !=
       Status::Ok) {
     out.txType[0] = '\0';
@@ -1204,7 +1204,7 @@ Status rpcParseTransactionStreamEvent(const char* json, TransactionStreamEvent& 
   if (rpcParseUIntField(json, "\"ledger_index\"", led) == Status::Ok) {
     out.ledgerIndex = static_cast<uint32_t>(led);
   }
-  // validated may be bool true without quotes — simple scan
+  // validated may be bool true without quotes - simple scan
   out.validated = (strstr(json, "\"validated\":true") != nullptr) ||
                   (strstr(json, "\"validated\": true") != nullptr);
   out.valid = (out.hash[0] != '\0' || out.txType[0] != '\0' || out.engineResult[0] != '\0');

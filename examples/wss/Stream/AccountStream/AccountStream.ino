@@ -1,5 +1,5 @@
 /**
- * XahauClient Example — AccountStream
+ * XahauClient Example - AccountStream
  *
  * WSS account stream subscribe
  *

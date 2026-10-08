@@ -1,7 +1,7 @@
-// sign.cpp — STX-prefix signing (Ed25519 raw + secp256k1 RFC6979 DER)
+// sign.cpp - STX-prefix signing (Ed25519 raw + secp256k1 RFC6979 DER)
 //
 // Host: stack-local buffers (re-entrant).
-// Arduino/ESP: static BSS buffers — WebSocketsClient + TxFieldBag already
+// Arduino/ESP: static BSS buffers - WebSocketsClient + TxFieldBag already
 // blow the default ~8 KiB task stack if signTx also uses ~3.5 KiB stack.
 #include "sign.h"
 

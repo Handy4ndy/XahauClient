@@ -1,6 +1,6 @@
 # XahauClient transaction examples
 
-Xahau **mainnet/testnet** live tree only (2026-09-28). Non-Xahau / amendment-absent
+Xahau **mainnet/testnet** live tree only. Non-Xahau / amendment-absent
 sketches archived to a maintainer archive.
 
 Grouped to match **Xahau** transaction feature areas:
@@ -128,7 +128,7 @@ Moved (not deleted) to a maintainer archive:
 | XChain* (`SideChains/`) | Intentional gap / not on public nets |
 | Batch, DelegateSet | XRPL-port EncodeOnly |
 
-Library `src` EncodeOnly fill/sign helpers were **also removed** 2026-09-28 (catalog codes only; bak `results/.bak-encodeonly-src-2026-09-28/`). See [ENCODE_ONLY_STUBS.md](../../docs/ENCODE_ONLY_STUBS.md).
+Library `src` EncodeOnly fill/sign helpers were **also removed** (catalog codes only; bak a maintainer archive). See [ENCODE_ONLY_STUBS.md](../../docs/ENCODE_ONLY_STUBS.md).
 
 ## Notes
 
