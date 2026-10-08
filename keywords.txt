@@ -1,0 +1,156 @@
+#######################################
+# Syntax Coloring Map For XahauClient
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+XahauClient	KEYWORD1
+XahauKeyPair	KEYWORD1
+XahauCurve	KEYWORD1
+XahauStatus	KEYWORD1
+XahauAmount	KEYWORD1
+KeyPair	KEYWORD1
+TxFieldBag	KEYWORD1
+TxCommon	KEYWORD1
+TxType	KEYWORD1
+Amount	KEYWORD1
+PaymentParams	KEYWORD1
+AccountSetParams	KEYWORD1
+AccountDeleteParams	KEYWORD1
+TrustSetParams	KEYWORD1
+OfferCreateParams	KEYWORD1
+OfferCancelParams	KEYWORD1
+CheckCreateParams	KEYWORD1
+CheckCashParams	KEYWORD1
+CheckCancelParams	KEYWORD1
+EscrowCreateParams	KEYWORD1
+EscrowFinishParams	KEYWORD1
+EscrowCancelParams	KEYWORD1
+PaymentChannelCreateParams	KEYWORD1
+PaymentChannelFundParams	KEYWORD1
+PaymentChannelClaimParams	KEYWORD1
+DepositPreauthParams	KEYWORD1
+ClawbackParams	KEYWORD1
+TicketCreateParams	KEYWORD1
+SetRegularKeyParams	KEYWORD1
+SignerListSetParams	KEYWORD1
+OracleSetParams	KEYWORD1
+OracleDeleteParams	KEYWORD1
+InvokeParams	KEYWORD1
+HookParamWire	KEYWORD1
+SetHookParams	KEYWORD1
+ClaimRewardParams	KEYWORD1
+ImportParams	KEYWORD1
+RemitParams	KEYWORD1
+CronSetParams	KEYWORD1
+SetRemarksParams	KEYWORD1
+URITokenMintParams	KEYWORD1
+URITokenBurnParams	KEYWORD1
+URITokenBuyParams	KEYWORD1
+URITokenCreateSellOfferParams	KEYWORD1
+URITokenCancelSellOfferParams	KEYWORD1
+SubscribeParams	KEYWORD1
+NetworkEndpoint	KEYWORD1
+WsXahauTransport	KEYWORD1
+XahauRpcClient	KEYWORD1
+MockXahauTransport	KEYWORD1
+IXahauTransport	KEYWORD1
+MultiSigner	KEYWORD1
+SubmitResult	KEYWORD1
+FeeAndLedger	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+deriveKeysFromSeed	KEYWORD2
+xahauDeriveKeysFromSeed	KEYWORD2
+signTx	KEYWORD2
+prepareCommon	KEYWORD2
+prepareCommonForTx	KEYWORD2
+applyNetworkId	KEYWORD2
+seedFromEntropy	KEYWORD2
+rpcBuildFeeWithTxBlob	KEYWORD2
+buildHookParameters	KEYWORD2
+setHookCreateFeeDrops	KEYWORD2
+fillPayment	KEYWORD2
+fillAccountSet	KEYWORD2
+fillAccountDelete	KEYWORD2
+fillTrustSet	KEYWORD2
+fillOfferCreate	KEYWORD2
+fillOfferCancel	KEYWORD2
+fillCheckCreate	KEYWORD2
+fillCheckCash	KEYWORD2
+fillCheckCancel	KEYWORD2
+fillEscrowCreate	KEYWORD2
+fillEscrowFinish	KEYWORD2
+fillEscrowCancel	KEYWORD2
+fillPaymentChannelCreate	KEYWORD2
+fillPaymentChannelFund	KEYWORD2
+fillPaymentChannelClaim	KEYWORD2
+fillDepositPreauth	KEYWORD2
+fillClawback	KEYWORD2
+fillTicketCreate	KEYWORD2
+fillSetRegularKey	KEYWORD2
+fillSignerListSet	KEYWORD2
+fillOracleSet	KEYWORD2
+fillOracleDelete	KEYWORD2
+fillInvoke	KEYWORD2
+fillSetHook	KEYWORD2
+fillClaimReward	KEYWORD2
+fillImport	KEYWORD2
+fillRemit	KEYWORD2
+fillCronSet	KEYWORD2
+fillSetRemarks	KEYWORD2
+fillURITokenMint	KEYWORD2
+fillURITokenBurn	KEYWORD2
+fillURITokenBuy	KEYWORD2
+fillURITokenCreateSellOffer	KEYWORD2
+fillURITokenCancelSellOffer	KEYWORD2
+buildAndSignPayment	KEYWORD2
+buildAndSignAccountSet	KEYWORD2
+buildAndSignAccountDelete	KEYWORD2
+buildAndSignTrustSet	KEYWORD2
+buildAndSignOfferCreate	KEYWORD2
+buildAndSignOfferCancel	KEYWORD2
+buildAndSignCheckCreate	KEYWORD2
+buildAndSignCheckCash	KEYWORD2
+buildAndSignCheckCancel	KEYWORD2
+buildAndSignEscrowCreate	KEYWORD2
+buildAndSignEscrowFinish	KEYWORD2
+buildAndSignEscrowCancel	KEYWORD2
+buildAndSignPaymentChannelCreate	KEYWORD2
+buildAndSignPaymentChannelFund	KEYWORD2
+buildAndSignPaymentChannelClaim	KEYWORD2
+buildAndSignDepositPreauth	KEYWORD2
+buildAndSignClawback	KEYWORD2
+buildAndSignTicketCreate	KEYWORD2
+buildAndSignSetRegularKey	KEYWORD2
+buildAndSignSignerListSet	KEYWORD2
+buildAndSignOracleSet	KEYWORD2
+buildAndSignOracleDelete	KEYWORD2
+buildAndSignInvoke	KEYWORD2
+buildAndSignURITokenMint	KEYWORD2
+buildAndSignURITokenBurn	KEYWORD2
+buildAndSignURITokenBuy	KEYWORD2
+buildAndSignURITokenCreateSellOffer	KEYWORD2
+buildAndSignURITokenCancelSellOffer	KEYWORD2
+buildAndSignRemit	KEYWORD2
+buildAndSignCronSet	KEYWORD2
+buildAndSignClaimReward	KEYWORD2
+buildAndSignImport	KEYWORD2
+buildAndSignSetRemarks	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+XAHAU_CLIENT_VERSION	LITERAL1
+XAHAU_CLIENT_VERSION_MAJOR	LITERAL1
+XAHAU_CLIENT_VERSION_MINOR	LITERAL1
+XAHAU_CLIENT_VERSION_PATCH	LITERAL1
+XAHAU_FEATURE_NET	LITERAL1
+XAHAU_FEATURE_ED25519	LITERAL1
+XAHAU_FEATURE_SECP256K1	LITERAL1

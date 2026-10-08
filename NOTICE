@@ -1,0 +1,12 @@
+XahauClient
+Copyright (c) 2026 Xspence LTD / Andrew Spencer
+
+This product includes software developed for dual-curve Xahau cryptography.
+See src/xahau/crypto/vendor/NOTICE.md for third-party components and licenses:
+
+  - Arduino Crypto (MIT) - Ed25519, SHA-512, Curve25519 helpers
+  - micro-ecc (BSD-2-Clause) - secp256k1 ECDSA
+
+The Xahau and XRP Ledger protocols and trademarks are the property of their respective owners.
+This library is an independent open-source client implementation and is not
+affiliated with Ripple, the XRPL Foundation, or the Xahau Foundation.

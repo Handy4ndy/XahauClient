@@ -1,0 +1,33 @@
+{
+  "note": "Placeholder expected seeds/addresses in public tree. Host tests use test_seeds.local.h. NEVER fund fixture accounts.",
+  "vectors": [
+    {
+      "name": "demo_ed25519",
+      "curve": "ed25519",
+      "entropyHex": "00000000000000000000000000000000",
+      "seed": "sEdPLACEHOLDER_ED1",
+      "address": "rYOUR_DESTINATION_ADDRESS"
+    },
+    {
+      "name": "demo_secp256k1",
+      "curve": "secp256k1",
+      "entropyHex": "00000000000000000000000000000000",
+      "seed": "sPLACEHOLDER_SECP1",
+      "address": "rYOUR_DESTINATION_ADDRESS"
+    },
+    {
+      "name": "fixed_ed25519",
+      "curve": "ed25519",
+      "entropyHex": "00000000000000000000000000000000",
+      "seed": "sEdPLACEHOLDER_ED2",
+      "address": "rYOUR_DESTINATION_ADDRESS"
+    },
+    {
+      "name": "fixed_secp256k1",
+      "curve": "secp256k1",
+      "entropyHex": "00000000000000000000000000000000",
+      "seed": "sPLACEHOLDER_SECP2",
+      "address": "rYOUR_DESTINATION_ADDRESS"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "hash": "8C07EBB4311FAD8F3BBB79C0A9FC55421303E7B51CE3D2D3447736DE5ADB8493",
+  "network": "xahau-testnet",
+  "transactionType": "Cron",
+  "typeCode": 92,
+  "sequence": 0,
+  "ledgerSequence": 12660697,
+  "owner": "rKkhqpbHdfftZddwLFocxfQvCjGcUG3nqU",
+  "account": "rrrrrrrrrrrrrrrrrrrrrhoLvTp",
+  "feeDrops": 0,
+  "blobHexFile": "emitted_cron_testnet.hex",
+  "captured": "2026-09-26",
+  "notes": "account_tx Cron on Primary after CronSet; binary from tx RPC binary=true"
+}

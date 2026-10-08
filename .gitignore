@@ -1,0 +1,89 @@
+# ---------------------------------------------------------------------------
+# XahauClient — Arduino / PlatformIO library .gitignore
+# ---------------------------------------------------------------------------
+
+# PlatformIO / build
+.pio/
+.pioenvs/
+.piolibdeps/
+.piopm
+build/
+cmake-build-*/
+CompileCommands/
+compile_commands.json
+
+# Object / binary artifacts
+*.o
+*.a
+*.exe
+*.out
+*.bin
+*.elf
+*.map
+*.hex
+*.dblite
+
+# IDE / editor
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Python (protocol scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.env/
+.Python
+
+# Logs / temp / scratch
+*.log
+*.tmp
+*.temp
+*.bak
+*.bak_*
+*.bak*
+*~
+
+# Internal / maintainer (never ship)
+results/
+AUDIT_*.md
+ClientTest/
+
+# Secrets — never commit real credentials
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+secrets.h
+arduino_secrets.h
+*_secrets.h
+!*_secrets.h.example
+!*_secrets.h.template
+!*_secrets.example.h
+secrets.local.*
+secrets.json
+wifi_config.h
+wifi_credentials.h
+!*wifi_config.h.example
+!*wifi_credentials.h.example
+!*wifi_config.h.template
+
+# Host-test fixture seeds (never commit)
+test/native/test_seeds.local.h
+

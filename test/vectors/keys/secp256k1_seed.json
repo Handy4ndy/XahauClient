@@ -1,0 +1,8 @@
+{
+  "curve": "secp256k1",
+  "seed": "sPLACEHOLDER_SECP1",
+  "address": "rYOUR_DESTINATION_ADDRESS",
+  "publicKeyHex": "000000000000000000000000000000000000000000000000000000000000000000",
+  "privateKeyHex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "note": "Placeholder key material in public tree. Real fixtures live in test/native/test_seeds.local.h (gitignored)."
+}

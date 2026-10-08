@@ -1,0 +1,3615 @@
+{
+  "generated": "2026-07-11T09:52:08.172442+00:00",
+  "source": "protocol/definitions (generated; see protocol/scripts/generate_fields.py)",
+  "fields": [
+    {
+      "name": "LedgerEntryType",
+      "typeCode": 1,
+      "nth": 1,
+      "fieldCode": 65537,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TransactionType",
+      "typeCode": 1,
+      "nth": 2,
+      "fieldCode": 65538,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SignerWeight",
+      "typeCode": 1,
+      "nth": 3,
+      "fieldCode": 65539,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TransferFee",
+      "typeCode": 1,
+      "nth": 4,
+      "fieldCode": 65540,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TradingFee",
+      "typeCode": 1,
+      "nth": 5,
+      "fieldCode": 65541,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DiscountedFee",
+      "typeCode": 1,
+      "nth": 6,
+      "fieldCode": 65542,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Version",
+      "typeCode": 1,
+      "nth": 16,
+      "fieldCode": 65552,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookStateChangeCount",
+      "typeCode": 1,
+      "nth": 17,
+      "fieldCode": 65553,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookEmitCount",
+      "typeCode": 1,
+      "nth": 18,
+      "fieldCode": 65554,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookExecutionIndex",
+      "typeCode": 1,
+      "nth": 19,
+      "fieldCode": 65555,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookApiVersion",
+      "typeCode": 1,
+      "nth": 20,
+      "fieldCode": 65556,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LedgerFixType",
+      "typeCode": 1,
+      "nth": 21,
+      "fieldCode": 65557,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ManagementFeeRate",
+      "typeCode": 1,
+      "nth": 22,
+      "fieldCode": 65558,
+      "typeName": "UINT16",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NetworkID",
+      "typeCode": 2,
+      "nth": 1,
+      "fieldCode": 131073,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Flags",
+      "typeCode": 2,
+      "nth": 2,
+      "fieldCode": 131074,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SourceTag",
+      "typeCode": 2,
+      "nth": 3,
+      "fieldCode": 131075,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Sequence",
+      "typeCode": 2,
+      "nth": 4,
+      "fieldCode": 131076,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PreviousTxnLgrSeq",
+      "typeCode": 2,
+      "nth": 5,
+      "fieldCode": 131077,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LedgerSequence",
+      "typeCode": 2,
+      "nth": 6,
+      "fieldCode": 131078,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "CloseTime",
+      "typeCode": 2,
+      "nth": 7,
+      "fieldCode": 131079,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ParentCloseTime",
+      "typeCode": 2,
+      "nth": 8,
+      "fieldCode": 131080,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SigningTime",
+      "typeCode": 2,
+      "nth": 9,
+      "fieldCode": 131081,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Expiration",
+      "typeCode": 2,
+      "nth": 10,
+      "fieldCode": 131082,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TransferRate",
+      "typeCode": 2,
+      "nth": 11,
+      "fieldCode": 131083,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "WalletSize",
+      "typeCode": 2,
+      "nth": 12,
+      "fieldCode": 131084,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OwnerCount",
+      "typeCode": 2,
+      "nth": 13,
+      "fieldCode": 131085,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DestinationTag",
+      "typeCode": 2,
+      "nth": 14,
+      "fieldCode": 131086,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LastUpdateTime",
+      "typeCode": 2,
+      "nth": 15,
+      "fieldCode": 131087,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HighQualityIn",
+      "typeCode": 2,
+      "nth": 16,
+      "fieldCode": 131088,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HighQualityOut",
+      "typeCode": 2,
+      "nth": 17,
+      "fieldCode": 131089,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LowQualityIn",
+      "typeCode": 2,
+      "nth": 18,
+      "fieldCode": 131090,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LowQualityOut",
+      "typeCode": 2,
+      "nth": 19,
+      "fieldCode": 131091,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "QualityIn",
+      "typeCode": 2,
+      "nth": 20,
+      "fieldCode": 131092,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "QualityOut",
+      "typeCode": 2,
+      "nth": 21,
+      "fieldCode": 131093,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "StampEscrow",
+      "typeCode": 2,
+      "nth": 22,
+      "fieldCode": 131094,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BondAmount",
+      "typeCode": 2,
+      "nth": 23,
+      "fieldCode": 131095,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoadFee",
+      "typeCode": 2,
+      "nth": 24,
+      "fieldCode": 131096,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OfferSequence",
+      "typeCode": 2,
+      "nth": 25,
+      "fieldCode": 131097,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "FirstLedgerSequence",
+      "typeCode": 2,
+      "nth": 26,
+      "fieldCode": 131098,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LastLedgerSequence",
+      "typeCode": 2,
+      "nth": 27,
+      "fieldCode": 131099,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TransactionIndex",
+      "typeCode": 2,
+      "nth": 28,
+      "fieldCode": 131100,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OperationLimit",
+      "typeCode": 2,
+      "nth": 29,
+      "fieldCode": 131101,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ReferenceFeeUnits",
+      "typeCode": 2,
+      "nth": 30,
+      "fieldCode": 131102,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ReserveBase",
+      "typeCode": 2,
+      "nth": 31,
+      "fieldCode": 131103,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ReserveIncrement",
+      "typeCode": 2,
+      "nth": 32,
+      "fieldCode": 131104,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SetFlag",
+      "typeCode": 2,
+      "nth": 33,
+      "fieldCode": 131105,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ClearFlag",
+      "typeCode": 2,
+      "nth": 34,
+      "fieldCode": 131106,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SignerQuorum",
+      "typeCode": 2,
+      "nth": 35,
+      "fieldCode": 131107,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "CancelAfter",
+      "typeCode": 2,
+      "nth": 36,
+      "fieldCode": 131108,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "FinishAfter",
+      "typeCode": 2,
+      "nth": 37,
+      "fieldCode": 131109,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SignerListID",
+      "typeCode": 2,
+      "nth": 38,
+      "fieldCode": 131110,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SettleDelay",
+      "typeCode": 2,
+      "nth": 39,
+      "fieldCode": 131111,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TicketCount",
+      "typeCode": 2,
+      "nth": 40,
+      "fieldCode": 131112,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TicketSequence",
+      "typeCode": 2,
+      "nth": 41,
+      "fieldCode": 131113,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenTaxon",
+      "typeCode": 2,
+      "nth": 42,
+      "fieldCode": 131114,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "MintedNFTokens",
+      "typeCode": 2,
+      "nth": 43,
+      "fieldCode": 131115,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BurnedNFTokens",
+      "typeCode": 2,
+      "nth": 44,
+      "fieldCode": 131116,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookStateCount",
+      "typeCode": 2,
+      "nth": 45,
+      "fieldCode": 131117,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitGeneration",
+      "typeCode": 2,
+      "nth": 46,
+      "fieldCode": 131118,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "VoteWeight",
+      "typeCode": 2,
+      "nth": 48,
+      "fieldCode": 131120,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "FirstNFTokenSequence",
+      "typeCode": 2,
+      "nth": 50,
+      "fieldCode": 131122,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OracleDocumentID",
+      "typeCode": 2,
+      "nth": 51,
+      "fieldCode": 131123,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PermissionValue",
+      "typeCode": 2,
+      "nth": 52,
+      "fieldCode": 131124,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "MutableFlags",
+      "typeCode": 2,
+      "nth": 53,
+      "fieldCode": 131125,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "StartDate",
+      "typeCode": 2,
+      "nth": 54,
+      "fieldCode": 131126,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PaymentInterval",
+      "typeCode": 2,
+      "nth": 55,
+      "fieldCode": 131127,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "GracePeriod",
+      "typeCode": 2,
+      "nth": 56,
+      "fieldCode": 131128,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PreviousPaymentDueDate",
+      "typeCode": 2,
+      "nth": 57,
+      "fieldCode": 131129,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NextPaymentDueDate",
+      "typeCode": 2,
+      "nth": 58,
+      "fieldCode": 131130,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PaymentRemaining",
+      "typeCode": 2,
+      "nth": 59,
+      "fieldCode": 131131,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PaymentTotal",
+      "typeCode": 2,
+      "nth": 60,
+      "fieldCode": 131132,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoanSequence",
+      "typeCode": 2,
+      "nth": 61,
+      "fieldCode": 131133,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "CoverRateMinimum",
+      "typeCode": 2,
+      "nth": 62,
+      "fieldCode": 131134,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "CoverRateLiquidation",
+      "typeCode": 2,
+      "nth": 63,
+      "fieldCode": 131135,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OverpaymentFee",
+      "typeCode": 2,
+      "nth": 64,
+      "fieldCode": 131136,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "InterestRate",
+      "typeCode": 2,
+      "nth": 65,
+      "fieldCode": 131137,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LateInterestRate",
+      "typeCode": 2,
+      "nth": 66,
+      "fieldCode": 131138,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "CloseInterestRate",
+      "typeCode": 2,
+      "nth": 67,
+      "fieldCode": 131139,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OverpaymentInterestRate",
+      "typeCode": 2,
+      "nth": 68,
+      "fieldCode": 131140,
+      "typeName": "UINT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "IndexNext",
+      "typeCode": 3,
+      "nth": 1,
+      "fieldCode": 196609,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "IndexPrevious",
+      "typeCode": 3,
+      "nth": 2,
+      "fieldCode": 196610,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BookNode",
+      "typeCode": 3,
+      "nth": 3,
+      "fieldCode": 196611,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OwnerNode",
+      "typeCode": 3,
+      "nth": 4,
+      "fieldCode": 196612,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BaseFee",
+      "typeCode": 3,
+      "nth": 5,
+      "fieldCode": 196613,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ExchangeRate",
+      "typeCode": 3,
+      "nth": 6,
+      "fieldCode": 196614,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LowNode",
+      "typeCode": 3,
+      "nth": 7,
+      "fieldCode": 196615,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HighNode",
+      "typeCode": 3,
+      "nth": 8,
+      "fieldCode": 196616,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DestinationNode",
+      "typeCode": 3,
+      "nth": 9,
+      "fieldCode": 196617,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Cookie",
+      "typeCode": 3,
+      "nth": 10,
+      "fieldCode": 196618,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ServerVersion",
+      "typeCode": 3,
+      "nth": 11,
+      "fieldCode": 196619,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenOfferNode",
+      "typeCode": 3,
+      "nth": 12,
+      "fieldCode": 196620,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitBurden",
+      "typeCode": 3,
+      "nth": 13,
+      "fieldCode": 196621,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookOn",
+      "typeCode": 3,
+      "nth": 16,
+      "fieldCode": 196624,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookInstructionCount",
+      "typeCode": 3,
+      "nth": 17,
+      "fieldCode": 196625,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookReturnCode",
+      "typeCode": 3,
+      "nth": 18,
+      "fieldCode": 196626,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ReferenceCount",
+      "typeCode": 3,
+      "nth": 19,
+      "fieldCode": 196627,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainClaimID",
+      "typeCode": 3,
+      "nth": 20,
+      "fieldCode": 196628,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainAccountCreateCount",
+      "typeCode": 3,
+      "nth": 21,
+      "fieldCode": 196629,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainAccountClaimCount",
+      "typeCode": 3,
+      "nth": 22,
+      "fieldCode": 196630,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AssetPrice",
+      "typeCode": 3,
+      "nth": 23,
+      "fieldCode": 196631,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "MaximumAmount",
+      "typeCode": 3,
+      "nth": 24,
+      "fieldCode": 196632,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "OutstandingAmount",
+      "typeCode": 3,
+      "nth": 25,
+      "fieldCode": 196633,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "MPTAmount",
+      "typeCode": 3,
+      "nth": 26,
+      "fieldCode": 196634,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "IssuerNode",
+      "typeCode": 3,
+      "nth": 27,
+      "fieldCode": 196635,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SubjectNode",
+      "typeCode": 3,
+      "nth": 28,
+      "fieldCode": 196636,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LockedAmount",
+      "typeCode": 3,
+      "nth": 29,
+      "fieldCode": 196637,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "VaultNode",
+      "typeCode": 3,
+      "nth": 30,
+      "fieldCode": 196638,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoanBrokerNode",
+      "typeCode": 3,
+      "nth": 31,
+      "fieldCode": 196639,
+      "typeName": "UINT64",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "EmailHash",
+      "typeCode": 4,
+      "nth": 1,
+      "fieldCode": 262145,
+      "typeName": "UINT128",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LedgerHash",
+      "typeCode": 5,
+      "nth": 1,
+      "fieldCode": 327681,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ParentHash",
+      "typeCode": 5,
+      "nth": 2,
+      "fieldCode": 327682,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TransactionHash",
+      "typeCode": 5,
+      "nth": 3,
+      "fieldCode": 327683,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AccountHash",
+      "typeCode": 5,
+      "nth": 4,
+      "fieldCode": 327684,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PreviousTxnID",
+      "typeCode": 5,
+      "nth": 5,
+      "fieldCode": 327685,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LedgerIndex",
+      "typeCode": 5,
+      "nth": 6,
+      "fieldCode": 327686,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "WalletLocator",
+      "typeCode": 5,
+      "nth": 7,
+      "fieldCode": 327687,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "RootIndex",
+      "typeCode": 5,
+      "nth": 8,
+      "fieldCode": 327688,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AccountTxnID",
+      "typeCode": 5,
+      "nth": 9,
+      "fieldCode": 327689,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenID",
+      "typeCode": 5,
+      "nth": 10,
+      "fieldCode": 327690,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitParentTxnID",
+      "typeCode": 5,
+      "nth": 11,
+      "fieldCode": 327691,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitNonce",
+      "typeCode": 5,
+      "nth": 12,
+      "fieldCode": 327692,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitHookHash",
+      "typeCode": 5,
+      "nth": 13,
+      "fieldCode": 327693,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AMMID",
+      "typeCode": 5,
+      "nth": 14,
+      "fieldCode": 327694,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BookDirectory",
+      "typeCode": 5,
+      "nth": 16,
+      "fieldCode": 327696,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "InvoiceID",
+      "typeCode": 5,
+      "nth": 17,
+      "fieldCode": 327697,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Nickname",
+      "typeCode": 5,
+      "nth": 18,
+      "fieldCode": 327698,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Amendment",
+      "typeCode": 5,
+      "nth": 19,
+      "fieldCode": 327699,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Digest",
+      "typeCode": 5,
+      "nth": 21,
+      "fieldCode": 327701,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Channel",
+      "typeCode": 5,
+      "nth": 22,
+      "fieldCode": 327702,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ConsensusHash",
+      "typeCode": 5,
+      "nth": 23,
+      "fieldCode": 327703,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "CheckID",
+      "typeCode": 5,
+      "nth": 24,
+      "fieldCode": 327704,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ValidatedHash",
+      "typeCode": 5,
+      "nth": 25,
+      "fieldCode": 327705,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PreviousPageMin",
+      "typeCode": 5,
+      "nth": 26,
+      "fieldCode": 327706,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NextPageMin",
+      "typeCode": 5,
+      "nth": 27,
+      "fieldCode": 327707,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenBuyOffer",
+      "typeCode": 5,
+      "nth": 28,
+      "fieldCode": 327708,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenSellOffer",
+      "typeCode": 5,
+      "nth": 29,
+      "fieldCode": 327709,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookStateKey",
+      "typeCode": 5,
+      "nth": 30,
+      "fieldCode": 327710,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookHash",
+      "typeCode": 5,
+      "nth": 31,
+      "fieldCode": 327711,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookNamespace",
+      "typeCode": 5,
+      "nth": 32,
+      "fieldCode": 327712,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookSetTxnID",
+      "typeCode": 5,
+      "nth": 33,
+      "fieldCode": 327713,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DomainID",
+      "typeCode": 5,
+      "nth": 34,
+      "fieldCode": 327714,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "VaultID",
+      "typeCode": 5,
+      "nth": 35,
+      "fieldCode": 327715,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ParentBatchID",
+      "typeCode": 5,
+      "nth": 36,
+      "fieldCode": 327716,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoanBrokerID",
+      "typeCode": 5,
+      "nth": 37,
+      "fieldCode": 327717,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoanID",
+      "typeCode": 5,
+      "nth": 38,
+      "fieldCode": 327718,
+      "typeName": "UINT256",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Amount",
+      "typeCode": 6,
+      "nth": 1,
+      "fieldCode": 393217,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Balance",
+      "typeCode": 6,
+      "nth": 2,
+      "fieldCode": 393218,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LimitAmount",
+      "typeCode": 6,
+      "nth": 3,
+      "fieldCode": 393219,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TakerPays",
+      "typeCode": 6,
+      "nth": 4,
+      "fieldCode": 393220,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TakerGets",
+      "typeCode": 6,
+      "nth": 5,
+      "fieldCode": 393221,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LowLimit",
+      "typeCode": 6,
+      "nth": 6,
+      "fieldCode": 393222,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HighLimit",
+      "typeCode": 6,
+      "nth": 7,
+      "fieldCode": 393223,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Fee",
+      "typeCode": 6,
+      "nth": 8,
+      "fieldCode": 393224,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SendMax",
+      "typeCode": 6,
+      "nth": 9,
+      "fieldCode": 393225,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DeliverMin",
+      "typeCode": 6,
+      "nth": 10,
+      "fieldCode": 393226,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Amount2",
+      "typeCode": 6,
+      "nth": 11,
+      "fieldCode": 393227,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BidMin",
+      "typeCode": 6,
+      "nth": 12,
+      "fieldCode": 393228,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BidMax",
+      "typeCode": 6,
+      "nth": 13,
+      "fieldCode": 393229,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "MinimumOffer",
+      "typeCode": 6,
+      "nth": 16,
+      "fieldCode": 393232,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "RippleEscrow",
+      "typeCode": 6,
+      "nth": 17,
+      "fieldCode": 393233,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DeliveredAmount",
+      "typeCode": 6,
+      "nth": 18,
+      "fieldCode": 393234,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenBrokerFee",
+      "typeCode": 6,
+      "nth": 19,
+      "fieldCode": 393235,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BaseFeeDrops",
+      "typeCode": 6,
+      "nth": 22,
+      "fieldCode": 393238,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ReserveBaseDrops",
+      "typeCode": 6,
+      "nth": 23,
+      "fieldCode": 393239,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ReserveIncrementDrops",
+      "typeCode": 6,
+      "nth": 24,
+      "fieldCode": 393240,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LPTokenOut",
+      "typeCode": 6,
+      "nth": 25,
+      "fieldCode": 393241,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LPTokenIn",
+      "typeCode": 6,
+      "nth": 26,
+      "fieldCode": 393242,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "EPrice",
+      "typeCode": 6,
+      "nth": 27,
+      "fieldCode": 393243,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Price",
+      "typeCode": 6,
+      "nth": 28,
+      "fieldCode": 393244,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "SignatureReward",
+      "typeCode": 6,
+      "nth": 29,
+      "fieldCode": 393245,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "MinAccountCreateAmount",
+      "typeCode": 6,
+      "nth": 30,
+      "fieldCode": 393246,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LPTokenBalance",
+      "typeCode": 6,
+      "nth": 31,
+      "fieldCode": 393247,
+      "typeName": "AMOUNT",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PublicKey",
+      "typeCode": 7,
+      "nth": 1,
+      "fieldCode": 458753,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "MessageKey",
+      "typeCode": 7,
+      "nth": 2,
+      "fieldCode": 458754,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "SigningPubKey",
+      "typeCode": 7,
+      "nth": 3,
+      "fieldCode": 458755,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "TxnSignature",
+      "typeCode": 7,
+      "nth": 4,
+      "fieldCode": 458756,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": false
+    },
+    {
+      "name": "URI",
+      "typeCode": 7,
+      "nth": 5,
+      "fieldCode": 458757,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Signature",
+      "typeCode": 7,
+      "nth": 6,
+      "fieldCode": 458758,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": false
+    },
+    {
+      "name": "Domain",
+      "typeCode": 7,
+      "nth": 7,
+      "fieldCode": 458759,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "FundCode",
+      "typeCode": 7,
+      "nth": 8,
+      "fieldCode": 458760,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "RemoveCode",
+      "typeCode": 7,
+      "nth": 9,
+      "fieldCode": 458761,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "ExpireCode",
+      "typeCode": 7,
+      "nth": 10,
+      "fieldCode": 458762,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "CreateCode",
+      "typeCode": 7,
+      "nth": 11,
+      "fieldCode": 458763,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "MemoType",
+      "typeCode": 7,
+      "nth": 12,
+      "fieldCode": 458764,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "MemoData",
+      "typeCode": 7,
+      "nth": 13,
+      "fieldCode": 458765,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "MemoFormat",
+      "typeCode": 7,
+      "nth": 14,
+      "fieldCode": 458766,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Fulfillment",
+      "typeCode": 7,
+      "nth": 16,
+      "fieldCode": 458768,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Condition",
+      "typeCode": 7,
+      "nth": 17,
+      "fieldCode": 458769,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "MasterSignature",
+      "typeCode": 7,
+      "nth": 18,
+      "fieldCode": 458770,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": false
+    },
+    {
+      "name": "UNLModifyValidator",
+      "typeCode": 7,
+      "nth": 19,
+      "fieldCode": 458771,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "ValidatorToDisable",
+      "typeCode": 7,
+      "nth": 20,
+      "fieldCode": 458772,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "ValidatorToReEnable",
+      "typeCode": 7,
+      "nth": 21,
+      "fieldCode": 458773,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookStateData",
+      "typeCode": 7,
+      "nth": 22,
+      "fieldCode": 458774,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookReturnString",
+      "typeCode": 7,
+      "nth": 23,
+      "fieldCode": 458775,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookParameterName",
+      "typeCode": 7,
+      "nth": 24,
+      "fieldCode": 458776,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookParameterValue",
+      "typeCode": 7,
+      "nth": 25,
+      "fieldCode": 458777,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "DIDDocument",
+      "typeCode": 7,
+      "nth": 26,
+      "fieldCode": 458778,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Data",
+      "typeCode": 7,
+      "nth": 27,
+      "fieldCode": 458779,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AssetClass",
+      "typeCode": 7,
+      "nth": 28,
+      "fieldCode": 458780,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Provider",
+      "typeCode": 7,
+      "nth": 29,
+      "fieldCode": 458781,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "MPTokenMetadata",
+      "typeCode": 7,
+      "nth": 30,
+      "fieldCode": 458782,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "CredentialType",
+      "typeCode": 7,
+      "nth": 31,
+      "fieldCode": 458783,
+      "typeName": "VL",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Account",
+      "typeCode": 8,
+      "nth": 1,
+      "fieldCode": 524289,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Owner",
+      "typeCode": 8,
+      "nth": 2,
+      "fieldCode": 524290,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Destination",
+      "typeCode": 8,
+      "nth": 3,
+      "fieldCode": 524291,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Issuer",
+      "typeCode": 8,
+      "nth": 4,
+      "fieldCode": 524292,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Authorize",
+      "typeCode": 8,
+      "nth": 5,
+      "fieldCode": 524293,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Unauthorize",
+      "typeCode": 8,
+      "nth": 6,
+      "fieldCode": 524294,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "RegularKey",
+      "typeCode": 8,
+      "nth": 8,
+      "fieldCode": 524296,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenMinter",
+      "typeCode": 8,
+      "nth": 9,
+      "fieldCode": 524297,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitCallback",
+      "typeCode": 8,
+      "nth": 10,
+      "fieldCode": 524298,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Holder",
+      "typeCode": 8,
+      "nth": 11,
+      "fieldCode": 524299,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Delegate",
+      "typeCode": 8,
+      "nth": 12,
+      "fieldCode": 524300,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookAccount",
+      "typeCode": 8,
+      "nth": 16,
+      "fieldCode": 524304,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "OtherChainSource",
+      "typeCode": 8,
+      "nth": 18,
+      "fieldCode": 524306,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "OtherChainDestination",
+      "typeCode": 8,
+      "nth": 19,
+      "fieldCode": 524307,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AttestationSignerAccount",
+      "typeCode": 8,
+      "nth": 20,
+      "fieldCode": 524308,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AttestationRewardAccount",
+      "typeCode": 8,
+      "nth": 21,
+      "fieldCode": 524309,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "LockingChainDoor",
+      "typeCode": 8,
+      "nth": 22,
+      "fieldCode": 524310,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "IssuingChainDoor",
+      "typeCode": 8,
+      "nth": 23,
+      "fieldCode": 524311,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Subject",
+      "typeCode": 8,
+      "nth": 24,
+      "fieldCode": 524312,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Borrower",
+      "typeCode": 8,
+      "nth": 25,
+      "fieldCode": 524313,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Counterparty",
+      "typeCode": 8,
+      "nth": 26,
+      "fieldCode": 524314,
+      "typeName": "ACCOUNT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Number",
+      "typeCode": 9,
+      "nth": 1,
+      "fieldCode": 589825,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AssetsAvailable",
+      "typeCode": 9,
+      "nth": 2,
+      "fieldCode": 589826,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AssetsMaximum",
+      "typeCode": 9,
+      "nth": 3,
+      "fieldCode": 589827,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AssetsTotal",
+      "typeCode": 9,
+      "nth": 4,
+      "fieldCode": 589828,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LossUnrealized",
+      "typeCode": 9,
+      "nth": 5,
+      "fieldCode": 589829,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DebtTotal",
+      "typeCode": 9,
+      "nth": 6,
+      "fieldCode": 589830,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "DebtMaximum",
+      "typeCode": 9,
+      "nth": 7,
+      "fieldCode": 589831,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "CoverAvailable",
+      "typeCode": 9,
+      "nth": 8,
+      "fieldCode": 589832,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoanOriginationFee",
+      "typeCode": 9,
+      "nth": 9,
+      "fieldCode": 589833,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoanServiceFee",
+      "typeCode": 9,
+      "nth": 10,
+      "fieldCode": 589834,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LatePaymentFee",
+      "typeCode": 9,
+      "nth": 11,
+      "fieldCode": 589835,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ClosePaymentFee",
+      "typeCode": 9,
+      "nth": 12,
+      "fieldCode": 589836,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PrincipalOutstanding",
+      "typeCode": 9,
+      "nth": 13,
+      "fieldCode": 589837,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PrincipalRequested",
+      "typeCode": 9,
+      "nth": 14,
+      "fieldCode": 589838,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TotalValueOutstanding",
+      "typeCode": 9,
+      "nth": 15,
+      "fieldCode": 589839,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "PeriodicPayment",
+      "typeCode": 9,
+      "nth": 16,
+      "fieldCode": 589840,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ManagementFeeOutstanding",
+      "typeCode": 9,
+      "nth": 17,
+      "fieldCode": 589841,
+      "typeName": "NUMBER",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LoanScale",
+      "typeCode": 10,
+      "nth": 1,
+      "fieldCode": 655361,
+      "typeName": "INT32",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TransactionMetaData",
+      "typeCode": 14,
+      "nth": 2,
+      "fieldCode": 917506,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "TransactionMetaData",
+      "typeCode": 14,
+      "nth": 2,
+      "fieldCode": 917506,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "CreatedNode",
+      "typeCode": 14,
+      "nth": 3,
+      "fieldCode": 917507,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "CreatedNode",
+      "typeCode": 14,
+      "nth": 3,
+      "fieldCode": 917507,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "DeletedNode",
+      "typeCode": 14,
+      "nth": 4,
+      "fieldCode": 917508,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "DeletedNode",
+      "typeCode": 14,
+      "nth": 4,
+      "fieldCode": 917508,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "ModifiedNode",
+      "typeCode": 14,
+      "nth": 5,
+      "fieldCode": 917509,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "ModifiedNode",
+      "typeCode": 14,
+      "nth": 5,
+      "fieldCode": 917509,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "PreviousFields",
+      "typeCode": 14,
+      "nth": 6,
+      "fieldCode": 917510,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "PreviousFields",
+      "typeCode": 14,
+      "nth": 6,
+      "fieldCode": 917510,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "FinalFields",
+      "typeCode": 14,
+      "nth": 7,
+      "fieldCode": 917511,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "FinalFields",
+      "typeCode": 14,
+      "nth": 7,
+      "fieldCode": 917511,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NewFields",
+      "typeCode": 14,
+      "nth": 8,
+      "fieldCode": 917512,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NewFields",
+      "typeCode": 14,
+      "nth": 8,
+      "fieldCode": 917512,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "TemplateEntry",
+      "typeCode": 14,
+      "nth": 9,
+      "fieldCode": 917513,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "TemplateEntry",
+      "typeCode": 14,
+      "nth": 9,
+      "fieldCode": 917513,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Memo",
+      "typeCode": 14,
+      "nth": 10,
+      "fieldCode": 917514,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Memo",
+      "typeCode": 14,
+      "nth": 10,
+      "fieldCode": 917514,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "SignerEntry",
+      "typeCode": 14,
+      "nth": 11,
+      "fieldCode": 917515,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "SignerEntry",
+      "typeCode": 14,
+      "nth": 11,
+      "fieldCode": 917515,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NFToken",
+      "typeCode": 14,
+      "nth": 12,
+      "fieldCode": 917516,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NFToken",
+      "typeCode": 14,
+      "nth": 12,
+      "fieldCode": 917516,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitDetails",
+      "typeCode": 14,
+      "nth": 13,
+      "fieldCode": 917517,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "EmitDetails",
+      "typeCode": 14,
+      "nth": 13,
+      "fieldCode": 917517,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Hook",
+      "typeCode": 14,
+      "nth": 14,
+      "fieldCode": 917518,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Hook",
+      "typeCode": 14,
+      "nth": 14,
+      "fieldCode": 917518,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Permission",
+      "typeCode": 14,
+      "nth": 15,
+      "fieldCode": 917519,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Permission",
+      "typeCode": 14,
+      "nth": 15,
+      "fieldCode": 917519,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Signer",
+      "typeCode": 14,
+      "nth": 16,
+      "fieldCode": 917520,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Signer",
+      "typeCode": 14,
+      "nth": 16,
+      "fieldCode": 917520,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Majority",
+      "typeCode": 14,
+      "nth": 18,
+      "fieldCode": 917522,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Majority",
+      "typeCode": 14,
+      "nth": 18,
+      "fieldCode": 917522,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "DisabledValidator",
+      "typeCode": 14,
+      "nth": 19,
+      "fieldCode": 917523,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "DisabledValidator",
+      "typeCode": 14,
+      "nth": 19,
+      "fieldCode": 917523,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "EmittedTxn",
+      "typeCode": 14,
+      "nth": 20,
+      "fieldCode": 917524,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "EmittedTxn",
+      "typeCode": 14,
+      "nth": 20,
+      "fieldCode": 917524,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookExecution",
+      "typeCode": 14,
+      "nth": 21,
+      "fieldCode": 917525,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookExecution",
+      "typeCode": 14,
+      "nth": 21,
+      "fieldCode": 917525,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookDefinition",
+      "typeCode": 14,
+      "nth": 22,
+      "fieldCode": 917526,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookDefinition",
+      "typeCode": 14,
+      "nth": 22,
+      "fieldCode": 917526,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookParameter",
+      "typeCode": 14,
+      "nth": 23,
+      "fieldCode": 917527,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookParameter",
+      "typeCode": 14,
+      "nth": 23,
+      "fieldCode": 917527,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookGrant",
+      "typeCode": 14,
+      "nth": 24,
+      "fieldCode": 917528,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookGrant",
+      "typeCode": 14,
+      "nth": 24,
+      "fieldCode": 917528,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "VoteEntry",
+      "typeCode": 14,
+      "nth": 25,
+      "fieldCode": 917529,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "VoteEntry",
+      "typeCode": 14,
+      "nth": 25,
+      "fieldCode": 917529,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuctionSlot",
+      "typeCode": 14,
+      "nth": 26,
+      "fieldCode": 917530,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuctionSlot",
+      "typeCode": 14,
+      "nth": 26,
+      "fieldCode": 917530,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuthAccount",
+      "typeCode": 14,
+      "nth": 27,
+      "fieldCode": 917531,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuthAccount",
+      "typeCode": 14,
+      "nth": 27,
+      "fieldCode": 917531,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainClaimProofSig",
+      "typeCode": 14,
+      "nth": 28,
+      "fieldCode": 917532,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainClaimProofSig",
+      "typeCode": 14,
+      "nth": 28,
+      "fieldCode": 917532,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainCreateAccountProofSig",
+      "typeCode": 14,
+      "nth": 29,
+      "fieldCode": 917533,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainCreateAccountProofSig",
+      "typeCode": 14,
+      "nth": 29,
+      "fieldCode": 917533,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainClaimAttestationCollectionElement",
+      "typeCode": 14,
+      "nth": 30,
+      "fieldCode": 917534,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainClaimAttestationCollectionElement",
+      "typeCode": 14,
+      "nth": 30,
+      "fieldCode": 917534,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainCreateAccountAttestationCollectionElement",
+      "typeCode": 14,
+      "nth": 31,
+      "fieldCode": 917535,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainCreateAccountAttestationCollectionElement",
+      "typeCode": 14,
+      "nth": 31,
+      "fieldCode": 917535,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "PriceData",
+      "typeCode": 14,
+      "nth": 32,
+      "fieldCode": 917536,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "PriceData",
+      "typeCode": 14,
+      "nth": 32,
+      "fieldCode": 917536,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Credential",
+      "typeCode": 14,
+      "nth": 33,
+      "fieldCode": 917537,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Credential",
+      "typeCode": 14,
+      "nth": 33,
+      "fieldCode": 917537,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "RawTransaction",
+      "typeCode": 14,
+      "nth": 34,
+      "fieldCode": 917538,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "RawTransaction",
+      "typeCode": 14,
+      "nth": 34,
+      "fieldCode": 917538,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "BatchSigner",
+      "typeCode": 14,
+      "nth": 35,
+      "fieldCode": 917539,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "BatchSigner",
+      "typeCode": 14,
+      "nth": 35,
+      "fieldCode": 917539,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Book",
+      "typeCode": 14,
+      "nth": 36,
+      "fieldCode": 917540,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Book",
+      "typeCode": 14,
+      "nth": 36,
+      "fieldCode": 917540,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "CounterpartySignature",
+      "typeCode": 14,
+      "nth": 37,
+      "fieldCode": 917541,
+      "typeName": "OBJECT",
+      "isVLEncoded": true,
+      "isSigningField": false
+    },
+    {
+      "name": "SigningAccounts",
+      "typeCode": 15,
+      "nth": 2,
+      "fieldCode": 983042,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "SigningAccounts",
+      "typeCode": 15,
+      "nth": 2,
+      "fieldCode": 983042,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Signers",
+      "typeCode": 15,
+      "nth": 3,
+      "fieldCode": 983043,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": false
+    },
+    {
+      "name": "SignerEntries",
+      "typeCode": 15,
+      "nth": 4,
+      "fieldCode": 983044,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "SignerEntries",
+      "typeCode": 15,
+      "nth": 4,
+      "fieldCode": 983044,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Template",
+      "typeCode": 15,
+      "nth": 5,
+      "fieldCode": 983045,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Template",
+      "typeCode": 15,
+      "nth": 5,
+      "fieldCode": 983045,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Necessary",
+      "typeCode": 15,
+      "nth": 6,
+      "fieldCode": 983046,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Necessary",
+      "typeCode": 15,
+      "nth": 6,
+      "fieldCode": 983046,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Sufficient",
+      "typeCode": 15,
+      "nth": 7,
+      "fieldCode": 983047,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Sufficient",
+      "typeCode": 15,
+      "nth": 7,
+      "fieldCode": 983047,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AffectedNodes",
+      "typeCode": 15,
+      "nth": 8,
+      "fieldCode": 983048,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AffectedNodes",
+      "typeCode": 15,
+      "nth": 8,
+      "fieldCode": 983048,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Memos",
+      "typeCode": 15,
+      "nth": 9,
+      "fieldCode": 983049,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Memos",
+      "typeCode": 15,
+      "nth": 9,
+      "fieldCode": 983049,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokens",
+      "typeCode": 15,
+      "nth": 10,
+      "fieldCode": 983050,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokens",
+      "typeCode": 15,
+      "nth": 10,
+      "fieldCode": 983050,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Hooks",
+      "typeCode": 15,
+      "nth": 11,
+      "fieldCode": 983051,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Hooks",
+      "typeCode": 15,
+      "nth": 11,
+      "fieldCode": 983051,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "VoteSlots",
+      "typeCode": 15,
+      "nth": 12,
+      "fieldCode": 983052,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "VoteSlots",
+      "typeCode": 15,
+      "nth": 12,
+      "fieldCode": 983052,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AdditionalBooks",
+      "typeCode": 15,
+      "nth": 13,
+      "fieldCode": 983053,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AdditionalBooks",
+      "typeCode": 15,
+      "nth": 13,
+      "fieldCode": 983053,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Majorities",
+      "typeCode": 15,
+      "nth": 16,
+      "fieldCode": 983056,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Majorities",
+      "typeCode": 15,
+      "nth": 16,
+      "fieldCode": 983056,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "DisabledValidators",
+      "typeCode": 15,
+      "nth": 17,
+      "fieldCode": 983057,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "DisabledValidators",
+      "typeCode": 15,
+      "nth": 17,
+      "fieldCode": 983057,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookExecutions",
+      "typeCode": 15,
+      "nth": 18,
+      "fieldCode": 983058,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookExecutions",
+      "typeCode": 15,
+      "nth": 18,
+      "fieldCode": 983058,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookParameters",
+      "typeCode": 15,
+      "nth": 19,
+      "fieldCode": 983059,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookParameters",
+      "typeCode": 15,
+      "nth": 19,
+      "fieldCode": 983059,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookGrants",
+      "typeCode": 15,
+      "nth": 20,
+      "fieldCode": 983060,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "HookGrants",
+      "typeCode": 15,
+      "nth": 20,
+      "fieldCode": 983060,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainClaimAttestations",
+      "typeCode": 15,
+      "nth": 21,
+      "fieldCode": 983061,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainClaimAttestations",
+      "typeCode": 15,
+      "nth": 21,
+      "fieldCode": 983061,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainCreateAccountAttestations",
+      "typeCode": 15,
+      "nth": 22,
+      "fieldCode": 983062,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainCreateAccountAttestations",
+      "typeCode": 15,
+      "nth": 22,
+      "fieldCode": 983062,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "PriceDataSeries",
+      "typeCode": 15,
+      "nth": 24,
+      "fieldCode": 983064,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "PriceDataSeries",
+      "typeCode": 15,
+      "nth": 24,
+      "fieldCode": 983064,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuthAccounts",
+      "typeCode": 15,
+      "nth": 25,
+      "fieldCode": 983065,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuthAccounts",
+      "typeCode": 15,
+      "nth": 25,
+      "fieldCode": 983065,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuthorizeCredentials",
+      "typeCode": 15,
+      "nth": 26,
+      "fieldCode": 983066,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AuthorizeCredentials",
+      "typeCode": 15,
+      "nth": 26,
+      "fieldCode": 983066,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "UnauthorizeCredentials",
+      "typeCode": 15,
+      "nth": 27,
+      "fieldCode": 983067,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "UnauthorizeCredentials",
+      "typeCode": 15,
+      "nth": 27,
+      "fieldCode": 983067,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AcceptedCredentials",
+      "typeCode": 15,
+      "nth": 28,
+      "fieldCode": 983068,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "AcceptedCredentials",
+      "typeCode": 15,
+      "nth": 28,
+      "fieldCode": 983068,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Permissions",
+      "typeCode": 15,
+      "nth": 29,
+      "fieldCode": 983069,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Permissions",
+      "typeCode": 15,
+      "nth": 29,
+      "fieldCode": 983069,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "RawTransactions",
+      "typeCode": 15,
+      "nth": 30,
+      "fieldCode": 983070,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "RawTransactions",
+      "typeCode": 15,
+      "nth": 30,
+      "fieldCode": 983070,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "BatchSigners",
+      "typeCode": 15,
+      "nth": 31,
+      "fieldCode": 983071,
+      "typeName": "ARRAY",
+      "isVLEncoded": true,
+      "isSigningField": false
+    },
+    {
+      "name": "CloseResolution",
+      "typeCode": 16,
+      "nth": 1,
+      "fieldCode": 1048577,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Method",
+      "typeCode": 16,
+      "nth": 2,
+      "fieldCode": 1048578,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TransactionResult",
+      "typeCode": 16,
+      "nth": 3,
+      "fieldCode": 1048579,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Scale",
+      "typeCode": 16,
+      "nth": 4,
+      "fieldCode": 1048580,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "AssetScale",
+      "typeCode": 16,
+      "nth": 5,
+      "fieldCode": 1048581,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TickSize",
+      "typeCode": 16,
+      "nth": 16,
+      "fieldCode": 1048592,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "UNLModifyDisabling",
+      "typeCode": 16,
+      "nth": 17,
+      "fieldCode": 1048593,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "HookResult",
+      "typeCode": 16,
+      "nth": 18,
+      "fieldCode": 1048594,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "WasLockingChainSend",
+      "typeCode": 16,
+      "nth": 19,
+      "fieldCode": 1048595,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "WithdrawalPolicy",
+      "typeCode": 16,
+      "nth": 20,
+      "fieldCode": 1048596,
+      "typeName": "UINT8",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TakerPaysCurrency",
+      "typeCode": 17,
+      "nth": 1,
+      "fieldCode": 1114113,
+      "typeName": "UINT160",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TakerPaysIssuer",
+      "typeCode": 17,
+      "nth": 2,
+      "fieldCode": 1114114,
+      "typeName": "UINT160",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TakerGetsCurrency",
+      "typeCode": 17,
+      "nth": 3,
+      "fieldCode": 1114115,
+      "typeName": "UINT160",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "TakerGetsIssuer",
+      "typeCode": 17,
+      "nth": 4,
+      "fieldCode": 1114116,
+      "typeName": "UINT160",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Paths",
+      "typeCode": 18,
+      "nth": 1,
+      "fieldCode": 1179649,
+      "typeName": "PATHSET",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Paths",
+      "typeCode": 18,
+      "nth": 1,
+      "fieldCode": 1179649,
+      "typeName": "PATHSET",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Indexes",
+      "typeCode": 19,
+      "nth": 1,
+      "fieldCode": 1245185,
+      "typeName": "VECTOR256",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Hashes",
+      "typeCode": 19,
+      "nth": 2,
+      "fieldCode": 1245186,
+      "typeName": "VECTOR256",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "Amendments",
+      "typeCode": 19,
+      "nth": 3,
+      "fieldCode": 1245187,
+      "typeName": "VECTOR256",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "NFTokenOffers",
+      "typeCode": 19,
+      "nth": 4,
+      "fieldCode": 1245188,
+      "typeName": "VECTOR256",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "CredentialIDs",
+      "typeCode": 19,
+      "nth": 5,
+      "fieldCode": 1245189,
+      "typeName": "VECTOR256",
+      "isVLEncoded": true,
+      "isSigningField": true
+    },
+    {
+      "name": "MPTokenIssuanceID",
+      "typeCode": 21,
+      "nth": 1,
+      "fieldCode": 1376257,
+      "typeName": "UINT192",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ShareMPTID",
+      "typeCode": 21,
+      "nth": 2,
+      "fieldCode": 1376258,
+      "typeName": "UINT192",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LockingChainIssue",
+      "typeCode": 24,
+      "nth": 1,
+      "fieldCode": 1572865,
+      "typeName": "ISSUE",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "IssuingChainIssue",
+      "typeCode": 24,
+      "nth": 2,
+      "fieldCode": 1572866,
+      "typeName": "ISSUE",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Asset",
+      "typeCode": 24,
+      "nth": 3,
+      "fieldCode": 1572867,
+      "typeName": "ISSUE",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Asset2",
+      "typeCode": 24,
+      "nth": 4,
+      "fieldCode": 1572868,
+      "typeName": "ISSUE",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "ClaimCurrency",
+      "typeCode": 24,
+      "nth": 5,
+      "fieldCode": 1572869,
+      "typeName": "ISSUE",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "XChainBridge",
+      "typeCode": 25,
+      "nth": 1,
+      "fieldCode": 1638401,
+      "typeName": "XCHAIN_BRIDGE",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "BaseAsset",
+      "typeCode": 26,
+      "nth": 1,
+      "fieldCode": 1703937,
+      "typeName": "CURRENCY",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "QuoteAsset",
+      "typeCode": 26,
+      "nth": 2,
+      "fieldCode": 1703938,
+      "typeName": "CURRENCY",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Transaction",
+      "typeCode": 10001,
+      "nth": 257,
+      "fieldCode": 655425793,
+      "typeName": "TRANSACTION",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Transaction",
+      "typeCode": 10001,
+      "nth": 257,
+      "fieldCode": 655425793,
+      "typeName": "TRANSACTION",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LedgerEntry",
+      "typeCode": 10002,
+      "nth": 257,
+      "fieldCode": 655491329,
+      "typeName": "LEDGERENTRY",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "LedgerEntry",
+      "typeCode": 10002,
+      "nth": 257,
+      "fieldCode": 655491329,
+      "typeName": "LEDGERENTRY",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Validation",
+      "typeCode": 10003,
+      "nth": 257,
+      "fieldCode": 655556865,
+      "typeName": "VALIDATION",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Validation",
+      "typeCode": 10003,
+      "nth": 257,
+      "fieldCode": 655556865,
+      "typeName": "VALIDATION",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Metadata",
+      "typeCode": 10004,
+      "nth": 257,
+      "fieldCode": 655622401,
+      "typeName": "METADATA",
+      "isVLEncoded": false,
+      "isSigningField": true
+    },
+    {
+      "name": "Metadata",
+      "typeCode": 10004,
+      "nth": 257,
+      "fieldCode": 655622401,
+      "typeName": "METADATA",
+      "isVLEncoded": false,
+      "isSigningField": true
+    }
+  ]
+}
